@@ -4,7 +4,7 @@ import "./sidenav.scss";
 class SideNav extends Component {
   constructor(props) {
     super(props);
-    this.state = {Open: true};
+    this.state = {Open: false};
     this.toggleOpen = this.toggleOpen.bind(this);
   }
 
@@ -16,7 +16,7 @@ class SideNav extends Component {
     console.log(this.isOpen());
   }
   isOpen() {
-    return ((this.state.Open) ? "aside-fold" : "");
+    return ((this.state.Open) ? "" : "aside-fold");
   }
 
   render() {
