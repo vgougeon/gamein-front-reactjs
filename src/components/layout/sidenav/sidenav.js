@@ -2,10 +2,26 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./sidenav.scss";
 class SideNav extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {Open: true};
+    this.toggleOpen = this.toggleOpen.bind(this);
+  }
+
+  toggleOpen() {
+    console.log('Le lien a été cliqué.');
+    this.setState(state => ({
+      Open : !state.Open
+    }));
+    console.log(this.isOpen());
+  }
+  isOpen() {
+    return ((this.state.Open) ? "aside-fold" : "");
+  }
+
   render() {
     return (
-        <aside>
+        <aside className={this.isOpen()}>
           <div class="d-flex flex-column">
             <NavLink exact={true} activeClassName='active' to='/'>
               <div class="button">
@@ -22,6 +38,11 @@ class SideNav extends Component {
                 <i class="fas fa-hands-helping" /> Contribute
               </div>
             </NavLink>
+            <NavLink  onClick={this.toggleOpen} >
+            <div class="button">
+              <i class="fas fa-plus" /> Expand
+              </div>
+              </NavLink>
           </div>
           <div class="d-flex flex-column" />
         </aside>
