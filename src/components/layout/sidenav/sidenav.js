@@ -1,33 +1,32 @@
-import React, { Component } from 'react';
-import './sidenav.scss';
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+import "./sidenav.scss";
 class SideNav extends Component {
-  state = { }
-  render() { 
-    return ( <section id="main">
-    <aside>
-        <div class="d-flex flex-column">
-            <a href="">
-                <div class="button">
-                    <i class="fas fa-compass"></i> Home
-                </div>
-            </a>
-            <a href="games">
-                <div class="button">
-                    <i class="fas fa-gamepad"></i> Games
-                </div>
-            </a>
-            <a href="contribute">
-                <div class="button">
-                    <i class="fas fa-hands-helping"></i> Contribute
-                </div>
-            </a>
-        </div>
-        <div class="d-flex flex-column">
-        </div>
-    </aside>
-</section> 
-);
+  state = {};
+  render() {
+    return (
+        <aside>
+          <div class="d-flex flex-column">
+            <NavLink exact={true} activeClassName='active' to='/'>
+              <div class="button">
+                <i class="fas fa-compass" /> Home
+              </div>
+            </NavLink>
+            <NavLink exact={true} activeClassName='active' to='/games'>
+              <div class="button">
+                <i class="fas fa-gamepad" /> Games
+              </div>
+            </NavLink>
+            <NavLink exact={true} activeClassName='active' to='/contribute'>
+              <div class="button">
+                <i class="fas fa-hands-helping" /> Contribute
+              </div>
+            </NavLink>
+          </div>
+          <div class="d-flex flex-column" />
+        </aside>
+    );
   }
 }
- 
+
 export default SideNav;

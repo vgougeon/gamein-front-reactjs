@@ -22,6 +22,12 @@ aside {
           color: inherit;
           text-decoration: none;
       }
+      &.active {
+        .button {
+          border-left: 4px solid var(--theme);
+          background: var(--soft);
+        }
+      }
   }
   .button {
       height: var(--header-size);
@@ -34,9 +40,6 @@ aside {
       cursor: pointer;
       &:hover {
           background: var(--soft);
-      }
-      &:active {
-          border-left: 4px solid var(--theme);
       }
       i {
           margin-right: 20px;
