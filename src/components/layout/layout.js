@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import Header from './header/header';
+import SideNav from './sidenav/sidenav';
 
 class Layout extends Component {
-    state = {  }
+    state = { }
     render() { 
         return (
-            <Header />
+            <React.Fragment>
+                <Header />
+                <SideNav />
+            </React.Fragment>
         );
     }
 }
