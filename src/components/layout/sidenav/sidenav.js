@@ -26,11 +26,6 @@ class SideNav extends Component {
                 <i class="fas fa-hands-helping" /> Contribute
               </div>
             </NavLink>
-            <NavLink  >
-            <div class="button">
-              <i class="fas fa-plus" /> Expand
-              </div>
-              </NavLink>
           </div>
           <div class="d-flex flex-column" />
         </aside>
