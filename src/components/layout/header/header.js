@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import "./header.scss";
 
 class Header extends Component {
-  state = {};
+ 
+
   render() {
     return (
       <header>
         <div class="item">
-          <i class="fas fa-bars aside-action" />
+          <i class="fas fa-bars aside-action" onClick={this.props.toggleOpen} />
           <div id="logo">
             <img src="assets/favicon.png" />
           </div>
