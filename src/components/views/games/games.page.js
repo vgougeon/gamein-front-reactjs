@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import axios from 'axios';
 import GameCard from "../../shared/games/gamecard/gamecard";
 import './games.page.scss';
 
@@ -11,43 +11,20 @@ class GamesPage extends Component {
 		super(props);
 		this.state = state;
 		this.appendGames = this.appendGames.bind(this);
-
-		if(!this.state.games.length) {
-			this.state.games = this.getJsonGames();
-		}
+	}
+	componentDidMount() {
+		this.appendGames();
 	}
 	componentWillUnmount() {
     state = this.state;
 	}
-	getJsonGames(){
-		//A faire en HTTP
-		return [
-			{
-				id: 4,
-				name: `Mario Kart: Double Dash!!`,
-				release: 2003
-			},
-			{
-				id: 3,
-				name: `Tales of Symphonia`,
-				release: 2003 
-			},
-			{
-				id: 5,
-				name: `World of Warcraft`,
-				release: 2004
-			},
-			{
-				id: 9,
-				name: `Luigi's Mansion`,
-				release: 2002 
-			}	
-		];
-	}
 	appendGames(){
-		this.setState(state => ({
-      games : [...state.games, ...this.getJsonGames()]
-    }));
+		let self = this
+		axios.get('https://njak.fr/getGames').then( response => {
+			self.setState(state => ({
+				games : [...self.state.games, ...response.data]
+			}));
+		})
 	}
 	render() { 
 		return ( 
