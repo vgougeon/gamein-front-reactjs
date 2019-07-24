@@ -14,7 +14,7 @@ class UserProvider extends Component {
             auth: {}
         }
         axios.get('http://api.njak.fr/me').then(res => {
-            if(res !== false){
+            if(res.data.id !== undefined){
                 this.setState(state => ({
                     isLoading: false,
                     isLoggedIn: true,

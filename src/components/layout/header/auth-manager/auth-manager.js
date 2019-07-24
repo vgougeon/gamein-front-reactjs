@@ -5,7 +5,7 @@ import Spinner from '../../../shared/spinner/spinner-standard';
 function Login () {
     return (
         <button className="stroked-theme">
-            <i className="fas fa-user-circle mr-1" />
+            <i className="fas fa-user-circle mr-2" />Connexion
         </button>
     ) 
 }
@@ -14,7 +14,7 @@ class AuthManager extends Component {
     static contextType = UserContext;
     render() {
         let auth;
-        if(this.context.isLoading){ auth = <Spinner size={"30px"}/> }
+        if(this.context.isLoading){ auth = <Spinner size={30}/> }
         else if(this.context.isLoggedIn){ auth = <AuthButtons {...this.context.auth} /> } 
         else { auth = <Login />; }
         return (
