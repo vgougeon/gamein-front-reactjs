@@ -10,34 +10,36 @@
   animation: 0.5s fromTop ease-in-out;
   display: flex;
   flex-shrink: 0;
-}
-.game-item a {
-  color: var(--color);
-  font-weight: 600;
-  opacity: 1;
-  line-height: 0.9rem;
-}
-.game-item a:hover {
-  color: var(--theme);
-}
-.game-item span.date {
-  font-size: .9rem;
-}
-.game-item img {
-  height: 135px;
-  transition: 0.3s;
-  border: 3px solid var(--soft);
-  box-shadow: 0 0 3px rgba(0,0,0,0.2);
-  margin-right: .4rem;
-}
-span.console {
-  width: fit-content;
-  height: fit-content;
-  border-radius: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 .6rem;
-  font-size: 0.7rem;
-  border: 2px solid var(--soft);
+  a {
+    color: var(--color);
+    font-weight: 600;
+    opacity: 1;
+    line-height: 0.9rem;
+    &:hover {
+      color: var(--theme);
+    }
+  }
+  span {
+    &.date {
+      font-size: .9rem;
+    }
+    &.console {
+      width: fit-content;
+      height: fit-content;
+      border-radius: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 .6rem;
+      font-size: 0.7rem;
+      border: 2px solid var(--soft);
+    }
+  }
+  img {
+    height: 135px;
+    transition: 0.3s;
+    border: 3px solid var(--soft);
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    margin-right: .4rem;
+  }
 }
