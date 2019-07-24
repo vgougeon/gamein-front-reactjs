@@ -3,7 +3,8 @@ import axios from 'axios';
 import GameCard from "../../shared/games/gamecard/gamecard";
 import './games.page.scss';
 
-let state = { games: [] }
+let state = { games: [],
+offset : 0 }
 
 class GamesPage extends Component {
 	constructor(props) {
@@ -25,6 +26,8 @@ class GamesPage extends Component {
 				games : [...self.state.games, ...response.data]
 			}));
 		})
+		this.setState({offset : this.state.games.length})
+		console.log(this.state.offset);
 	}
 	render() { 
 		return ( 
