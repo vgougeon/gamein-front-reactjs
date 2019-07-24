@@ -6,7 +6,6 @@ class SideNav extends Component {
   isOpen() {
     return ((this.props.isOpen) ? "" : "aside-fold");
   }
-
   render() {
     return (
         <aside className={this.isOpen()} >
