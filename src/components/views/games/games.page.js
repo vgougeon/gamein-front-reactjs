@@ -3,9 +3,8 @@ import axios from 'axios';
 import GameCard from "../../shared/games/gamecard/gamecard";
 import './games.page.scss';
 
-let state = {
-	games: []
-}
+let state = { games: [] }
+
 class GamesPage extends Component {
 	constructor(props) {
 		super(props);
@@ -13,7 +12,8 @@ class GamesPage extends Component {
 		this.appendGames = this.appendGames.bind(this);
 	}
 	componentDidMount() {
-		this.appendGames();
+		if(!this.state.games.length)
+			this.appendGames();
 	}
 	componentWillUnmount() {
     state = this.state;
