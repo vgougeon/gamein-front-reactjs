@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AuthManager from './auth-manager/auth-manager';
 import { UserContext } from "../../../services/auth/userProvider";
 import "./header.scss";
 
@@ -16,12 +17,7 @@ class Header extends Component {
             <i className="fas fa-search" />
             <input type="search" placeholder="Rechercher..." />
           </div>
-          <div id="buttons">
-            <button className="stroked-theme">
-              <i className="fas fa-user-circle mr-1" />
-              { this.context.name }
-            </button>
-          </div>
+          <AuthManager />
         </div>
       </header>
     );
