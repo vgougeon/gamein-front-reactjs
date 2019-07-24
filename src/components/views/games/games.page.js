@@ -9,16 +9,19 @@ let state = {
 class GamesPage extends Component {
 	constructor(props) {
 		super(props);
-		this.state = state
+		this.state = state;
 		this.appendGames = this.appendGames.bind(this);
+
+		if(!this.state.games.length) {
+			this.state.games = this.getJsonGames();
+		}
 	}
 	componentWillUnmount() {
     state = this.state;
-  }
-	appendGames(){
-		//tests
-		console.log("Hey")
-		let newGames = [
+	}
+	getJsonGames(){
+		//A faire en HTTP
+		return [
 			{
 				id: 4,
 				name: `Mario Kart: Double Dash!!`,
@@ -39,9 +42,11 @@ class GamesPage extends Component {
 				name: `Luigi's Mansion`,
 				release: 2002 
 			}	
-		]
+		];
+	}
+	appendGames(){
 		this.setState(state => ({
-      games : [...state.games, ...newGames]
+      games : [...state.games, ...this.getJsonGames()]
     }));
 	}
 	render() { 
