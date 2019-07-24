@@ -28,7 +28,6 @@ class GamesPage extends Component {
 				games : [...self.state.games, ...response.data],
 				offset : [...self.state.games, ...response.data].length 
 			}));
-			
 		})
 	}
 	render() { 

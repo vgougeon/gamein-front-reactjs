@@ -10,9 +10,13 @@ class GameCard extends Component {
         />
         <div class="d-flex flex-column mx-2 m-g">
           <a href="">{this.props.name}</a>
-          <span class="date">{this.props.release}</span>
+          <span class="date">{this.props.release_year}</span>
           <div class="d-flex">
-            <span class="console s-1 mr-1" />
+          { this.props.console.map((console) =>
+            <span class="console s-1 mr-1" style={{background: console.background, color: console.color}}>
+              { console.short }
+            </span>
+          )}
           </div>
         </div>
       </div>
