@@ -3,8 +3,7 @@ import axios from 'axios';
 import GameCard from "../../shared/games/gamecard/gamecard";
 import './games.page.scss';
 
-let state = { games: [],
-offset : 0 }
+let state = { games: [], offset : 0 }
 
 class GamesPage extends Component {
 	constructor(props) {
@@ -19,15 +18,18 @@ class GamesPage extends Component {
 	componentWillUnmount() {
     state = this.state;
 	}
+	getGames() {
+		return axios.get('http://api.njak.fr/getGames', { params: { offset: this.state.offset }});
+	}
 	appendGames(){
 		let self = this
-		axios.get('https://njak.fr/getGames').then( response => {
+		this.getGames().then( response => {
 			self.setState(state => ({
-				games : [...self.state.games, ...response.data]
+				games : [...self.state.games, ...response.data],
+				offset : [...self.state.games, ...response.data].length 
 			}));
+			
 		})
-		this.setState({offset : this.state.games.length})
-		console.log(this.state.offset);
 	}
 	render() { 
 		return ( 
