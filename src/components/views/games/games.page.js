@@ -32,7 +32,7 @@ class GamesPage extends Component {
 		})
 	}
 	viewBox(){
-		if(this.state.view == ''){
+		if(this.state.view === ''){
 			this.setState(state => ({
 				view: 'view_box'
 			}));
