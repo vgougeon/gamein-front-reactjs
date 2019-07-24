@@ -3,25 +3,18 @@ import { Link } from "react-router-dom";
 import GameCard from "../../shared/games/gamecard/gamecard";
 import './games.page.scss';
 
+let state = {
+	games: []
+}
 class GamesPage extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			games: [
-				{
-					id: 5,
-					name: `World of Warcraft`,
-					release: 2004
-				},
-				{
-					id: 9,
-					name: `Luigi's Mansion`,
-					release: 2002 
-				}	
-			]
-		}
+		this.state = state
 		this.appendGames = this.appendGames.bind(this);
 	}
+	componentWillUnmount() {
+    state = this.state;
+  }
 	appendGames(){
 		//tests
 		console.log("Hey")
