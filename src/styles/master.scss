@@ -34,6 +34,14 @@ a:hover {
   color: var(--theme);
   opacity: 1;
 }
+.link {
+  line-height: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.link:hover {
+  color: var(--theme);
+}
 .label-file {
   background: var(--soft);
   border: 1px solid var(--soft);

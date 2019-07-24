@@ -1,26 +1,26 @@
 import React, { Component } from "react";
+import { UserContext } from "../../../services/auth/userProvider";
 import "./header.scss";
 
 class Header extends Component {
+  static contextType = UserContext;
   render() {
     return (
       <header>
-        <div class="item">
-          <i class="fas fa-bars aside-action" onClick={this.props.toggleOpen} />
+        <div className="item">
+          <i className="fas fa-bars aside-action" onClick={this.props.toggleOpen} />
           <div id="logo">
-            <img src="assets/favicon.png" />
+            <img src="assets/favicon.png" alt="Logo gamein" />
           </div>
           <div id="search">
-            <i class="fas fa-search" />
+            <i className="fas fa-search" />
             <input type="search" placeholder="Rechercher..." />
           </div>
           <div id="buttons">
-            <a href="login">
-              <button class="stroked-theme">
-                <i class="fas fa-user-circle mr-1" />
-                Connexion
-              </button>
-            </a>
+            <button className="stroked-theme">
+              <i className="fas fa-user-circle mr-1" />
+              { this.context.name }
+            </button>
           </div>
         </div>
       </header>

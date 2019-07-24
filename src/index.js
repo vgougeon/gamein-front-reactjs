@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './styles/animations.scss';
 import './styles/master.scss';
 import './styles/grid.scss';
 import App from './App';

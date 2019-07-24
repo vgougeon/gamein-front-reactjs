@@ -1,0 +1,13 @@
+@keyframes fromTop {
+    from { opacity: 0; transform: translateY(-10rem); }
+}
+.fromTop {
+    animation: 0.5s fromTop ease-in-out;
+}
+@keyframes slowAppear {
+    0% { opacity: 0; }
+    80% { opacity: 0;}
+}
+.slowAppear {
+    animation: 1s slowAppear ease-in-out;
+}
