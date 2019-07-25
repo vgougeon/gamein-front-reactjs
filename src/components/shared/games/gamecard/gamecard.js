@@ -10,7 +10,7 @@ class GameCard extends Component {
           alt={this.props.name + " - Cover"}
         />
         <div className="d-flex flex-column mx-2 m-g">
-          <Link to={'/game/' + this.props.name}>{this.props.name}</Link>
+          <Link to={'/game/' + this.props.id + '/' + this.props.name.replace(/\s+/g, '-')}>{this.props.name}</Link>
           <span className="date">{this.props.release_year}</span>
           <div className="d-flex flex-wrap">
           { this.props.console.map((console) =>

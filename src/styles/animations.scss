@@ -11,3 +11,9 @@
 .slowAppear {
     animation: 1s slowAppear ease-in-out;
 }
+@keyframes appear {
+    from { opacity: 0; }
+}
+.appear {
+    animation: 0.6s appear ease-in-out;
+}

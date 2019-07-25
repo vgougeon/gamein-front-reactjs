@@ -11,7 +11,7 @@ class Header extends Component {
         <div className="item">
           <i className="fas fa-bars aside-action" onClick={this.props.toggleOpen} />
           <div id="logo">
-            <img src="assets/favicon.png" alt="Logo gamein" />
+            <img src="http://njak.fr/assets/favicon.png" alt="Logo gamein" />
           </div>
           <div id="search">
             <i className="fas fa-search" />

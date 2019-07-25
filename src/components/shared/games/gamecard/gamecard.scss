@@ -21,17 +21,6 @@
       &.date {
         font-size: .9rem;
       }
-      &.console {
-        width: fit-content;
-        height: fit-content;
-        border-radius: 3px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 .6rem;
-        font-size: 0.7rem;
-        border: 2px solid var(--soft);
-      }
     }
     img {
       height: 135px;
@@ -68,4 +57,14 @@
       margin-bottom: 0;
     }
   }
+}
+span.console {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .2rem .8rem;
+  font-size: 0.7rem;
 }
