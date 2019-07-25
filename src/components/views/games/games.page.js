@@ -3,7 +3,7 @@ import axios from 'axios';
 import GameCard from "../../shared/games/gamecard/gamecard";
 import './games.page.scss';
 
-let state = { games: [], offset: 0 }
+let state = { games: [], offset: 0, scroll: 0 }
 
 class GamesPage extends Component {
 	constructor(props) {
@@ -14,8 +14,10 @@ class GamesPage extends Component {
 	componentDidMount() {
 		if (!this.state.games.length)
 			this.appendGames();
+		document.getElementById("page-content").scrollTop = this.state.scroll
 	}
 	componentWillUnmount() {
+		this.state.scroll = document.getElementById("page-content").scrollTop;
 		state = this.state;
 	}
 	getGames() {
