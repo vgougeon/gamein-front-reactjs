@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './user-profile.scss';
-const UserProfile = (props) => {
-  return ( 
-    <div className="user-profile">
+import * as theme from '../../../../services/themes/themeService'; 
+
+class UserProfile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {  }
+  }
+  render() { 
+    return ( 
+      <div className="user-profile">
       <div className="head">
-        <img src={ 'http://njak.fr/assets/imgs/accounts/' + props.avatar} alt="User Profile" />
+        <img src={ 'http://njak.fr/assets/imgs/accounts/' + this.props.avatar} alt="User Profile" />
         <div className=" m-g d-flex flex-column">
-          <Link to={ "/user/" + props.username } className="bold">{ props.display_name }</Link>
-          <span className='username'>@{ props.username }</span>
+          <Link to={ "/user/" + this.props.username } className="bold">{ this.props.display_name }</Link>
+          <span className='username'>@{ this.props.username }</span>
         </div>
       </div>
       <div className="d-flex flex-column mt-1">
@@ -21,14 +28,15 @@ const UserProfile = (props) => {
               <i className="fas fa-palette mr-3" /><span>Thèmes</span>
             </div>
             <div className="d-flex">
-              <div className="theme-picker white"></div>
-              <div className="theme-picker black"></div>
+              <div className="theme-picker white" onClick={() => theme.switchTheme(1)}></div>
+              <div className="theme-picker black" onClick={() => theme.switchTheme(2)}></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+    );
+  }
 }
  
 export default UserProfile;
