@@ -1,0 +1,16 @@
+.dropdown {
+  width: 380px;
+  height: auto;
+  background: var(--module);
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  right: -100px;
+  transition: 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  &.open {
+    right: 5px;
+    opacity: 1;
+    visibility: visible;
+  }
+}

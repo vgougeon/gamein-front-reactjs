@@ -1,40 +1,6 @@
 #uploadImage {
     display: none;
 }
-.dropdown {
-    background: var(--module);
-    min-width: 200px;
-    position: absolute;
-    top: 125%;
-    right: 0;
-    display: none;
-    color: var(--color);
-}
-.dropdown .button {
-    color: var(--color);
-    width: 100%;
-    height: 3.5rem;
-    display :flex;
-    padding: 0 14px;
-    align-items: center;
-}
-.dropdown .button i{
-    margin-right: 14px;
-}
-.dropdown .button:hover {
-    background: var(--soft);
-}
-.dropdown .dropdown-header {
-    width: 100%;
-    height: 2.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: default;
-    width: 400px;
-    max-width: 100vw;
-    border-bottom: 1px solid var(--soft);
-}
 
 #content {
     width: 100%;

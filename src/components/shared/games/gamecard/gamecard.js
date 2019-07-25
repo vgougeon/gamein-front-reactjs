@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import "./gamecard.scss";
 class GameCard extends Component {
   render() {
@@ -9,7 +10,7 @@ class GameCard extends Component {
           alt={this.props.name + " - Cover"}
         />
         <div className="d-flex flex-column mx-2 m-g">
-          <span className="link">{this.props.name}</span>
+          <Link to={'/game/' + this.props.name}>{this.props.name}</Link>
           <span className="date">{this.props.release_year}</span>
           <div className="d-flex flex-wrap">
           { this.props.console.map((console) =>

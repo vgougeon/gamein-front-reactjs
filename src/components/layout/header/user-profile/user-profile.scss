@@ -1,0 +1,41 @@
+.user-profile {
+  height: 100%;
+  width: 100%;
+  color: var(--color);
+  .head {
+    width: 100%;
+    height: 90px;
+    background: var(--soft);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    img {
+      height: 60px;
+      width: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    span.username {
+      font-size: 0.9rem;
+      opacity: 0.5;
+    }
+  }
+}
+.theme-picker {
+  width: 25px;
+  height: 25px;
+  box-shadow: var(--box-shadow);
+  outline: 2px solid var(--soft);
+  margin-left: 10px;
+  transition: 0.15s;
+  &.white {
+    background: white;
+  }
+  &.black {
+    background: #666;
+  }
+  &:hover{
+    outline: 2px solid var(--theme);
+    transform: scale(1.2);
+  }
+}
