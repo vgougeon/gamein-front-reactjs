@@ -1,4 +1,4 @@
-import React, { Component, useRef, useEffect } from 'react';
+import React, { Component } from 'react';
 import './dropdown.scss';
 
 class Dropdown extends Component {
