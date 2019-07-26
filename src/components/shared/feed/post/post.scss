@@ -1,0 +1,64 @@
+.feed {
+  animation: 0.5s fromTop ease-in-out;
+
+  .info {
+    display: flex;
+    img{
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 5px;
+      background: var(--theme);
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+  .username {
+    display :flex;
+    align-items: center;
+    i {
+      opacity: 1;
+      color: var(--theme);
+      font-size: 12px;
+      margin-left: 5px;
+    }
+  }
+  .feed-tools {
+    i {
+      font-size: 20px;
+      opacity: 0.7;
+      cursor:pointer;
+      &.fa-heart:hover {
+        color: var(--red);
+      }
+      &.fa-comment:hover {
+        color: var(--blue);
+      }
+    }
+    span {
+      opacity: 0.5;
+      transition: 0.2s;
+    }
+    i:hover + span {
+      opacity: 0.7;
+    }
+  }
+  .liked {
+    color: var(--red);
+  }
+  .commented {
+    color: var(--blue);
+  }
+  .content-images img {
+    margin-top: 14px;
+    width: 100%;
+  }
+  .content-footer {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+}

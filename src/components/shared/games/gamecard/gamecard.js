@@ -6,10 +6,6 @@ class GameCard extends Component {
   render() {
     return (
       <div className="game-item box s-1 mx-g2 mb-g">
-        {/* <img
-          src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"}
-          alt={this.props.name + " - Cover"}
-        /> */}
         <Img 
           src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} 
           alt={this.props.name + " - Cover"}

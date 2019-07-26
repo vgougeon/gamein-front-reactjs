@@ -189,61 +189,6 @@ img.small-avatar {
     max-height: 140px;
     margin: 10px 0px 10px 10px;
 }
-.feed {
-    animation: 0.5s fromTop ease-in-out;
-}
-.feed .info{
-    display: flex;
-}
-.feed p {
-    margin-bottom: 0;
-}
-.username {
-    display :flex;
-    align-items: center;
-}
-.username i {
-    opacity: 1;
-    color: var(--theme);
-    font-size: 12px;
-    margin-left: 5px;
-}
-.feed .info img{
-    width: 55px;
-    height: 55px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 5px;
-    background: var(--theme);
-}
-.feed-tools i {
-    font-size: 20px;
-    opacity: 0.7;
-    cursor:pointer;
-}
-.feed-tools span {
-    opacity: 0.5;
-    transition: 0.2s;
-}
-.feed-tools i:hover + span {
-    opacity: 0.7;
-}
-.feed-tools i.fa-heart:hover {
-    color: var(--red);
-}
-.feed-tools i.fa-comment:hover {
-    color: var(--blue);
-}
-.liked {
-    color: var(--red);
-}
-.commented {
-    color: var(--blue);
-}
-.feed .content-images img {
-    margin-top: 14px;
-    width: 100%;
-}
 .user-banner {
     background: var(--theme);
     opacity: 0.7;
