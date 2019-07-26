@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import Img from '../../img/img';
 import "./gamecard.scss";
 class GameCard extends Component {
   render() {
     return (
       <div className="game-item box s-1 mx-g2 mb-g">
-        <img
+        {/* <img
           src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"}
+          alt={this.props.name + " - Cover"}
+        /> */}
+        <Img 
+          src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} 
           alt={this.props.name + " - Cover"}
         />
         <div className="d-flex flex-column mx-2 m-g">
