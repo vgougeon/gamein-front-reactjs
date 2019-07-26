@@ -132,3 +132,11 @@ header {
         }
     }
 }
+@media screen and (max-width: 800px){
+    #logo {
+        display: none;
+    }
+    #search {
+        margin-left: 15px;
+    }
+}

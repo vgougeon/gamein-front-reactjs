@@ -23,7 +23,7 @@ class Layout extends Component {
       <React.Fragment>
         <Header toggleOpen={this.toggleOpen} />
         <section id="main">
-        <SideNav isOpen = {this.state.Open} />
+        <SideNav toggleOpen={this.toggleOpen} isOpen = {this.state.Open} />
         {this.props.message}
         {this.props.children}
         </section>

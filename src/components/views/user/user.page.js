@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UserHeader from '../../shared/user/userHeader';
+import UserHeader from '../../shared/user/userHeader/userHeader';
 import axios from 'axios';
 
 class UserPage extends Component {

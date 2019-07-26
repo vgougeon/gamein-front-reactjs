@@ -6,11 +6,14 @@ class SideNav extends Component {
   isOpen() {
     return ((this.props.isOpen) ? "" : "aside-fold");
   }
+  navClicked() {
+    console.log(window)
+  }
   render() {
     return (
         <aside className={this.isOpen()} >
           <div className="d-flex flex-column">
-            <NavLink exact={true} activeClassName='active' to='/'>
+            <NavLink exact={true} activeClassName='active' to='/' onClick={() => this.navClicked()}>
               <div className="button">
                 <i className="fas fa-compass" /> Home
               </div>

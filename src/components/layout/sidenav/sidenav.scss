@@ -59,3 +59,28 @@ section#main {
   height: calc(100% - var(--header-size));
   display: flex;
 }
+@media screen and (max-width: 1400px){
+  aside {
+    position: fixed;
+    z-index: 10;
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+    &.aside-fold {
+      box-shadow: var(--boxshadow) !important;
+    }
+  }
+}
+@media screen and (max-width: 800px){
+  aside {
+    width: 260px;
+    transform: translateX(0%);
+    position: fixed;
+    z-index: 10;
+    &.aside-fold {
+      width: 260px;
+      transform: translateX(-100%);
+    }
+    i.aside-action {
+      width: var(--header-size) !important;
+    }
+  }
+}
