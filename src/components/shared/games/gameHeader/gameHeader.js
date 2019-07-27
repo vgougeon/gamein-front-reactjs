@@ -3,6 +3,9 @@ import { NavLink } from 'react-router-dom';
 import './gameHeader.scss';
 import '../gamecard/gamecard.scss'
 class GameHeader extends Component {
+    static defaultProps = {
+        skins: []
+    };
     constructor(props) {
         super(props);
         this.state = { }
@@ -11,7 +14,7 @@ class GameHeader extends Component {
         return (
             <React.Fragment>
                 <div className="game-wrapper">
-                    <img src={"http://njak.fr/assets/imgs/skins/1.png"} className="appear wrapper-banner" />
+                    { this.props.skins.length && <img src={"http://njak.fr/assets/imgs/skins/" + this.props.skins[0].id + ".png"} className="appear wrapper-banner" />}
                     <img src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} className="cover s-1" />
                     <div className="d-flex flex-column info">
                         <span className="name">{this.props.name}</span>
