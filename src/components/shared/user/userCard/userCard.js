@@ -6,48 +6,48 @@ class UserCard extends Component {
   static contextType = UserContext;
   render() {
     return (
-      <div class="box s-1 account">
-        <img class="banner" 
+      <div className="box s-1 account">
+        <img className="banner" 
         src={ 'http://njak.fr/assets/imgs/skins/' +  this.context.auth.skin  + '.png'}
         />
-        <div class="info pb-2">
-          <img class="avatar" 
+        <div className="info pb-2">
+          <img className="avatar" 
           src={ 'http://njak.fr/assets/imgs/accounts/' +  this.context.auth.avatar}
            />
-          <div class="d-flex flex-column mt-2">
+          <div className="d-flex flex-column mt-2">
             <Link to={ 'user/' + this.context.auth.username }>
-              <span class="username ml-2 font-weight-bold">
+              <span className="username ml-2 font-weight-bold">
               { this.context.auth.username }
               </span>
             </Link>
-            <span class="grade ml-2">
+            <span className="grade ml-2">
               { this.context.auth.gradeName }
             </span>
           </div>
         </div>
-        <div class="d-flex justify-content-between my-1">
-          <div class="stat pb-1 pt-2">
-            <span class="font-weight-bold text-size-l">
-              { this.context.auth.experience }
+        <div className="d-flex justify-content-between my-1">
+          <div className="stat pb-1 pt-2">
+            <span className="font-weight-bold text-size-l">
+              { this.context.auth.level }
             </span>
-            <span class="text-size-s">Niveau</span>
+            <span className="text-size-xs">NIVEAU</span>
           </div>
-          <div class="stat pb-1 pt-2">
-            <span class="font-weight-bold text-size-l">
+          <div className="stat pb-1 pt-2">
+            <span className="font-weight-bold text-size-l">
               { this.context.auth.posts }
             </span>
-            <span class="text-size-s">Posts</span>
+            <span className="text-size-xs">POSTS</span>
           </div>
-          <div class="stat pb-1 pt-2">
-            <span class="font-weight-bold text-size-l">
-              { this.context.auth.friends }
+          <div className="stat pb-1 pt-2">
+            <span className="font-weight-bold text-size-l">
+              { this.context.auth.followers }
             </span>
-            <span class="text-size-s">Amis</span>
+            <span className="text-size-xs">ABONNÉS</span>
           </div>
         </div>
-        {/* <div class="experience-bar" style="width: <?= $acc->getExpPercent(); ?>%">
-        <span></span>
-    </div> */}
+        <div className="experience-bar" style={{width: '' + (this.context.auth.experience * 10) % 100  + '%' }}>
+          <span></span>
+        </div>
       </div>
     );
   }
