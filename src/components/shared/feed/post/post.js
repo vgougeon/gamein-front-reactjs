@@ -12,7 +12,8 @@ class Post extends Component {
     return (  
     <div className="box s-1 feed mb-g">
         <div className="info">
-            <img className="m-g" src={"http://njak.fr/assets/imgs/accounts/" + this.props.avatar } />
+            <img className="m-g" src={"http://njak.fr/assets/imgs/accounts/" + this.props.avatar }
+            alt="Post user profile" />
             <div className="d-flex flex-column mt-g mb-g justify-content-center">
                 <span className="username font-weight-bold">{ this.props.display_name }<i className="fas fa-check-circle"></i></span>
                 <span className="grade text-muted">{ this.props.name}</span>

@@ -9,7 +9,6 @@ class UserPage extends Component {
             username: this.props.match.params.username,
             userInfo: {}
         }
-        console.log(this.props)
     }
     componentDidMount() {
         axios.get("http://api.njak.fr/me").then(res => {

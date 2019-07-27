@@ -10,8 +10,15 @@ class UserHeader extends Component {
         return (
             <React.Fragment>
                 <div className="user-wrapper">
-                    <img src={ "http://njak.fr/assets/imgs/skins/" + this.props.skin + ".png"} className="appear wrapper-banner" />
-                    <img src={ "http://njak.fr/assets/imgs/accounts/" + this.props.avatar} className="avatar s-1" />
+                    { this.props.skin && 
+                    <img src={ "http://njak.fr/assets/imgs/skins/" + this.props.skin + ".png"} 
+                    className="appear wrapper-banner" 
+                    alt="User Banner"
+                    /> }
+                    { this.props.avatar && <img src={ "http://njak.fr/assets/imgs/accounts/" + this.props.avatar} 
+                    className="avatar s-1" 
+                    alt="User Profile"
+                    /> }
                     <div className="d-flex flex-column info">
                         <span className="name">{ this.props.display_name }</span>
                         <span className="username">@{ this.props.username } - {this.props.gradeName}</span>

@@ -14,8 +14,15 @@ class GameHeader extends Component {
         return (
             <React.Fragment>
                 <div className="game-wrapper">
-                    { this.props.skins.length && <img src={"http://njak.fr/assets/imgs/skins/" + this.props.skins[0].id + ".png"} className="appear wrapper-banner" />}
-                    <img src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} className="cover s-1" />
+                    { this.props.skins.length && 
+                    <img src={"http://njak.fr/assets/imgs/skins/" + this.props.skins[0].id + ".png"} 
+                    className="appear wrapper-banner"
+                    alt="Game Banner" 
+                    /> }
+                    { this.props.id && <img src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} 
+                    className="cover s-1"
+                    alt="Game Cover"
+                    /> }
                     <div className="d-flex flex-column info">
                         <span className="name">{this.props.name}</span>
                         <span className="username">{this.props.release_year}</span>

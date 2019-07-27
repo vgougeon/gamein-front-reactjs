@@ -2,6 +2,7 @@ import { UserContext } from "../../../../services/auth/userProvider";
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import "./userCard.scss";
+
 class UserCard extends Component {
   static contextType = UserContext;
   render() {
@@ -9,11 +10,13 @@ class UserCard extends Component {
       <div className="box s-1 account">
         <img className="banner" 
         src={ 'http://njak.fr/assets/imgs/skins/' +  this.context.auth.skin  + '.png'}
+        alt="User Banner"
         />
         <div className="info pb-2">
           <img className="avatar" 
           src={ 'http://njak.fr/assets/imgs/accounts/' +  this.context.auth.avatar}
-           />
+          alt="User Profile"
+          />
           <div className="d-flex flex-column mt-2">
             <Link to={ 'user/' + this.context.auth.username }>
               <span className="username ml-2 font-weight-bold">

@@ -17,7 +17,9 @@ class GamesPage extends Component {
 		document.getElementById("page-content").scrollTop = this.state.scroll
 	}
 	componentWillUnmount() {
-		this.state.scroll = document.getElementById("page-content").scrollTop;
+		this.setState({
+			scroll: document.getElementById("page-content").scrollTop
+		})
 		state = this.state;
 	}
 	getGames() {
@@ -31,9 +33,6 @@ class GamesPage extends Component {
 					games: [...self.state.games, ...response.data],
 					offset: [...self.state.games, ...response.data].length
 				}));
-			}
-			else {
-
 			}
 		})
 	}
