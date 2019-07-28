@@ -52,7 +52,12 @@ class NewPost extends Component {
                 <i className="fas fa-image" /> Image
               </label>
             </div>
-            <input type="submit"></input>
+            <div className="tool p-0">
+            <label htmlFor="submit" className="px-2 m-0 h-100 d-flex align-items-center">
+              <i className="fas fa-paper-plane" /> Envoyer
+            </label>
+            <input type="submit" id="submit" className='d-none'></input>
+            </div>
           </div>
         </form>
       </div>
