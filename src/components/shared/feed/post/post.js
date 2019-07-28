@@ -27,7 +27,7 @@ class Post extends Component {
           {
             this.props.images &&
             this.props.images.map(image => (
-            <img src={'http://api.njak.fr/assets/imgs/posts/' + image.path }/>
+            <img alt="Post media" src={'http://api.njak.fr/assets/imgs/posts/' + image.path }/>
           ))}
         </div>
         <div className="content-footer px-g">

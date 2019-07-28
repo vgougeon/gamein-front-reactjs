@@ -41,7 +41,7 @@ class NewPost extends Component {
           />
           <div className="filePreview">
             {this.state.files.map(file => (
-              <img className='file' src={file} />
+              <img alt="Media to upload" className='file' src={file} />
             ))}
             
           </div>
@@ -52,9 +52,6 @@ class NewPost extends Component {
                 <i className="fas fa-image" /> Image
               </label>
             </div>
-            {/* <div className="tool send" type="submit">
-              <i className="fas fa-paper-plane" /> Envoyer
-            </div> */}
             <input type="submit"></input>
           </div>
         </form>

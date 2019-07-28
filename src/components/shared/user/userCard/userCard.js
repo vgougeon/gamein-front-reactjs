@@ -8,15 +8,19 @@ class UserCard extends Component {
   render() {
     return (
       <div className="box s-1 account">
+        { this.context.auth.skin &&
         <img className="banner" 
         src={ 'http://njak.fr/assets/imgs/skins/' +  this.context.auth.skin  + '.png'}
         alt="User Banner"
         />
+        }
         <div className="info pb-2">
+          { this.context.auth.avatar &&
           <img className="avatar" 
           src={ 'http://njak.fr/assets/imgs/accounts/' +  this.context.auth.avatar}
           alt="User Profile"
           />
+          }
           <div className="d-flex flex-column mt-2">
             <Link to={ 'user/' + this.context.auth.username }>
               <span className="username ml-2 font-weight-bold">
