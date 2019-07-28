@@ -23,9 +23,11 @@ class Post extends Component {
             <p>{ this.props.content }</p>
         </div>
         <div className="content-images">
-            {/* {{#images}}
-                <img src="http://njak.fr/assets/imgs/posts/{{ path }}">
-            {{/images}} */}
+          {
+            this.props.images &&
+            this.props.images.map(image => (
+            <img src={'http://api.njak.fr/assets/imgs/posts/' + image.path }/>
+          ))}
         </div>
         <div className="content-footer px-g">
             <p className="text-muted text-size-s my-0">{ this.props.date }</p>

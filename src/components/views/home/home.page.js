@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Post from "../../shared/feed/post/post";
+import NewPost from "../../shared/feed/newPost/newPost";
 import UserCard from "../../shared/user/userCard/userCard";
 
 let state = { posts: [], offset: 0, scroll: 0 };
@@ -37,6 +38,7 @@ class HomePage extends Component {
 						<UserCard />
 					</div>
           <div className="col-xl-6 col-lg-12">
+            <NewPost />
             <div className={"feed-container " + this.state.view}>
               {this.state.posts.map(post => (
                 <Post key={post.id} {...post} />

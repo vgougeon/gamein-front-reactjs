@@ -1,0 +1,74 @@
+.textarea-post {
+  position: relative;
+
+  textarea {
+    width: 100%;
+    border: none;
+    background: var(--module);
+    font-family: "Open Sans", sans-serif;
+    color: var(--color);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.textarea-tools {
+  width: 100%;
+  height: 40px;
+  background:  var(--soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .tool {
+    color: var(--theme);
+    padding: 0 10px;
+    cursor: pointer;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    &:hover {
+      opacity: 1;
+      background: var(--soft);
+    }
+
+    i {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+  }
+  .send {
+    position: relative;
+    color: var(--color);
+    z-index: 2;
+  }
+  .tool.send::after{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: -1;
+    background: var(--theme);
+    opacity: 0.2;
+  }
+}
+.filePreview {
+  height: auto;
+  width: 100%;
+  transition: 1s;
+  overflow: hidden;
+  img.file {
+    border-radius: 5px;
+    max-height: 140px;
+    margin: 10px 0px 10px 10px;
+  }
+}
+#uploadImage {
+  display: none;
+}
+label {
+  cursor: pointer;
+}
