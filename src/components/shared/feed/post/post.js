@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './post.scss';
 class Post extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Post extends Component {
             <img className="m-g" src={"http://njak.fr/assets/imgs/accounts/" + this.props.avatar }
             alt="Post user profile" />
             <div className="d-flex flex-column mt-g mb-g justify-content-center">
-                <span className="username font-weight-bold">{ this.props.display_name }<i className="fas fa-check-circle"></i></span>
+                <Link to={"user/" + this.props.username } className="username font-weight-bold">{ this.props.display_name }<i className="fas fa-check-circle"></i></Link>
                 <span className="grade text-muted">{ this.props.name}</span>
             </div>
         </div>

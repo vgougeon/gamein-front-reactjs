@@ -7,7 +7,7 @@ class SideNav extends Component {
     return ((this.props.isOpen) ? "" : "aside-fold");
   }
   navClicked() {
-    console.log(window)
+    // console.log(window)
   }
   render() {
     return (

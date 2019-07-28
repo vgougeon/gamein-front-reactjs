@@ -17,10 +17,7 @@ class GamesPage extends Component {
 		document.getElementById("page-content").scrollTop = this.state.scroll
 	}
 	componentWillUnmount() {
-		this.setState({
-			scroll: document.getElementById("page-content").scrollTop
-		})
-		state = this.state;
+		state = {...this.state, scroll: document.getElementById("page-content").scrollTop};
 	}
 	getGames() {
 		return axios.get('http://api.njak.fr/getGames', { params: { offset: this.state.offset } });
