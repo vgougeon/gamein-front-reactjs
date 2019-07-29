@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import GameCard from "../../shared/games/gamecard/gamecard";
+import UserCard from "../../shared/user/userCard/userCard";
+
 import './games.page.scss';
 
 let state = { games: [], offset: 0, scroll: 0 }
@@ -37,7 +39,10 @@ class GamesPage extends Component {
 		return (
 			<section id="page-content">
 				<div className="row mt-g g-g px-g">
-					<div className="col-xl-9 col-lg-12">
+					<div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
+						<UserCard />
+					</div>
+					<div className="col-xl-9 col-lg-9">
 						<div className={"games " + this.state.view}>
 							{this.state.games.map((game) =>
 								<GameCard key={game.id} {...game} />
