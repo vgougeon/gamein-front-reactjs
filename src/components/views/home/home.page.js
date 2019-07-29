@@ -10,9 +10,15 @@ class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = state;
+    this.addPost = this.addPost.bind(this);
   }
   componentDidMount() {
     this.appendPosts();
+  }
+  addPost(response) {
+    this.setState(state => ({
+      posts: [...response, ...this.state.posts]
+    }))
   }
   getPosts() {
     return axios.get("http://api.njak.fr/getPosts", {
@@ -38,7 +44,7 @@ class HomePage extends Component {
 						<UserCard />
 					</div>
           <div className="col-xl-6 col-lg-12">
-            <NewPost />
+            <NewPost addPost={this.addPost}/>
             <div className={"feed-container " + this.state.view}>
               {this.state.posts.map(post => (
                 <Post key={post.id} {...post} />

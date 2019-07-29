@@ -4,28 +4,39 @@ import axios from "axios";
 class NewPost extends Component {
   constructor(props) {
     super(props);
-    this.state = { files: []};
+    this.state = { files: [], isLoading: false};
   }
   submitPost = (e) => {
+    let self = this
     e.preventDefault();
     const data = new FormData(e.target);
 
-    axios.post('http://api.njak.fr/newPost', data, {
+    axios.post('http://api.njak.fr/newPost', data, 
+    {onUploadProgress(progressEvent){
+      self.setState({
+        isLoading: (progressEvent.loaded / progressEvent.total) * 100
+      })
+    }},
+    {
       headers: {
         'Content-Type': 'multipart/form-data'
       }})
       .then(res => {
-      console.log(res.data);
+        console.log(res.data)
+        this.props.addPost([res.data]);
+        self.setState({
+          isLoading: false,
+          files: []
+        })
     })
   }
 
   changeFile = (e) => {
-    this.setState({
-      files: [...this.state.files, URL.createObjectURL(e.target.files[0])]
-    },
-    () => {
-      console.log(this.state.files)
-    });
+    if(e.target.files.length){
+      this.setState({
+        files: [...this.state.files, URL.createObjectURL(e.target.files[0])]
+      })
+    }
   }
   render() {
     return (
@@ -46,6 +57,9 @@ class NewPost extends Component {
             
           </div>
           <div className="textarea-tools">
+            { this.state.isLoading &&
+            <div className="textarea-loader" style={{ width: this.state.isLoading + '%' }}></div>
+            }
             <input type="file" name="uploadImage" id="uploadImage" onChange={ this.changeFile }/>
             <div className="tool p-0">
               <label htmlFor="uploadImage" className="px-2 m-0 h-100 d-flex align-items-center">

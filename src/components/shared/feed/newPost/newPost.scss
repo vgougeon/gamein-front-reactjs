@@ -20,7 +20,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  position: relative;
+  .textarea-loader {
+    width: 100%;
+    position: absolute;
+    background: var(--theme);
+    opacity: .8;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    animation: color 1.5s infinite;
+    transition: 0.15s;
+  }
   .tool {
     color: var(--theme);
     padding: 0 10px;
