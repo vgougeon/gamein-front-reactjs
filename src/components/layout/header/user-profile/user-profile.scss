@@ -34,6 +34,9 @@
   &.black {
     background: #666;
   }
+  &.predator {
+    background: linear-gradient(rgb(138, 36, 36), rgb(207, 62, 62));
+  }
   &:hover{
     outline: 2px solid var(--theme);
     transform: scale(1.2);
