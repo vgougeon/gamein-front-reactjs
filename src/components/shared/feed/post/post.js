@@ -33,7 +33,7 @@ class Post extends Component {
         <div className="content-footer px-g">
             <p className="text-muted text-size-s my-0">{ this.props.date }</p>
             <div className="d-flex feed-tools align-items-center">
-                <i className="fas liked fa-heart pl-3 pr-2"></i><span className="font-weight-bold">{ this.state.likes }</span>
+                <i className="far fa-heart pl-3 pr-2"></i><span className="font-weight-bold">{ this.state.likes }</span>
                 <i className="far fa-comment pl-3 pr-2"></i><span className="font-weight-bold">{ this.state.comments }</span>
             </div>
         </div>
