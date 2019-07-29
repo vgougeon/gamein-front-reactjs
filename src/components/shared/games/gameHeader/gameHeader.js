@@ -26,11 +26,13 @@ class GameHeader extends Component {
                     <div className="d-flex flex-column info">
                         <span className="name">{this.props.name}</span>
                         <span className="username">{this.props.release_year}</span>
+                        <div className="d-flex">
                         { this.props.console.map((console) =>
                             <span key={console.id} className="console s-1 mr-1 mt-1" style={{ background: console.background, color: console.color }}>
                                 {console.short}
                             </span>
                         )}
+                        </div>
                     </div>
                 </div>
                 <div className="box s-1 account">
