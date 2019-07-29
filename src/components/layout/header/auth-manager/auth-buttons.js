@@ -16,7 +16,7 @@ class AuthButtons extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <div className="icon-button mr-3">
+                <div className="icon-button mr-3 d-none d-md-flex">
                     <i className="fas fa-bell"></i>
                 </div>
                 <div className="icon-button" onClick={ this.toggleUserProfile }>

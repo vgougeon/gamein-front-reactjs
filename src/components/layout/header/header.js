@@ -10,15 +10,18 @@ class Header extends Component {
       <header>
         <div className="item">
           <i className="fas fa-bars aside-action" onClick={this.props.toggleOpen} />
-          <div id="logo">
+          <div id="logo" className="d-none d-md-flex">
             <img src="http://njak.fr/assets/favicon.png" alt="Logo gamein" />
           </div>
+        </div>
+        <div className="item search-bar">
           <div id="search">
             <i className="fas fa-search" />
             <input type="search" placeholder="Rechercher..." />
           </div>
-          <AuthManager />
         </div>
+        <AuthManager/>
+
       </header>
     );
   }

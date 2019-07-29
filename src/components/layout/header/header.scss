@@ -13,8 +13,10 @@ header {
     .item {
         display: flex;
         align-items: center;
-        width: 100%;
-
+        &.search-bar {
+            justify-content: center;
+            flex-grow: 2
+        }
         i.aside-action {
             width: var(--header-size);
             font-size: 22px;
@@ -48,7 +50,7 @@ header {
         font-size: 1rem;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
 
         i {
             font-size: 1.2rem;
@@ -95,20 +97,20 @@ header {
         }
     }
     #search {
-        width: 200px;
-        max-width: 200px;
+        max-width: 350px;
+        width: 100%;
         height: calc(var(--header-size) / 2);
         background: rgba(255,255,255,0.10);
         border-radius: 4px;
         position: relative;
         transition: 0.2s;
+        margin: 0 15px;
         
         &:hover {
             background: rgba(255,255,255,0.15);
         }
         &:focus-within {
-            max-width: 350px;
-            width: 350px;
+            max-width: 400px;
         }
         i {
             position: absolute;
@@ -126,17 +128,10 @@ header {
             border: none;
             color: #fafafa;
             padding: 10px;
+            padding-right: 28px;
             &::placeholder{
                 color: rgba(255,255,255,0.5);
             }
         }
-    }
-}
-@media screen and (max-width: 800px){
-    #logo {
-        display: none;
-    }
-    #search {
-        margin-left: 15px;
     }
 }
