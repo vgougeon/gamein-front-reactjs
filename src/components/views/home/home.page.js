@@ -35,6 +35,7 @@ class HomePage extends Component {
       <section id="page-content">
         <div className="row mt-g g-g px-g">
           <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
+            Hello !
 						<UserCard />
 					</div>
           <div className="col-xl-6 col-lg-12">
