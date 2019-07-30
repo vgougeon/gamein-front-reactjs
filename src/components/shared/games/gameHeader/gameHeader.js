@@ -14,7 +14,7 @@ class GameHeader extends Component {
         return (
             <React.Fragment>
                 <div className="game-wrapper">
-                    { this.props.skins.length && 
+                    { this.props.skins.length > 0 && 
                     <img src={"http://njak.fr/assets/imgs/skins/" + this.props.skins[0].id + ".png"} 
                     className="appear wrapper-banner"
                     alt="Game Banner" 
