@@ -10,6 +10,7 @@ class NewPost extends Component {
     let self = this
     e.preventDefault();
     const data = new FormData(e.target);
+    console.log(data.files)
 
     axios.post('http://api.njak.fr/newPost', data, 
     {onUploadProgress(progressEvent){
@@ -33,16 +34,16 @@ class NewPost extends Component {
   }
 
   changeFile = (e) => {
+      console.log(e.target.files[0])
       this.setState({
-        file: URL.createObjectURL(e.target.files[0]),
-        inputKey : Date.now()
+        file: URL.createObjectURL(e.target.files[0])
       })
-      if (this.state.file !== null ) console.log('test')
   }
 
   removeFile = () => {
     this.setState({ file : null,
-      inputKey: Date.now() });
+      inputKey: Date.now() 
+    });
   }
 
   render() {
@@ -70,7 +71,7 @@ class NewPost extends Component {
             { this.state.isLoading &&
             <div className="textarea-loader" style={{ width: this.state.isLoading + '%' }}></div>
             }
-            <input type="file" name="uploadImage" id="uploadImage" key = { this.state.inputKey } onChange={ this.changeFile }/>
+            <input type="file" name="uploadImage" id="uploadImage" key={ this.state.inputKey } onChange={ this.changeFile }/>
             <div className="tool p-0">
               <label htmlFor="uploadImage" className="px-2 m-0 h-100 d-flex align-items-center">
                 <i className="fas fa-image" /> Image
