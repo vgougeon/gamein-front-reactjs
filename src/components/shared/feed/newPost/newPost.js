@@ -52,7 +52,12 @@ class NewPost extends Component {
           />
           <div className="filePreview">
             {this.state.files.map(file => (
-              <img alt="Media to upload" className='file' src={file} />
+              <div className="prev_wrapper">
+                <div className="preview">
+                 <div className="del"><i className="fas fa-times"></i></div>
+                <img alt="Media to upload" className='file' src={file} />
+                </div>
+              </div>
             ))}
             
           </div>

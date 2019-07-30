@@ -71,12 +71,32 @@
   width: 100%;
   transition: 1s;
   overflow: hidden;
+  display: flex;
+  flex-wrap:wrap;
   img.file {
     border-radius: 5px;
-    max-height: 140px;
-    margin: 10px 0px 10px 10px;
+    height:100%;
+    display: block;
   }
 }
+.prev_wrapper {
+  max-height: 140px;
+  padding: 10px 0px 10px 10px;
+  display: inline-block;
+  flex: 1 1;
+  .preview {
+    position: relative;
+    display: inline-block;
+    height:100%;
+    .del {
+      position: absolute;
+      top : 10px;
+      left: 10px;
+
+    }
+  }
+}
+
 #uploadImage {
   display: none;
 }
