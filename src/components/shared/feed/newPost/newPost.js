@@ -4,7 +4,7 @@ import axios from "axios";
 class NewPost extends Component {
   constructor(props) {
     super(props);
-    this.state = { files: [], isLoading: false};
+    this.state = { file: null, inputKey : Date.now(), isLoading: false};
   }
   submitPost = (e) => {
     let self = this
