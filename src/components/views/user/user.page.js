@@ -20,11 +20,7 @@ class UserPage extends Component {
     render() { 
         return ( 
             <section id="page-content">
-                <div className="row g-g">
-                    <div className="col-12">
-                        <UserHeader {...this.state.userInfo } />
-                    </div>
-                </div>
+                <UserHeader {...this.state.userInfo } />
             </section>
         );
     }

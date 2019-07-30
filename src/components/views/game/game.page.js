@@ -22,11 +22,7 @@ class GamePage extends Component {
     render() { 
         return ( 
             <section id="page-content">
-                <div className="row g-g">
-                    <div className="col-12">
-                        <GameHeader {...this.state.gameInfo} />
-                    </div>
-                </div>
+                <GameHeader {...this.state.gameInfo} />
             </section>
         );
     }

@@ -39,7 +39,7 @@ class HomePage extends Component {
   render() {
     return (
       <section id="page-content">
-        <div className="row mt-g g-g px-g">
+        <div className="row mt-g g-g row-p-0">
           <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
 						<UserCard />
 					</div>
