@@ -73,26 +73,29 @@
   overflow: hidden;
   display: flex;
   flex-wrap:wrap;
+  padding: 0 10px 10px 10px;;
   img.file {
+    max-height: 140px;
     border-radius: 5px;
     height:100%;
     display: block;
   }
 }
 .prev_wrapper {
-  max-height: 140px;
-  padding: 10px 0px 10px 10px;
-  display: inline-block;
-  flex: 1 1;
-  .preview {
-    position: relative;
-    display: inline-block;
-    height:100%;
-    .del {
-      position: absolute;
-      top : 10px;
-      left: 10px;
-
+  width: fit-content;
+  position: relative;
+  .del {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    width: 1rem;
+    height: 1rem;
+    color: white;
+    text-shadow: 0 0 2px black;
+    cursor: pointer;
+    transition: 0.1s;
+    &:hover {
+      text-shadow: 0 0 6px rgba(0,0,0,0.8);
     }
   }
 }
