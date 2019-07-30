@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import GameCard from "../../shared/games/gamecard/gamecard";
-import UserCard from "../../shared/user/userCard/userCard";
+import UserCardMin from "../../shared/user/userCardMin/userCardMin";
 
 import './games.page.scss';
 
@@ -40,7 +40,7 @@ class GamesPage extends Component {
 			<section id="page-content">
 				<div className="row mt-g g-g px-g">
 					<div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
-						<UserCard />
+						<UserCardMin />
 					</div>
 					<div className="col-xl-9 col-lg-9">
 						<div className={"games " + this.state.view}>

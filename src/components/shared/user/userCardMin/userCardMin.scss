@@ -1,0 +1,23 @@
+@import '../userCard/userCard.scss';
+
+.info.min {
+    position: absolute;
+    top:0;bottom:10px;left:0;right:0;
+    z-index: 1;
+    background: linear-gradient(transparent, var(--module));
+    display: flex;
+    align-items: center;
+
+    .avatar {
+        margin-top:0;
+    }
+    .username {
+        text-shadow: 0 0px 5px rgba(0,0,0,0.7), 0 0px 5px rgba(0,0,0,0.7);
+        color:white;
+    }
+    .grade {
+        text-shadow: 0 0px 5px rgba(0,0,0,0.7), 0 0px 5px rgba(0,0,0,0.7);
+        color:white;
+    }
+    
+}
