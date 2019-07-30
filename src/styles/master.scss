@@ -5,7 +5,7 @@ html {--header-size: 60px;--aside-size: 260px;--bg: #eee;--module: #fff;--header
 }
 html, body {
   overflow: hidden;
-  background: red;
+  background: var(--bg);
   font-family: 'Open Sans', sans-serif;
 }
 body {
