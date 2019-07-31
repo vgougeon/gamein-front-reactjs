@@ -9,6 +9,19 @@ class Post extends Component {
       comments: this.props.comments
     }
   }
+  expand = (e) => {
+    console.log()
+    if(e.currentTarget.classList.contains('open')) {
+      e.currentTarget.style.maxHeight = '250px';
+      e.currentTarget.classList.remove('open')
+    }
+    else {
+      const height = e.currentTarget.scrollHeight
+      if(height > 1500) { height = 1500 }
+      e.currentTarget.style.maxHeight = '' + height + 'px'
+      e.currentTarget.classList.add('open')
+    }
+  }
   render() { 
     return (  
     <div className="box s-1 feed mb-g">
@@ -23,11 +36,14 @@ class Post extends Component {
         <div className="content px-g">
             <p>{ this.props.content }</p>
         </div>
-        <div className="content-images">
+        <div className="content-images" onClick={ this.expand }>
           {
             this.props.images &&
             this.props.images.map(image => (
+            <React.Fragment>
+            <div className="fas fa-angle-double-down expand"></div>
             <img alt="Post media" src={'http://api.njak.fr/assets/imgs/posts/' + image.path }/>
+            </React.Fragment>
           ))}
         </div>
         <div className="content-footer px-g">

@@ -71,12 +71,42 @@
   width: 100%;
   transition: 1s;
   overflow: hidden;
-  img.file {
-    border-radius: 5px;
-    max-height: 140px;
-    margin: 10px 0px 10px 10px;
+  display: flex;
+  flex-wrap:wrap;
+  padding: 0 5px 0 5px;
+
+  .prev_wrapper {
+    padding: 0 5px 10px 5px;
+    width: auto;
+    position: relative;
+    img.file {
+      height: 140px;
+      min-height: 140px;
+      max-height: 140px;
+      border-radius: 5px;
+      height:100%;
+      width: auto;
+      position: relative;
+    }
+    .del {
+      position: absolute;
+      top: .5rem;
+      right: .7rem;
+      width: 1rem;
+      height: 1rem;
+      color: white;
+      text-shadow: 0 0 2px black;
+      cursor: pointer;
+      transition: 0.1s;
+      z-index: 2;
+      &:hover {
+        text-shadow: 0 0 6px rgba(0,0,0,0.8);
+      }
+    }
   }
 }
+
+
 #uploadImage {
   display: none;
 }

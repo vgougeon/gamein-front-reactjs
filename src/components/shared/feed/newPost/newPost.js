@@ -4,12 +4,13 @@ import axios from "axios";
 class NewPost extends Component {
   constructor(props) {
     super(props);
-    this.state = { files: [], isLoading: false};
+    this.state = { file: null, inputKey : Date.now(), isLoading: false};
   }
   submitPost = (e) => {
     let self = this
     e.preventDefault();
     const data = new FormData(e.target);
+    console.log(data.files)
 
     axios.post('http://api.njak.fr/newPost', data, 
     {onUploadProgress(progressEvent){
@@ -26,18 +27,25 @@ class NewPost extends Component {
         this.props.addPost([res.data]);
         self.setState({
           isLoading: false,
-          files: []
+          file: null,
+          inputKey : Date.now()
         })
     })
   }
 
   changeFile = (e) => {
-    if(e.target.files.length){
+      console.log(e.target.files[0])
       this.setState({
-        files: [...this.state.files, URL.createObjectURL(e.target.files[0])]
+        file: URL.createObjectURL(e.target.files[0])
       })
-    }
   }
+
+  removeFile = () => {
+    this.setState({ file : null,
+      inputKey: Date.now() 
+    });
+  }
+
   render() {
     return (
       <div className="box s-1 textarea-post mb-g">
@@ -51,16 +59,19 @@ class NewPost extends Component {
             placeholder="Des choses à dire ?"
           />
           <div className="filePreview">
-            {this.state.files.map(file => (
-              <img alt="Media to upload" className='file' src={file} />
-            ))}
+            {this.state.file &&
+              <div className="prev_wrapper">
+                <div className="del fas fa-trash" onClick={ this.removeFile }></div>
+                <img alt="Media to upload" className='file' src={this.state.file} />
+              </div>
+            }
             
           </div>
           <div className="textarea-tools">
             { this.state.isLoading &&
             <div className="textarea-loader" style={{ width: this.state.isLoading + '%' }}></div>
             }
-            <input type="file" name="uploadImage" id="uploadImage" onChange={ this.changeFile }/>
+            <input type="file" name="uploadImage" id="uploadImage" key={ this.state.inputKey } onChange={ this.changeFile }/>
             <div className="tool p-0">
               <label htmlFor="uploadImage" className="px-2 m-0 h-100 d-flex align-items-center">
                 <i className="fas fa-image" /> Image
