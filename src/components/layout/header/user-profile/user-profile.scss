@@ -5,10 +5,18 @@
   .head {
     width: 100%;
     height: 90px;
-    background: var(--soft);
+    background: var(--header);
     display: flex;
     align-items: center;
     padding: 0 1rem;
+    a {
+      color: white;
+      opacity: 1;
+    }
+    .username {
+      color: white;
+      opacity: 0.8;
+    }
     img {
       height: 60px;
       width: 60px;
@@ -35,7 +43,7 @@
       background:var(--soft)
     }
     i {
-      color: var(--color);
+      color: white;
       font-size: 3rem;
     }
   }
@@ -55,6 +63,9 @@
   }
   &.predator {
     background: linear-gradient(rgb(138, 36, 36), rgb(207, 62, 62));
+  }
+  &.rain {
+    background: linear-gradient(rgb(52, 98, 158), rgb(31, 23, 105));
   }
   &:hover{
     outline: 2px solid var(--theme);

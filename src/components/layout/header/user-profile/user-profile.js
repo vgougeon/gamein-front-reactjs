@@ -33,6 +33,7 @@ class UserProfile extends Component {
             <div className="d-flex">
               <div className="theme-picker white" onClick={() => theme.switchTheme(1)}></div>
               <div className="theme-picker black" onClick={() => theme.switchTheme(2)}></div>
+              <div className="theme-picker rain" onClick={() => theme.switchTheme(3)}></div>
               <div className="theme-picker predator" onClick={() => theme.switchTheme(4)}></div>
             </div>
           </div>

@@ -22,7 +22,7 @@ class Dropdown extends Component {
   }
   render() { 
     return ( 
-      <div ref={node => this.node = node} className={ 's-1 dropdown ' + (this.props.show ? 'open' : '')} style={{top: this.props.top}}>
+      <div ref={node => this.node = node} className={ 'dropdown ' + (this.props.show ? 'open' : '')} style={{top: this.props.top}}>
       { this.props.children }
       </div>
     );
