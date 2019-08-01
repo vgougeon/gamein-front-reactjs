@@ -46,6 +46,7 @@ a:hover {
 .box {
   background: var(--module);
   position: relative;
+  border-radius: 6px;
   .box-head {
     background: var(--soft);
     min-height: 2.5rem;

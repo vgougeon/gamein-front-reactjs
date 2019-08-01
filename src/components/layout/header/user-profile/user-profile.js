@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './user-profile.scss';
 import * as theme from '../../../../services/themes/themeService'; 
+import ExperienceBar from '../../../shared/user/experienceBar/experienceBar';
 
 class UserProfile extends Component {
   constructor(props) {
@@ -12,13 +13,31 @@ class UserProfile extends Component {
     return ( 
       <div className="user-profile">
       <div className="head">
-        <div className="closeUserProfile" onClick={ this.props.toggle }>
-          <i className="fas fa-angle-double-right"></i>
+        <img src={ 'http://njak.fr/assets/imgs/skins/' + this.props.skin + '.png'} className="user-banner" />
+        <div className="profile-head-content">
+          <div className="closeUserProfile" onClick={ this.props.toggle }>
+            <i className="fas fa-angle-double-right"></i>
+          </div>
+          <img src={ 'http://njak.fr/assets/imgs/accounts/' + this.props.avatar} className="user-avatar" alt="User Profile" />
+          <div className=" m-g d-flex flex-column">
+            <Link to={ "/user/" + this.props.username } className="bold">{ this.props.display_name }</Link>
+            <span className='username'>@{ this.props.username }</span>
+          </div>
         </div>
-        <img src={ 'http://njak.fr/assets/imgs/accounts/' + this.props.avatar} alt="User Profile" />
-        <div className=" m-g d-flex flex-column">
-          <Link to={ "/user/" + this.props.username } className="bold">{ this.props.display_name }</Link>
-          <span className='username'>@{ this.props.username }</span>
+      </div>
+      <ExperienceBar experience={ this.props.experience } />
+      <div className="d-flex justify-content-between my-1">
+        <div className="stat pb-1 pt-2">
+          <span className="font-weight-bold text-size-l">{ this.props.level }</span>
+          <span className="text-size-xs">LVL</span>
+        </div>
+        <div className="stat pb-1 pt-2">
+          <span className="font-weight-bold text-size-l">{ this.props.points }</span>
+          <span className="text-size-xs">PTS</span>
+        </div>
+        <div className="stat pb-1 pt-2">
+          <span className="font-weight-bold text-size-l">{ this.props.followers }</span>
+          <span className="text-size-xs">SUB</span>
         </div>
       </div>
       <div className="d-flex flex-column mt-1">

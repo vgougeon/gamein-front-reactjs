@@ -9,7 +9,7 @@ class UserCard extends Component {
     return (
       <React.Fragment>
       { !this.context.isLoading && this.context.isLoggedIn &&
-      <div className="box s-1 account">
+      <div className="box s-1 account overflow-hidden">
         { this.context.auth.skin &&
         <img className="banner" 
         src={ 'http://njak.fr/assets/imgs/skins/' +  this.context.auth.skin  + '.png'}

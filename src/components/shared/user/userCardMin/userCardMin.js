@@ -9,7 +9,7 @@ class UserCardMin extends Component {
     return (
       <React.Fragment>
       { !this.context.isLoading && this.context.isLoggedIn &&
-      <div className="box s-1 account min">
+      <div className="box s-1 account min overflow-hidde">
         <img
           className="banner min"
           src={"http://njak.fr/assets/imgs/skins/" + this.context.auth.skin + ".png"}
