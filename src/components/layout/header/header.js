@@ -21,7 +21,6 @@ class Header extends Component {
           </div>
         </div>
         <AuthManager/>
-
       </header>
     );
   }

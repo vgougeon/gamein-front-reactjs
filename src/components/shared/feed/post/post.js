@@ -16,7 +16,7 @@ class Post extends Component {
       e.currentTarget.classList.remove('open')
     }
     else {
-      const height = e.currentTarget.scrollHeight
+      let height = e.currentTarget.scrollHeight
       if(height > 1500) { height = 1500 }
       e.currentTarget.style.maxHeight = '' + height + 'px'
       e.currentTarget.classList.add('open')
@@ -40,7 +40,7 @@ class Post extends Component {
           {
             this.props.images &&
             this.props.images.map(image => (
-            <React.Fragment>
+            <React.Fragment key={image.id}>
             <div className="fas fa-angle-double-down expand"></div>
             <img alt="Post media" src={'http://api.njak.fr/assets/imgs/posts/' + image.path }/>
             </React.Fragment>

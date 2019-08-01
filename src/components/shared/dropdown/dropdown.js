@@ -7,7 +7,7 @@ class Dropdown extends Component {
     this.state = {  }
   }
   componentDidUpdate(prevProps, prevState, snapshot){
-    if(prevProps.show != this.props.show && this.props.show === true){
+    if(prevProps.show !== this.props.show && this.props.show === true){
       document.addEventListener('mousedown', this.handleClick, false);
     }
     else {
