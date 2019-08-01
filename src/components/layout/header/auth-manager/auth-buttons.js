@@ -22,8 +22,8 @@ class AuthButtons extends Component {
                 <div className="icon-button" onClick={ this.toggleUserProfile }>
                     <img alt="User profile" src={"http://njak.fr/assets/imgs/accounts/" + this.props.avatar } />
                 </div>
-                <Dropdown top={0} show={ this.state.userProfile }>
-                    <UserProfile {...this.props} />
+                <Dropdown top={0} toggle={ this.toggleUserProfile } show={ this.state.userProfile }>
+                    <UserProfile {...this.props } toggle={ this.toggleUserProfile } />
                 </Dropdown>
             </React.Fragment>
          );
