@@ -59,7 +59,7 @@ class GamesPage extends Component {
 						</div>
 						<div className="loading-block">
 							{ this.state.isLoading ? 
-							<div className="d-flex justify-content-center w-100"><Spinner /></div>
+							<div className="d-flex justify-content-center w-100"><Spinner size={30} /></div>
 							: <ShowMore action={ this.appendGames }/>
 							}
 						</div>
