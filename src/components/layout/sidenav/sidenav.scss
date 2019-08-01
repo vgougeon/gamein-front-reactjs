@@ -26,6 +26,7 @@ aside {
         .button {
           border-left: 4px solid var(--theme);
           background: var(--soft);
+          box-shadow: 0 0 4px var(--soft) inset;
         }
       }
   }
