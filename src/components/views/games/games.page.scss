@@ -1,3 +1,8 @@
+@media screen and (max-width: 800px){
+  .games {
+    grid-template-columns: repeat(auto-fit, minmax(auto, auto)) !important;
+  }
+}
 .games {
   width: calc(100% + 14px);
   display: flex;

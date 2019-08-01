@@ -1,13 +1,13 @@
 .games{
   .game-item {
-    min-width: 400px;
-    flex-basis: 400px;
-    flex-grow: 1;
     padding: .5rem;
-    height: fit-content;
+    height: auto;
     animation: 0.5s fromTop ease-in-out;
     display: flex;
-    flex-shrink: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    min-width: 250px;
+    flex-basis: 400px;
     a {
       color: var(--color);
       font-weight: 600;
