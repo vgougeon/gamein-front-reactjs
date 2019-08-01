@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import axios from 'axios';
 import GameCard from "../../shared/games/gamecard/gamecard";
 import UserCardMin from "../../shared/user/userCardMin/userCardMin";
+import Spinner from '../../shared/spinner/spinner-standard';
+import ShowMore from '../../shared/elements/showMore';
 
 import './games.page.scss';
 
-let state = { games: [], offset: 0, scroll: 0 }
+let state = { games: [], offset: 0, scroll: 0, isLoading: true }
 
 class GamesPage extends Component {
 	constructor(props) {
@@ -25,12 +27,19 @@ class GamesPage extends Component {
 		return axios.get('http://api.njak.fr/getGames', { params: { offset: this.state.offset } });
 	}
 	appendGames() {
+		this.setState({ isLoading : true })
 		let self = this
 		this.getGames().then(response => {
 			if(response.data.length){
 				self.setState(state => ({
 					games: [...self.state.games, ...response.data],
-					offset: [...self.state.games, ...response.data].length
+					offset: [...self.state.games, ...response.data].length,
+					isLoading: false
+				}));
+			}
+			else {
+				self.setState(state => ({
+					isLoading: false
 				}));
 			}
 		})
@@ -48,7 +57,12 @@ class GamesPage extends Component {
 								<GameCard key={game.id} {...game} />
 							)}
 						</div>
-						<button onClick={this.appendGames} className="mx-auto fromTop slowAppear">Afficher plus</button>
+						<div className="loading-block">
+							{ this.state.isLoading ? 
+							<div className="d-flex justify-content-center w-100"><Spinner /></div>
+							: <ShowMore action={ this.appendGames }/>
+							}
+						</div>
 					</div>
 					<div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
 					</div>
