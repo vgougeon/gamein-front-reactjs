@@ -7,18 +7,19 @@ class UserCardMin extends Component {
   static contextType = UserContext;
   render() {
     return (
+      <React.Fragment>
+      { !this.context.auth.isLoading && 
       <div className="box s-1 account min">
-        {this.context.auth.skin && (<img
+        <img
           className="banner min"
           src={"http://njak.fr/assets/imgs/skins/" + this.context.auth.skin + ".png"}
-          alt="User Banner"/>)}
+          alt="User Banner"/>
         <div className="info min">
-            
-          {this.context.auth.avatar && <img
+          <div class="background-min"></div>
+          <img
             className="avatar"
             src={'http://njak.fr/assets/imgs/accounts/' + this.context.auth.avatar}
             alt="User Profile"/>
-            }
           <div className="d-flex flex-column">
             <Link to={'user/' + this.context.auth.username}>
               <span className="username ml-2 font-weight-bold">
@@ -34,6 +35,8 @@ class UserCardMin extends Component {
           <span></span>
         </div>
       </div>
+      }
+      </React.Fragment>
     )
   }
 }

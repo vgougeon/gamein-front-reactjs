@@ -1,0 +1,9 @@
+button {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+  &.ready {
+    opacity: 1;
+    visibility: visible;
+  }
+}

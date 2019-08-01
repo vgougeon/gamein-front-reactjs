@@ -7,6 +7,8 @@ class UserCard extends Component {
   static contextType = UserContext;
   render() {
     return (
+      <React.Fragment>
+      { !this.context.auth.isLoading && 
       <div className="box s-1 account">
         { this.context.auth.skin &&
         <img className="banner" 
@@ -56,6 +58,8 @@ class UserCard extends Component {
           <span></span>
         </div>
       </div>
+      }
+      </React.Fragment>
     );
   }
 }

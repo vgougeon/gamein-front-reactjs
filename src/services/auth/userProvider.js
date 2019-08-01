@@ -13,7 +13,7 @@ class UserProvider extends Component {
             isLoggedIn: false,
             auth: {}
         }
-        axios.get('http://api.njak.fr/me').then(res => {
+        axios.get('http://54.37.228.12/api/me').then(res => {
             if(res.data.id !== undefined){
                 this.setState(state => ({
                     isLoading: false,
