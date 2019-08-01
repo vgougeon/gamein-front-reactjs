@@ -8,7 +8,7 @@ class UserCardMin extends Component {
   render() {
     return (
       <React.Fragment>
-      { !this.context.auth.isLoading && 
+      { !this.context.isLoading && this.context.isLoggedIn &&
       <div className="box s-1 account min">
         <img
           className="banner min"

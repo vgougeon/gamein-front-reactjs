@@ -8,7 +8,7 @@ class UserCard extends Component {
   render() {
     return (
       <React.Fragment>
-      { !this.context.auth.isLoading && 
+      { !this.context.isLoading && this.context.isLoggedIn &&
       <div className="box s-1 account">
         { this.context.auth.skin &&
         <img className="banner" 

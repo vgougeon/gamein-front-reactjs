@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { UserContext } from '../../../../services/auth/userProvider';
 import './newPost.scss';
 import axios from "axios";
 class NewPost extends Component {
+  static contextType = UserContext;
   constructor(props) {
     super(props);
     this.state = { file: null, inputKey : Date.now(), isLoading: false};
@@ -47,46 +49,51 @@ class NewPost extends Component {
   }
 
   render() {
-    return (
-      <div className="box s-1 textarea-post mb-g">
-        <form
-          encType="multipart/form-data"
-          onSubmit={ this.submitPost }
-        >
-          <textarea
-            className="p-g"
-            name="content"
-            placeholder="Des choses à dire ?"
-          />
-          <div className="filePreview">
-            {this.state.file &&
-              <div className="prev_wrapper">
-                <div className="del fas fa-trash" onClick={ this.removeFile }></div>
-                <img alt="Media to upload" className='file' src={this.state.file} />
+    if(this.context.isLoggedIn){
+      return (
+        <div className="box s-1 textarea-post mb-g">
+          <form
+            encType="multipart/form-data"
+            onSubmit={ this.submitPost }
+          >
+            <textarea
+              className="p-g"
+              name="content"
+              placeholder="Des choses à dire ?"
+            />
+            <div className="filePreview">
+              {this.state.file &&
+                <div className="prev_wrapper">
+                  <div className="del fas fa-trash" onClick={ this.removeFile }></div>
+                  <img alt="Media to upload" className='file' src={this.state.file} />
+                </div>
+              }
+              
+            </div>
+            <div className="textarea-tools">
+              { this.state.isLoading &&
+              <div className="textarea-loader" style={{ width: this.state.isLoading + '%' }}></div>
+              }
+              <input type="file" name="uploadImage" id="uploadImage" key={ this.state.inputKey } onChange={ this.changeFile }/>
+              <div className="tool p-0">
+                <label htmlFor="uploadImage" className="px-2 m-0 h-100 d-flex align-items-center">
+                  <i className="fas fa-image" /> Image
+                </label>
               </div>
-            }
-            
-          </div>
-          <div className="textarea-tools">
-            { this.state.isLoading &&
-            <div className="textarea-loader" style={{ width: this.state.isLoading + '%' }}></div>
-            }
-            <input type="file" name="uploadImage" id="uploadImage" key={ this.state.inputKey } onChange={ this.changeFile }/>
-            <div className="tool p-0">
-              <label htmlFor="uploadImage" className="px-2 m-0 h-100 d-flex align-items-center">
-                <i className="fas fa-image" /> Image
+              <div className="tool p-0">
+              <label htmlFor="submit" className="px-2 m-0 h-100 d-flex align-items-center">
+                <i className="fas fa-paper-plane" /> Envoyer
               </label>
+              <input type="submit" id="submit" className='d-none'></input>
+              </div>
             </div>
-            <div className="tool p-0">
-            <label htmlFor="submit" className="px-2 m-0 h-100 d-flex align-items-center">
-              <i className="fas fa-paper-plane" /> Envoyer
-            </label>
-            <input type="submit" id="submit" className='d-none'></input>
-            </div>
-          </div>
-        </form>
-      </div>
-    );
+          </form>
+        </div>
+      );
+    }
+    else {
+      return null
+    }
   }
 }
 

@@ -11,7 +11,8 @@ class UserProvider extends Component {
         this.state = {
             isLoading: true,
             isLoggedIn: false,
-            auth: {}
+            auth: {},
+            signOut: this.signOut
         }
         axios.get('http://54.37.228.12/api/me').then(res => {
             if(res.data.id !== undefined){
@@ -26,6 +27,13 @@ class UserProvider extends Component {
                     isLoading: false
                 }))
             }
+        })
+    }
+    signOut = () => {
+        this.setState({
+            isLoading: false,
+            isLoggedIn: false,
+            auth: {}
         })
     }
     render() {

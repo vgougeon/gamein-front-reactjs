@@ -1,16 +1,17 @@
 .dropdown {
   max-width: 100vw;
   width: 380px;
-  height: auto;
+  height: 100vh;
   background: var(--module);
   position: absolute;
   opacity: 0;
   visibility: hidden;
   right: -100px;
+  top: 0;
   transition: 0.2s;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  box-shadow: 0 0px 16px rgba(0,0,0,0.5);
   &.open {
-    right: 5px;
+    right: 0px;
     opacity: 1;
     visibility: visible;
   }

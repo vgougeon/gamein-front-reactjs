@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { UserContext } from '../../../services/auth/userProvider';
 import "./sidenav.scss";
 class SideNav extends Component {
- 
+  static contextType = UserContext;
   isOpen() {
     return ((this.props.isOpen) ? "" : "aside-fold");
   }
   navClicked() {
-    // console.log(window)
   }
   render() {
+    
     return (
         <aside className={this.isOpen()} >
           <div className="d-flex flex-column">
@@ -29,7 +30,13 @@ class SideNav extends Component {
               </div>
             </NavLink>
           </div>
-          <div className="d-flex flex-column" />
+          <div className="d-flex flex-column">
+            { this.context.isLoggedIn &&
+            <div className="button" onClick={ this.context.signOut } >
+              <i className="fas fa-sign-out-alt" /> Sign out
+            </div>
+            }
+          </div>
         </aside>
     );
   }

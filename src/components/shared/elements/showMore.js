@@ -18,7 +18,7 @@ class ShowMore extends Component {
     return (
       <React.Fragment>
         <button
-          className={(this.state.ready ? "ready " : "") + "mx-auto stroked"}
+          className={(this.state.ready ? "ready " : "") + "mx-auto stroked showMore"}
           onClick={this.props.action}
           style={{ marginBottom: this.state.spacing }}
         >
