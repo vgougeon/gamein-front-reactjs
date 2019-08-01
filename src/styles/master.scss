@@ -43,10 +43,12 @@ a:hover {
     background: var(--bg);
   }
 }
+* {
+  border-radius: 20px !important;
+}
 .box {
   background: var(--module);
   position: relative;
-
   .box-head {
     background: var(--soft);
     min-height: 2.5rem;
