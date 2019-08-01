@@ -51,7 +51,7 @@ class NewPost extends Component {
   render() {
     if(this.context.isLoggedIn){
       return (
-        <div className="box s-1 textarea-post mb-g">
+        <div className="box s-1 textarea-post mb-g overflow-hidden">
           <form
             encType="multipart/form-data"
             onSubmit={ this.submitPost }
