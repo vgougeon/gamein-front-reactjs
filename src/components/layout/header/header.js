@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AuthManager from './auth-manager/auth-manager';
 import { UserContext } from "../../../services/auth/userProvider";
+import SearchBar from "./search-bar/search-bar";
 import "./header.scss";
 
 class Header extends Component {
@@ -15,10 +16,7 @@ class Header extends Component {
           </div>
         </div>
         <div className="item search-bar">
-          <div id="search">
-            <i className="fas fa-search" />
-            <input type="search" placeholder="Rechercher..." />
-          </div>
+          <SearchBar />
         </div>
         <AuthManager/>
       </header>

@@ -13,7 +13,9 @@ class UserProfile extends Component {
     return ( 
       <div className="user-profile">
       <div className="head">
-        <img src={ 'http://njak.fr/assets/imgs/skins/' + this.props.skin + '.png'} className="user-banner" />
+        <img src={ 'http://njak.fr/assets/imgs/skins/' + this.props.skin + '.png'} 
+        className="user-banner" 
+        alt="Your banner" />
         <div className="profile-head-content">
           <div className="closeUserProfile" onClick={ this.props.toggle }>
             <i className="fas fa-angle-double-right"></i>

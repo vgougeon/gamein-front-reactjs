@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { UserContext } from '../../../../../services/auth/userProvider';
 import './postComments.scss';
-import axios from "axios";
 
 class PostComments extends Component {
     static contextType = UserContext;
