@@ -9,14 +9,24 @@ class Img extends Component {
     this.setState({ loaded: true });
   };
   render() { 
-    return ( 
-      <img 
-      className={ 'loadImg ' + (this.state.loaded ? "loaded" : "")}
-      src={ this.props.src } 
-      alt={ this.props.alt } 
-      onLoad={ this.onLoad }
-      />
-    );
+    if(this.props.ratio === undefined){
+      return ( 
+        <img 
+        className={ 'loadImg ' + (this.state.loaded ? "loaded" : "")}
+        src={ this.props.src } 
+        alt={ this.props.alt } 
+        onLoad={ this.onLoad }
+        />
+      );
+    } else {
+      return (
+        <div className="img-ratio">
+          <div className="ratio-box">
+            <img className="ratio" src={ this.props.src } alt={ this.props.alt } />
+          </div> 
+        </div>
+      );
+    }
   }
 }
  

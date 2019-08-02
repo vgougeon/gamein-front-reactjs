@@ -9,6 +9,7 @@ class GameCard extends Component {
         <Img 
           src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} 
           alt={this.props.name + " - Cover"}
+          ratio='120%'
         />
         <div className="d-flex flex-column mx-2 m-g">
           <Link to={'/game/' + this.props.id + '/' + this.props.name.replace(/\s+/g, '-')}>{this.props.name}</Link>

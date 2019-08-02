@@ -5,3 +5,23 @@ img.loadImg {
       opacity: 1;
   }
 }
+.img-ratio {
+  width: 120px;
+  height: auto;
+  position: relative;
+  .ratio-box {
+    width: 100%;
+    padding-top: 115%;
+    img.ratio {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      border: 3px solid var(--soft);
+      border-radius: 6px;
+    }
+  }
+  
+}
