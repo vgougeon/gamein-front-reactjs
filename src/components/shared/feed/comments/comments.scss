@@ -1,0 +1,24 @@
+.comments {
+    min-height: 0px;
+    height: auto;;
+    opacity: 1;
+    border-top: 1px solid var(--soft);
+    transition: 0.2s;
+    overflow: hidden;
+    
+}
+.w-fit {
+    width: fit-content;
+}
+.small-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 2px solid var(--module);
+    z-index: 2;
+    position: relative;
+    background: var(--theme);
+    transition: 0.2s;
+}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './post.scss';
+import Comments from '../comments/comments';
+
 class Post extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,8 @@ class Post extends Component {
   }
   render() { 
     return (  
-    <div className="box s-1 feed mb-g">
+    <div className="feed-content mb-g">
+    <div className="box s-1 feed">
         <div className="info">
             <img className="m-g" src={"http://njak.fr/assets/imgs/accounts/" + this.props.avatar }
             alt="Post user profile" />
@@ -54,7 +57,8 @@ class Post extends Component {
             </div>
         </div>
     </div>
-
+    < Comments />
+    </div>
     );
   }
 }
