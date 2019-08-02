@@ -1,11 +1,15 @@
 .comments {
     min-height: 0px;
-    height: auto;;
-    opacity: 1;
+    height: 0;
+    opacity: 0;
     border-top: 1px solid var(--soft);
     transition: 0.2s;
     overflow: hidden;
     
+}
+.toggleOn {
+    height: auto;
+    opacity: 1;
 }
 .w-fit {
     width: fit-content;

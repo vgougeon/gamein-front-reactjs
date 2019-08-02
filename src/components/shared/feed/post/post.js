@@ -8,7 +8,8 @@ class Post extends Component {
     super(props);
     this.state = { 
       likes: this.props.likes,
-      comments: this.props.comments
+      comments: this.props.comments,
+      active: false
     }
   }
   expand = (e) => {
@@ -24,6 +25,11 @@ class Post extends Component {
       e.currentTarget.classList.add('open')
     }
   }
+
+    showComments = () => {
+      this.setState({active : !this.state.active });
+    }
+
   render() { 
     return (  
     <div className="feed-content mb-g s-1">
@@ -53,11 +59,11 @@ class Post extends Component {
             <p className="text-muted text-size-s my-0">{ this.props.date }</p>
             <div className="d-flex feed-tools align-items-center">
                 <i className="far fa-heart pl-3 pr-2"></i><span className="font-weight-bold">{ this.state.likes }</span>
-                <i className="far fa-comment pl-3 pr-2"></i><span className="font-weight-bold">{ this.state.comments }</span>
+                <i className="far fa-comment pl-3 pr-2" onClick={this.showComments}></i><span className="font-weight-bold">{ this.state.comments }</span>
             </div>
         </div>
     </div>
-    < Comments />
+    < Comments active={this.state.active} />
     </div>
     );
   }
