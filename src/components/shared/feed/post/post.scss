@@ -1,5 +1,5 @@
 .feed {
-  animation: 0.5s fromTop ease-in-out;
+  
 
   .info {
     display: flex;
@@ -96,6 +96,7 @@
 .feed-content {
   overflow: hidden;
   border-radius:6px;
+  animation: 0.5s fromTop ease-in-out;
 
    .box {
      border-radius: 0 ;
