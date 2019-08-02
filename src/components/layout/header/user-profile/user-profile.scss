@@ -83,6 +83,10 @@
     }
     
   }
+  .open-menu {
+    font-size: .9rem !important;
+    margin-top: 2px;
+  }
 }
 .theme-picker {
   width: 25px;
@@ -101,8 +105,8 @@
   &.predator {
     background: rgb(148, 46, 46);
   }
-  &.rain {
-    background: rgb(53, 70, 168);
+  &.bluetooth {
+    background: rgb(92, 135, 216);
   }
   &:hover{
     border: 2px solid var(--theme);

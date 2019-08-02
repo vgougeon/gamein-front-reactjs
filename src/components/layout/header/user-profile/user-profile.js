@@ -47,12 +47,22 @@ class UserProfile extends Component {
         <div className="wide-button">
           <div className="d-flex justify-content-between w-100">
             <div>
+              <i className="fas fa-globe mr-3" /><span>Langage</span>
+            </div>
+            <div className="d-flex align-items-center">
+              <span>Français</span><i className="open-menu fas fa-chevron-down ml-2" />
+            </div>
+          </div>
+        </div>
+        <div className="wide-button">
+          <div className="d-flex justify-content-between w-100">
+            <div>
               <i className="fas fa-palette mr-3" /><span>Thèmes</span>
             </div>
             <div className="d-flex">
               <div className="theme-picker white" onClick={() => theme.switchTheme(1)}></div>
               <div className="theme-picker black" onClick={() => theme.switchTheme(2)}></div>
-              <div className="theme-picker rain" onClick={() => theme.switchTheme(3)}></div>
+              <div className="theme-picker bluetooth" onClick={() => theme.switchTheme(5)}></div>
               <div className="theme-picker predator" onClick={() => theme.switchTheme(4)}></div>
             </div>
           </div>
