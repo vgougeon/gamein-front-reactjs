@@ -26,8 +26,8 @@ class Post extends Component {
   }
   render() { 
     return (  
-    <div className="feed-content mb-g">
-    <div className="box s-1 feed">
+    <div className="feed-content mb-g s-1">
+    <div className="box feed">
         <div className="info">
             <img className="m-g" src={"http://njak.fr/assets/imgs/accounts/" + this.props.avatar }
             alt="Post user profile" />

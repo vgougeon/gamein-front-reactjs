@@ -8,7 +8,7 @@ class Comments extends Component {
 
     render() {
         return(
-            <div className="box s-1 comments">
+            <div className="box comments">
                 <div className="px-g d-flex flex-column" id="comment-container">
                     <div className="d-flex mt-g comment-item">
                         <img className="small-avatar mr-2" src="http://njak.fr/assets/imgs/accounts/61563909495.png"/>
