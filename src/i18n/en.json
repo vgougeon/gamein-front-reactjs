@@ -1,5 +1,14 @@
 {
   "nav-home": "Home",
   "nav-games": "Games",
-  "sign-out": "Sign out"
+  "sign-out": "Sign out",
+  "search": "Search...",
+
+  "themes": "Themes",
+  "my-account": "My account",
+  "language": "Language",
+
+  "lvl": "LVL",
+  "pts": "PTS",
+  "sub": "SUB"
 }
