@@ -62,7 +62,7 @@ class Post extends Component {
             </div>
         </div>
     </div>
-    < Comments active={this.state.active} />
+    < Comments active={this.state.active} idpost={this.props.id} />
     </div>
     );
   }
