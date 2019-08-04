@@ -44,9 +44,6 @@ class HomePage extends Component {
         <div className="row mt-g g-g row-p-0">
           <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
 						<UserCard />
-            <Test />
-            <ClassTest />
-            <TestWithTranslation />
 					</div>
           <div className="col-xl-6 col-lg-12">
             <NewPost addPost={this.addPost}/>

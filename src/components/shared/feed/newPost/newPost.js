@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { UserContext } from '../../../../services/auth/userProvider';
+import { withTranslation } from 'react-i18next';
 import './newPost.scss';
 import axios from "axios";
 class NewPost extends Component {
@@ -50,6 +51,7 @@ class NewPost extends Component {
 
   render() {
     if(this.context.isLoggedIn){
+      const { t } = this.props;
       return (
         <div className="box s-1 textarea-post mb-g overflow-hidden">
           <form
@@ -59,7 +61,7 @@ class NewPost extends Component {
             <textarea
               className="p-g"
               name="content"
-              placeholder="Des choses à dire ?"
+              placeholder={t('newpost-placeholder')}
             />
             <div className="filePreview">
               {this.state.file &&
@@ -77,12 +79,12 @@ class NewPost extends Component {
               <input type="file" name="uploadImage" id="uploadImage" key={ this.state.inputKey } onChange={ this.changeFile }/>
               <div className="tool p-0">
                 <label htmlFor="uploadImage" className="px-2 m-0 h-100 d-flex align-items-center">
-                  <i className="fas fa-image" /> Image
+                  <i className="fas fa-image" />{t('image')}
                 </label>
               </div>
               <div className="tool p-0">
               <label htmlFor="submit" className="px-2 m-0 h-100 d-flex align-items-center">
-                <i className="fas fa-paper-plane" /> Envoyer
+                <i className="fas fa-paper-plane" />{t('send')}
               </label>
               <input type="submit" id="submit" className='d-none'></input>
               </div>
@@ -97,4 +99,4 @@ class NewPost extends Component {
   }
 }
 
-export default NewPost;
+export default withTranslation()(NewPost);

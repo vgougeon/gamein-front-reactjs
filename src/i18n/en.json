@@ -9,6 +9,17 @@
   "language": "Language",
 
   "lvl": "LVL",
+  "level": "LEVEL",
   "pts": "PTS",
-  "sub": "SUB"
+  "points": "POINTS",
+  "sub": "SUB",
+  "followers": "FOLLOWERS",
+
+  "newpost-placeholder": "What's up ?",
+  "image": "Image",
+  "send": "Send",
+
+  "admin": "Admin",
+  "mod": "Mod",
+  "member": "Member"
 }

@@ -2,10 +2,12 @@ import { UserContext } from "../../../../services/auth/userProvider";
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import "./userCard.scss";
+import { withTranslation } from 'react-i18next';
 
 class UserCard extends Component {
   static contextType = UserContext;
   render() {
+    const { t } = this.props;
     return (
       <React.Fragment>
       { !this.context.isLoading && this.context.isLoggedIn &&
@@ -30,7 +32,7 @@ class UserCard extends Component {
               </span>
             </Link>
             <span className="grade ml-2">
-              { this.context.auth.gradeName }
+              { t(this.context.auth.gradeName) }
             </span>
           </div>
         </div>
@@ -39,19 +41,19 @@ class UserCard extends Component {
             <span className="font-weight-bold text-size-l">
               { this.context.auth.level }
             </span>
-            <span className="text-size-xs">NIVEAU</span>
+            <span className="text-size-xs">{t('level')}</span>
           </div>
           <div className="stat pb-1 pt-2">
             <span className="font-weight-bold text-size-l">
               { this.context.auth.posts }
             </span>
-            <span className="text-size-xs">POSTS</span>
+            <span className="text-size-xs">{t('points')}</span>
           </div>
           <div className="stat pb-1 pt-2">
             <span className="font-weight-bold text-size-l">
               { this.context.auth.followers }
             </span>
-            <span className="text-size-xs">ABONNÉS</span>
+            <span className="text-size-xs">{t('followers')}</span>
           </div>
         </div>
         <div className="experience-bar" style={{width: '' + (this.context.auth.experience * 10) % 100  + '%' }}>
@@ -64,4 +66,4 @@ class UserCard extends Component {
   }
 }
 
-export default UserCard;
+export default withTranslation()(UserCard);
