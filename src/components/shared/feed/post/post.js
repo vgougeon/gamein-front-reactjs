@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './post.scss';
 import Comments from '../comments/comments';
+import { withTranslation } from 'react-i18next';
 
 class Post extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class Post extends Component {
     }
 
   render() { 
+    const { t } = this.props;
     return (  
     <div className="feed-content mb-g s-1">
     <div className="box feed">
@@ -39,7 +41,7 @@ class Post extends Component {
             alt="Post user profile" />
             <div className="d-flex flex-column mt-g mb-g justify-content-center">
                 <Link to={"user/" + this.props.username } className="username font-weight-bold">{ this.props.display_name }<i className="fas fa-check-circle"></i></Link>
-                <span className="grade text-muted">{ this.props.name}</span>
+                <span className="grade text-muted">{t(this.props.name)}</span>
             </div>
         </div>
         <div className="content px-g">
@@ -68,4 +70,4 @@ class Post extends Component {
   }
 }
  
-export default Post;
+export default withTranslation()(Post);
