@@ -47,16 +47,15 @@ class Post extends Component {
         </div>
         <div className="content-images" onClick={ this.expand }>
           {
-            this.props.images &&
-            this.props.images.map(image => (
-            <React.Fragment key={image.id}>
-            <div className="fas fa-angle-double-down expand"></div>
-            <img alt="Post media" src={'http://api.njak.fr/assets/imgs/posts/' + image.path }/>
+            this.props.path &&
+            <React.Fragment>
+              <div className="fas fa-angle-double-down expand"></div>
+              <img alt="Post media" src={'http://api.njak.fr/assets/imgs/posts/' + this.props.path }/>
             </React.Fragment>
-          ))}
+          }
         </div>
         <div className="content-footer px-g">
-            <p className="text-muted text-size-s my-0">{ this.props.date }</p>
+            <p className="text-muted text-size-s my-0">{ this.props.dateformat }</p>
             <div className="d-flex feed-tools align-items-center">
                 <i className="far fa-heart pl-3 pr-2"></i><span className="font-weight-bold">{ this.state.likes }</span>
                 <i className="far fa-comment pl-3 pr-2" onClick={this.showComments}></i><span className="font-weight-bold">{ this.state.comments }</span>

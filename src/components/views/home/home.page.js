@@ -23,7 +23,7 @@ class HomePage extends Component {
     }))
   }
   getPosts() {
-    return axios.get("http://api.njak.fr/getPosts", {
+    return axios.get("http://54.37.228.12/api/getPosts", {
       params: { offset: this.state.offset }
     });
   }
