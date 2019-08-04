@@ -2,5 +2,23 @@
   "nav-home": "Accueil",
   "nav-games": "Jeux",
   "sign-out": "Déconnexion",
-  "search": "Rechercher..."
+  "search": "Rechercher...",
+
+  "themes": "Thème",
+  "my-account": "Mon Compte",
+  "language": "Langage",
+  "lvl": "NIV",
+  "level": "Niveau",
+  "pts": "PTS",
+  "points": "POINTS",
+  "sub": "ABO",
+  "followers": "ABONNÉS",
+
+  "newpost-placeholder": "Quoi de neuf ?",
+  "image": "Image",
+  "send": "Envoyer",
+
+  "admin": "Admin",
+  "mod": "Mod",
+  "member": "Membre"
 }
