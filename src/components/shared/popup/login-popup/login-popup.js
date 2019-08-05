@@ -33,7 +33,7 @@ class LoginPopup extends Component {
         return (  
             <div className="popup-wrapper">
                 <div className="login-popup" ref={node => this.node = node}>
-                    <div className="login-head">
+                    <div className="login-head z1">
                         <img src="http://njak.fr/assets/favicon.png"></img>
                         Gamein
                     </div>
@@ -49,8 +49,9 @@ class LoginPopup extends Component {
                             <b>z</b> jeux
                         </div>
                     </div>
-                    <div className="login-wrapper">
-                        <form className="w-100 d-flex flex-column" onSubmit={this.login}>
+                    <div className="login-wrapper relative">
+                        <div className="bg-login"></div>
+                        <form className="w-100 d-flex flex-column z1" onSubmit={this.login}>
                             <h5 className="mb-4">Connexion</h5>
                             <label htmlFor="username">Username</label>
                             <input 
