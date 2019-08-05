@@ -69,22 +69,22 @@ class UserProfile extends Component {
           duration={ 200 }
           height={ this.state.height }
         >
-          <div className="wide-button">
+          <div className="wide-button" onClick={() => i18n.changeLanguage('en')}>
             <div className="d-flex justify-content-between align-items-center w-100">
               <span>English</span>
               <span className="rounded-flag flag-icon-background flag-icon-gb "></span>
             </div>
           </div>
-          <div className="wide-button">
-            <div className="d-flex justify-content-between align-items-center w-100">
-              <span>日本語</span>
-              <span className="rounded-flag flag-icon-background flag-icon-jp "></span>
-            </div>
-          </div>
-          <div className="wide-button">
+          <div className="wide-button" onClick={() => i18n.changeLanguage('fr')}>
             <div className="d-flex justify-content-between align-items-center w-100">
               <span>Français</span>
               <span className="rounded-flag flag-icon-background flag-icon-fr "></span>
+            </div>
+          </div>
+          <div className="wide-button" onClick={() => i18n.changeLanguage('jp')}>
+            <div className="d-flex justify-content-between align-items-center w-100">
+              <span>日本語</span>
+              <span className="rounded-flag flag-icon-background flag-icon-jp "></span>
             </div>
           </div>
         </AnimateHeight>
