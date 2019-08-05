@@ -20,6 +20,9 @@ class UserProvider extends Component {
                 toggleLogin: this.toggleLogin
             }
         }
+        if (localStorage.getItem("token") !== null) {
+            axios.defaults.headers.common['Authorization'] = localStorage.getItem("token")
+        }
         this.getMe()
     }
     getMe = () => {
@@ -39,6 +42,7 @@ class UserProvider extends Component {
         })
     }
     signOut = () => {
+        localStorage.setItem("token", null);
         this.setState({
             isLoading: false,
             isLoggedIn: false,
