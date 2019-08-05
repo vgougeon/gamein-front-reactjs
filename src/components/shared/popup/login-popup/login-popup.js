@@ -52,7 +52,7 @@ class LoginPopup extends Component {
                     <div className="login-wrapper">
                         <form className="w-100 d-flex flex-column" onSubmit={this.login}>
                             <h5 className="mb-4">Connexion</h5>
-                            <label for="username">Username</label>
+                            <label htmlFor="username">Username</label>
                             <input 
                             type="text" name="username" id="username" placeholder="Username"
                             value={this.state.username} 
@@ -60,7 +60,7 @@ class LoginPopup extends Component {
                             onBlur={ this.checkUsername }
                             ref={(input) => { this.username = input; }} 
                             ></input>
-                            <label for="password" className="mt-2">Password</label>
+                            <label htmlFor="password" className="mt-2">Password</label>
                             <input type="password" name="password" id="password" placeholder="Password"
                             value={this.state.password}
                             onChange={ (e) => {this.setState({password: e.target.value})}}
