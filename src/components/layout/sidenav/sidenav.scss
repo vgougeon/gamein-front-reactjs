@@ -1,6 +1,7 @@
 aside {
   background: var(--module);
-  height: 100%;
+  height: calc(100% - var(--header-size));
+  position: fixed;
   width: var(--aside-size);
   flex-shrink: 0;
   min-width: var(--header-size);
@@ -10,7 +11,7 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   box-shadow: var(--boxshadow);
-  z-index:10;
+  z-index: 10;
   &.aside-fold {
       width: var(--header-size);
   }
@@ -54,11 +55,6 @@ aside {
           font-size: 18px;
       }
   }
-}
-section#main {
-  width: 100%;
-  height: calc(100% - var(--header-size));
-  display: flex;
 }
 @media screen and (max-width: 1400px){
   aside {

@@ -12,8 +12,17 @@ class UserProvider extends Component {
             isLoading: true,
             isLoggedIn: false,
             auth: {},
-            signOut: this.signOut
+
+            signOut: this.signOut,
+            signIn: this.signIn,
+            layout: {
+                login: false,
+                toggleLogin: this.toggleLogin
+            }
         }
+        this.getMe()
+    }
+    getMe = () => {
         axios.get('http://54.37.228.12/api/me').then(res => {
             if(res.data.id !== undefined){
                 this.setState(state => ({
@@ -35,6 +44,31 @@ class UserProvider extends Component {
             isLoggedIn: false,
             auth: {}
         })
+    }
+    signIn = (username, password) => {
+        axios.post('http://localhost:3001/signIn', 
+        { params: { 
+            username: username,
+            password: password
+        }})
+        .then(res => {
+            if(res.data !== false){
+                localStorage.setItem("token", res.data);
+                axios.defaults.headers.common['Authorization'] = res.data;
+                this.getMe()
+            }
+            else {
+                alert("error!")
+            }
+        })
+    }
+    toggleLogin = () => {
+        this.setState(state => ({
+            layout: {
+              ...state.layout,
+              login: !state.layout.login
+            }
+        }))
     }
     render() {
         return (

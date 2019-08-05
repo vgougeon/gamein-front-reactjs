@@ -4,6 +4,11 @@ html {--header-size: 60px;--aside-size: 260px;--bg: rgba(43, 44, 55, 1);--module
   height: 100%;
   width: 100%;
 }
+section#main {
+  width: 100%;
+  height: calc(100% - var(--header-size));
+  display: flex;
+}
 html, body {
   overflow: hidden;
   background: var(--bg);
@@ -23,6 +28,7 @@ section#page-content {
   overflow-x: hidden;
   flex-grow: 1;
   height: 100%;
+  margin-left: var(--header-size);
 }
 a {
   color: var(--theme);
