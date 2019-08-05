@@ -75,6 +75,8 @@
             height: 40px;
             border-radius: 6px;
             display: block;
+            background: rgba(0,0,0,0.6);
+            color: white;
         }
         label {
             font-size: .9rem;
@@ -90,16 +92,16 @@
 
 .bg-login {
     position: absolute;
-        background: url("https://static.wixstatic.com/media/3d9bdd_23b02c9a6ba146f9849c673a24cacbf5~mv2_d_1920_2182_s_2.jpg") center no-repeat;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        background-size: cover;
-        opacity: 0.5;
+    background: url("http://njak.fr/assets/imgs/login.jpg") center no-repeat;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-size: cover;
+    opacity: 0.5;
 }
 .relative {
     position: relative;
