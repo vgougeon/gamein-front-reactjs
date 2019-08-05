@@ -133,3 +133,9 @@
   filter:contrast(80%);
   background-size:cover !important;
 }
+.transition {
+  transition: 0.2s;
+}
+.rotate {
+  transform: rotate(180deg);
+}

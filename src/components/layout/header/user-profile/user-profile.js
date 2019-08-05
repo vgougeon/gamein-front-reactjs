@@ -54,13 +54,13 @@ class UserProfile extends Component {
         <div className="wide-button">
           <i className="fas fa-user-circle mr-3" /><span>{t('my-account')}</span>
         </div>
-        <div className="wide-button" onClick={ this.expandLang /*() => i18n.changeLanguage('fr')*/}>
+        <div className="wide-button" onClick={ this.expandLang}>
           <div className="d-flex justify-content-between w-100">
             <div>
-              <i className="fas fa-globe mr-3" /><span>{t('language')}</span>
+              <i className="fas fa-globe mr-3 "/><span>{t('language')}</span>
             </div>
             <div className="d-flex align-items-center">
-              <span>{ t(i18n.language) }</span><i className="open-menu fas fa-chevron-down ml-2" />
+              <span>{ t(i18n.language) }</span><i className={"transition open-menu fas fa-chevron-down ml-2 " + ((this.state.height === 'auto')? "rotate" : "")} />
             </div>
           </div>
         </div>
@@ -69,19 +69,19 @@ class UserProfile extends Component {
           duration={ 200 }
           height={ this.state.height }
         >
-          <div className="wide-button" onClick={() => i18n.changeLanguage('en')}>
+          <div className="wide-button" onClick={() => {i18n.changeLanguage('en'); this.expandLang() } }>
             <div className="d-flex justify-content-between align-items-center w-100">
               <span>English</span>
               <span className="rounded-flag flag-icon-background flag-icon-gb "></span>
             </div>
           </div>
-          <div className="wide-button" onClick={() => i18n.changeLanguage('fr')}>
+          <div className="wide-button" onClick={() => {i18n.changeLanguage('fr'); this.expandLang()}}>
             <div className="d-flex justify-content-between align-items-center w-100">
               <span>Français</span>
               <span className="rounded-flag flag-icon-background flag-icon-fr "></span>
             </div>
           </div>
-          <div className="wide-button" onClick={() => i18n.changeLanguage('jp')}>
+          <div className="wide-button" onClick={() => {i18n.changeLanguage('jp'); this.expandLang()}}>
             <div className="d-flex justify-content-between align-items-center w-100">
               <span>日本語</span>
               <span className="rounded-flag flag-icon-background flag-icon-jp "></span>
