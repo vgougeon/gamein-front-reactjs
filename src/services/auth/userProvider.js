@@ -53,6 +53,10 @@ class UserProvider extends Component {
         }})
         .then(res => {
             if(res.data !== false){
+                this.setState({
+                    isLoading: true,
+                })
+                this.toggleLogin()
                 localStorage.setItem("token", res.data);
                 axios.defaults.headers.common['Authorization'] = res.data;
                 this.getMe()

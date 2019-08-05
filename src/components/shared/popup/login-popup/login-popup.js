@@ -14,9 +14,11 @@ class LoginPopup extends Component {
         this.username.focus();
         document.addEventListener('mousedown', this.handleClick, false);
     }
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClick, false)
+    }
     handleClick = (e) => {
         if(!this.node.contains(e.target)) {
-            document.removeEventListener('mousedown', this.handleClick, false)
             this.context.layout.toggleLogin()
         }
     }
