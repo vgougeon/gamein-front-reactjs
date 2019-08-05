@@ -116,11 +116,20 @@
 
 .lang-select-list {
   overflow: hidden;
-  max-height:0vh;
-  transition:max-height ease-in-out;
-  transition-duration: 0.5s;
+  background:rgba(0,0,0,0.10);
+  .wide-button {
+    background: none;
+  }
+  .wide-button:hover {
+    background: rgba(255,255,255,0.07);
+  }
 }
 
-.lsl-expand {
-  max-height: 100vh;
+.rounded-flag {
+  width:25px;
+  height:20px;
+  overflow: hidden;
+  border-radius: 5px;
+  filter:contrast(80%);
+  background-size:cover !important;
 }

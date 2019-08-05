@@ -4,15 +4,16 @@ import './user-profile.scss';
 import * as theme from '../../../../services/themes/themeService'; 
 import ExperienceBar from '../../../shared/user/experienceBar/experienceBar';
 import { withTranslation } from 'react-i18next';
+import AnimateHeight from 'react-animate-height';
 
 class UserProfile extends Component {
   constructor(props) {
     super(props);
-    this.state = { active: false  }
+    this.state = { height: 0  }
   }
 
   expandLang = () => {
-    this.setState({ active : !this.state.active })
+    this.setState({ height : this.state.height === 0 ? 'auto' : 0 })
   }
 
   render() {
@@ -63,13 +64,30 @@ class UserProfile extends Component {
             </div>
           </div>
         </div>
-        <div className={"lang-select-list " + ((this.state.active) ? "lsl-expand" : "")}>
+        <AnimateHeight
+        className="lang-select-list"
+          duration={ 200 }
+          height={ this.state.height }
+        >
           <div className="wide-button">
-            <div className="d-flex justify-content-between w-100">
+            <div className="d-flex justify-content-between align-items-center w-100">
               <span>English</span>
+              <span className="rounded-flag flag-icon-background flag-icon-gb "></span>
             </div>
           </div>
-        </div>
+          <div className="wide-button">
+            <div className="d-flex justify-content-between align-items-center w-100">
+              <span>日本語</span>
+              <span className="rounded-flag flag-icon-background flag-icon-jp "></span>
+            </div>
+          </div>
+          <div className="wide-button">
+            <div className="d-flex justify-content-between align-items-center w-100">
+              <span>Français</span>
+              <span className="rounded-flag flag-icon-background flag-icon-fr "></span>
+            </div>
+          </div>
+        </AnimateHeight>
         <div className="wide-button" onClick={() => i18n.changeLanguage('en')}>
           <div className="d-flex justify-content-between w-100">
             <div>
