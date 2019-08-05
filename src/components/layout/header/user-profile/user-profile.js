@@ -88,16 +88,6 @@ class UserProfile extends Component {
             </div>
           </div>
         </AnimateHeight>
-        <div className="wide-button" onClick={() => i18n.changeLanguage('en')}>
-          <div className="d-flex justify-content-between w-100">
-            <div>
-              <i className="fas fa-globe mr-3" /><span>{t('language')}</span>
-            </div>
-            <div className="d-flex align-items-center">
-              <span>English</span><i className="open-menu fas fa-chevron-down ml-2" />
-            </div>
-          </div>
-        </div>
         <div className="wide-button">
           <div className="d-flex justify-content-between w-100">
             <div>
