@@ -1,6 +1,23 @@
 {
-    "nav-home": "Accueil",
-    "nav-games": "Jeux",
-    "sign-out": "Déconnexion",
-    "search": "Rechercher..."
+  "jp" : "日本語",
+  "nav-home": "ホーム",
+  "nav-games": "ゲーム",
+  "sign-out": "ログアウト",
+  "search": "検索",
+
+  "themes": "色",
+  "my-account": "アカウント",
+  "language": "言語",
+
+  "level": "レベル",
+  "points": "得点",
+  "followers": "フォロー中",
+
+  "newpost-placeholder": "今何してるの？",
+  "image": "画像",
+  "send": "送る",
+
+  "admin": "管理人",
+  "mod": "モデレータ",
+  "member": "メンバー"
   }
