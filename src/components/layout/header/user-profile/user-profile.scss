@@ -113,3 +113,23 @@
     transform: scale(1.2);
   }
 }
+
+.lang-select-list {
+  overflow: hidden;
+  background:rgba(0,0,0,0.10);
+  .wide-button {
+    background: none;
+  }
+  .wide-button:hover {
+    background: rgba(255,255,255,0.07);
+  }
+}
+
+.rounded-flag {
+  width:25px;
+  height:20px;
+  overflow: hidden;
+  border-radius: 5px;
+  filter:contrast(80%);
+  background-size:cover !important;
+}

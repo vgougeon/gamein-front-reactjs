@@ -6,6 +6,7 @@ import GamesPage from "./components/views/games/games.page";
 import UserPage from "./components/views/user/user.page";
 import GamePage from "./components/views/game/game.page";
 import UserProvider from "./services/auth/userProvider";
+import 'flag-icon-css/css/flag-icon.min.css';
 
 const Container = () => (
     <BrowserRouter>
