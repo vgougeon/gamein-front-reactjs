@@ -60,7 +60,7 @@ class UserProfile extends Component {
               <i className="fas fa-globe mr-3" /><span>{t('language')}</span>
             </div>
             <div className="d-flex align-items-center">
-              <span>Français</span><i className="open-menu fas fa-chevron-down ml-2" />
+              <span>{ t(i18n.language) }</span><i className="open-menu fas fa-chevron-down ml-2" />
             </div>
           </div>
         </div>
