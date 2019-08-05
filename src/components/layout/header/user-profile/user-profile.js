@@ -8,8 +8,13 @@ import { withTranslation } from 'react-i18next';
 class UserProfile extends Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = { active: false  }
   }
+
+  expandLang = () => {
+    this.setState({ active : !this.state.active })
+  }
+
   render() {
     const { t, i18n } = this.props;
     return ( 
@@ -48,13 +53,20 @@ class UserProfile extends Component {
         <div className="wide-button">
           <i className="fas fa-user-circle mr-3" /><span>{t('my-account')}</span>
         </div>
-        <div className="wide-button" onClick={() => i18n.changeLanguage('fr')}>
+        <div className="wide-button" onClick={ this.expandLang /*() => i18n.changeLanguage('fr')*/}>
           <div className="d-flex justify-content-between w-100">
             <div>
               <i className="fas fa-globe mr-3" /><span>{t('language')}</span>
             </div>
             <div className="d-flex align-items-center">
               <span>Français</span><i className="open-menu fas fa-chevron-down ml-2" />
+            </div>
+          </div>
+        </div>
+        <div className={"lang-select-list " + ((this.state.active) ? "lsl-expand" : "")}>
+          <div className="wide-button">
+            <div className="d-flex justify-content-between w-100">
+              <span>English</span>
             </div>
           </div>
         </div>

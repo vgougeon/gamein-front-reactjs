@@ -113,3 +113,14 @@
     transform: scale(1.2);
   }
 }
+
+.lang-select-list {
+  overflow: hidden;
+  max-height:0vh;
+  transition:max-height ease-in-out;
+  transition-duration: 0.5s;
+}
+
+.lsl-expand {
+  max-height: 100vh;
+}
