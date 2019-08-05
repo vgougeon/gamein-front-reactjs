@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Cropper from 'react-easy-crop'
 import './newSkin.scss';
 class NewSkin extends Component {
     constructor(props) {
