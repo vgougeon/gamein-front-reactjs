@@ -9,7 +9,10 @@ class GamePage extends Component {
             id: this.props.match.params.id,
             gameInfo: {
                 console: []
-            }
+            },
+            editor: true,
+
+            toggleEdit: this.toggleEdit
         }
     }
     componentDidMount() {
@@ -19,10 +22,15 @@ class GamePage extends Component {
             }));
         })
     }
+    toggleEdit = () => {
+        this.setState({
+            editor: !this.state.editor
+        })
+    }
     render() { 
         return ( 
             <section id="page-content">
-                <GameHeader {...this.state.gameInfo} />
+                <GameHeader {...this.state.gameInfo} editor={this.state.editor} toggleEdit={this.state.toggleEdit} />
             </section>
         );
     }
