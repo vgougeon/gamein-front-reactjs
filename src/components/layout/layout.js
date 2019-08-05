@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./header/header";
 import SideNav from "./sidenav/sidenav";
+import LoginPopup from "../shared/popup/login-popup/login-popup";
 
 class Layout extends Component {
   constructor(props) {
