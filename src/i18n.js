@@ -5,6 +5,7 @@ import { initReactI18next } from "react-i18next";
 
 import fr from './i18n/fr.json';
 import en from './i18n/en.json';
+import jp from './i18n/jp.json';
 
 const resources = {
   fr: {
@@ -12,6 +13,9 @@ const resources = {
   },
   en: {
     translation: en
+  },
+  jp: {
+    translation: jp
   }
 };
 
