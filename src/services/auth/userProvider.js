@@ -46,7 +46,7 @@ class UserProvider extends Component {
         })
     }
     signIn = (username, password) => {
-        axios.post('http://localhost:3001/signIn', 
+        axios.post('http://54.37.228.12/api/signIn', 
         { params: { 
             username: username,
             password: password
