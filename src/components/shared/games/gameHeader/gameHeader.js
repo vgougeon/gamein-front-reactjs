@@ -14,16 +14,16 @@ class GameHeader extends Component {
     }
     render() {
         return (
-            <React.Fragment>
+            <React.Fragment>  
                 <div className={ 'game-wrapper ' + (this.props.editor ? 'editor' : '')}>
                     { this.props.skins.length > 0 &&
-                    <img src={"http://njak.fr/assets/imgs/skins/" + this.props.skins[0].id + ".png"} 
+                    <img src={"http://54.37.228.12/f/skin/" + this.props.skins[0].id + ".jpg"} 
                     className="appear wrapper-banner"
                     alt="Game Banner" 
                     /> }
                     { this.props.editor &&
                     <Suspense fallback={<div>Loading...</div>}>
-                        <NewSkin />
+                        <NewSkin gameId={ this.props.id } />
                     </Suspense>
                     }
                     <div className="d-flex info-container">
