@@ -1,12 +1,18 @@
 .game-wrapper {
     width: 100%;
-    height: 280px;
+    height: 350px;
     background: var(--module);
     display: flex;
     align-items: center;
     position: relative;
     transition: 0.5s ease-out;
     color: white;
+    @media screen and (max-width: 1750px) {
+        height: 330px;
+    }
+    @media screen and (max-width: 1300px) {
+        height: 270px;
+    }
     @media screen and (max-width: 800px) {
         height: 160px;
     }
@@ -34,6 +40,7 @@
     }
     .info-container {
         height: 100%;
+        width: 100%;
         display: flex;
         align-items: center;
         .info {

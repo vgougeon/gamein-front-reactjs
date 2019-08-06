@@ -10,7 +10,7 @@ class GamePage extends Component {
             gameInfo: {
                 console: []
             },
-            editor: true,
+            editor: false,
 
             toggleEdit: this.toggleEdit
         }
