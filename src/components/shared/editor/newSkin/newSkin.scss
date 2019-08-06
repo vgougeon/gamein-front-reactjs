@@ -2,6 +2,8 @@
     width: 100%;
     padding-top: 20%;
     border-bottom: 1px solid var(--soft);
+    position: relative;
+    z-index: 6 !important;
     input[type="file"] {
         display :none;
     }
