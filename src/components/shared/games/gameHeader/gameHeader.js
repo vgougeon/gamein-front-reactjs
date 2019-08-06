@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import { NavLink } from 'react-router-dom';
-import NewSkin from '../../editor/newSkin/newSkin';
+// import NewSkin from '../../editor/newSkin/newSkin';
 import './gameHeader.scss';
 import '../gamecard/gamecard.scss'
+const NewSkin = React.lazy(() => import('../../editor/newSkin/newSkin'))
 class GameHeader extends Component {
     static defaultProps = {
         skins: []
@@ -21,7 +22,9 @@ class GameHeader extends Component {
                     alt="Game Banner" 
                     /> }
                     { this.props.editor &&
-                    <NewSkin />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <NewSkin />
+                    </Suspense>
                     }
                     <div className="d-flex info-container">
                         { this.props.id && <img src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} 
