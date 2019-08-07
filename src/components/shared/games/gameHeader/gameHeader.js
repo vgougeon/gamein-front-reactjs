@@ -15,32 +15,34 @@ class GameHeader extends Component {
     }
     render() {
         return (
-            <React.Fragment>  
-                <div className={ 'game-wrapper ' + (this.props.editor ? 'editor' : '')}>
-                    { this.props.skins.length > 0 &&
-                    <img src={"http://54.37.228.12/f/skin/" + this.props.skins[0].id + ".jpg"} 
-                    className="appear wrapper-banner"
-                    alt="Game Banner" 
-                    /> }
-                    { this.props.editor &&
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <NewSkin gameId={ this.props.id } />
-                    </Suspense>
-                    }
-                    <div className="d-flex info-container">
-                        { this.props.id && <img src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} 
-                        className="cover s-1"
-                        alt="Game Cover"
+            <React.Fragment>
+                <div className="game-wrapper-container">
+                    <div className={ 'game-wrapper ' + (this.props.editor ? 'editor' : '')}>
+                        { this.props.skins.length > 0 &&
+                        <img src={"http://54.37.228.12/f/skin/" + this.props.skins[0].id + ".jpg"} 
+                        className="appear wrapper-banner"
+                        alt="Game Banner" 
                         /> }
-                        <div className="d-flex flex-column info">
-                            <span className="name">{this.props.name}</span>
-                            <span className="username">{this.props.release_year}</span>
-                            <div className="d-flex">
-                            { this.props.console.map((console) =>
-                                <span key={console.id} className="console s-1 mr-1 mt-1" style={{ background: console.background, color: console.color }}>
-                                    {console.short}
-                                </span>
-                            )}
+                        { this.props.editor &&
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <NewSkin gameId={ this.props.id } />
+                        </Suspense>
+                        }
+                        <div className="d-flex info-container">
+                            { this.props.id && <img src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} 
+                            className="cover s-1"
+                            alt="Game Cover"
+                            /> }
+                            <div className="d-flex flex-column info">
+                                <span className="name">{this.props.name}</span>
+                                <span className="username">{this.props.release_year}</span>
+                                <div className="d-flex">
+                                { this.props.console.map((console) =>
+                                    <span key={console.id} className="console s-1 mr-1 mt-1" style={{ background: console.background, color: console.color }}>
+                                        {console.short}
+                                    </span>
+                                )}
+                                </div>
                             </div>
                         </div>
                     </div>
