@@ -20,7 +20,7 @@ class NewSkin extends Component {
     }
     sendSkin = async () => {
         let formData = new FormData();
-        let img = await this.cropper.getCroppedCanvas().toDataURL('image/jpeg', 0.88);
+        let img = await this.cropper.getCroppedCanvas().toDataURL('image/jpeg', 0.9);
         console.log(img)
         img = await this.dataURItoBlob(img)
         await formData.append("skin", img);
@@ -35,15 +35,13 @@ class NewSkin extends Component {
         })
     }
     dataURItoBlob = (dataURI) => {
-        // convert base64/URLEncoded data component to raw binary data held in a string
+        //Fonction trouvée sur internet pour convertir dans le bon format pour le form
         var byteString;
         if (dataURI.split(',')[0].indexOf('base64') >= 0)
             byteString = atob(dataURI.split(',')[1]);
         else
             byteString = unescape(dataURI.split(',')[1]);
-        // separate out the mime component
         var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-        // write the bytes of the string to a typed array
         var ia = new Uint8Array(byteString.length);
         for (var i = 0; i < byteString.length; i++) {
             ia[i] = byteString.charCodeAt(i);
