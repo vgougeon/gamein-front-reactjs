@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Post from "../../shared/feed/post/post";
 import NewPost from "../../shared/feed/newPost/newPost";
-import UserCard from "../../shared/user/userCard/userCard";
 import Test from './test';
 import ClassTest from './classtest';
 import TestWithTranslation from './withTranslation';
@@ -43,7 +42,6 @@ class HomePage extends Component {
       <section id="page-content">
         <div className="row mt-g g-g row-p-0">
           <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
-						<UserCard />
 					</div>
           <div className="col-xl-6 col-lg-12">
             <NewPost addPost={this.addPost}/>

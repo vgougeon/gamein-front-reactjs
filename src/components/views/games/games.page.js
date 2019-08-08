@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import GameCard from "../../shared/games/gamecard/gamecard";
-import UserCardMin from "../../shared/user/userCardMin/userCardMin";
 import Spinner from '../../shared/spinner/spinner-standard';
 import ShowMore from '../../shared/elements/showMore';
 
@@ -48,10 +47,7 @@ class GamesPage extends Component {
 		return (
 			<section id="page-content">
 				<div className="row mt-g g-g row-p-0">
-					<div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
-						<UserCardMin />
-					</div>
-					<div className="col-xl-9 col-lg-9">
+					<div className="col-xl-12 col-lg-12">
 						<div className={"games " + this.state.view}>
 							{this.state.games.map((game) =>
 								<GameCard key={game.id} {...game} />
@@ -63,8 +59,6 @@ class GamesPage extends Component {
 							: <ShowMore action={ this.appendGames }/>
 							}
 						</div>
-					</div>
-					<div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
 					</div>
 				</div>
 			</section>
