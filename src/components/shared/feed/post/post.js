@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import './post.scss';
 import Comments from '../comments/comments';
 import { withTranslation } from 'react-i18next';
@@ -9,6 +10,7 @@ class Post extends Component {
     super(props);
     this.state = { 
       likes: this.props.likes,
+      liked: this.props.account_id,
       comments: this.props.comments,
       active: false
     }
@@ -27,9 +29,29 @@ class Post extends Component {
     }
   }
 
-    showComments = () => {
-      this.setState({active : !this.state.active });
-    }
+  showComments = () => {
+    this.setState({active : !this.state.active });
+  }
+
+  likePost = () => {
+    let data = { id: this.props.id}
+    axios.post('http://54.37.228.12/api/likePost', data)
+    .then(res => {
+      if(res.data === 1){ 
+        this.setState(state => ({
+          likes: state.likes + 1,
+          liked: true
+        }))
+      }
+      else if(res.data === -1){
+        this.setState(state => ({
+          likes: state.likes - 1,
+          liked: false
+        }))
+      }
+      
+    })
+  }
 
   render() { 
     const { t } = this.props;
@@ -59,8 +81,11 @@ class Post extends Component {
         <div className="content-footer px-g">
             <p className="text-muted text-size-s my-0">{ this.props.dateformat }</p>
             <div className="d-flex feed-tools align-items-center">
-                <i className="far fa-heart pl-3 pr-2"></i><span className="font-weight-bold">{ this.state.likes }</span>
-                <i className="far fa-comment pl-3 pr-2" onClick={this.showComments}></i><span className="font-weight-bold">{ this.state.comments }</span>
+                <i className={ 'fa-heart pl-3 pr-2 ' + (this.state.liked ? 'fas liked' : 'far')}
+                onClick={ this.likePost } />
+                <span className="font-weight-bold">{ this.state.likes }</span>
+                <i className="far fa-comment pl-3 pr-2" onClick={this.showComments} />
+                <span className="font-weight-bold">{ this.state.comments }</span>
             </div>
         </div>
     </div>
