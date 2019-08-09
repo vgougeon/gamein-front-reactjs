@@ -13,9 +13,8 @@ class NewPost extends Component {
     let self = this
     e.preventDefault();
     const data = new FormData(e.target);
-    console.log(data.files)
 
-    axios.post('http://api.njak.fr/newPost', data, 
+    axios.post('http://54.37.228.12/api/newPost', data, 
     {onUploadProgress(progressEvent){
       self.setState({
         isLoading: (progressEvent.loaded / progressEvent.total) * 100

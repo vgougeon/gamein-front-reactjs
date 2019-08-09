@@ -93,6 +93,7 @@
 .account {
     .menu {
         width: 100%;
+        overflow-x: visible;
         background: var(--module);
         height: 45px;
         display: flex;
@@ -101,6 +102,8 @@
         a,.menu-item {
             color: var(--color);
             font-size: 16px;
+            min-width: fit-content;
+            height: 45px;
             height: 100%;
             font-weight: bold;
             border-bottom: 4px solid transparent;

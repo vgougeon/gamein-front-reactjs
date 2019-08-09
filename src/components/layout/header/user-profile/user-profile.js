@@ -39,15 +39,15 @@ class UserProfile extends Component {
       <div className="d-flex justify-content-between my-1">
         <div className="stat pb-1 pt-2">
           <span className="font-weight-bold text-size-l">{ this.props.level }</span>
-          <span className="text-size-xs">{t('lvl')}</span>
+          <span className="text-size-xs">{t('level')}</span>
         </div>
         <div className="stat pb-1 pt-2">
           <span className="font-weight-bold text-size-l">{ this.props.points }</span>
-          <span className="text-size-xs">{t('pts')}</span>
+          <span className="text-size-xs">{t('points')}</span>
         </div>
         <div className="stat pb-1 pt-2">
           <span className="font-weight-bold text-size-l">{ this.props.followers }</span>
-          <span className="text-size-xs">{t('sub')}</span>
+          <span className="text-size-xs">{t('followers')}</span>
         </div>
       </div>
       <div className="d-flex flex-column mt-1">
