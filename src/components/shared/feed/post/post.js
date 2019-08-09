@@ -52,7 +52,7 @@ class Post extends Component {
             this.props.path &&
             <React.Fragment>
               <div className="fas fa-angle-double-down expand"></div>
-              <img alt="Post media" src={'http://api.njak.fr/assets/imgs/posts/' + this.props.path }/>
+              <img alt="Post media" src={'http://54.37.228.12/f/posts/' + this.props.path }/>
             </React.Fragment>
           }
         </div>
