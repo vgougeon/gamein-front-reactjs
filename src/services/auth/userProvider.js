@@ -43,6 +43,7 @@ class UserProvider extends Component {
     }
     signOut = () => {
         localStorage.setItem("token", null);
+        delete axios.defaults.headers.common["Authorization"];
         this.setState({
             isLoading: false,
             isLoggedIn: false,
