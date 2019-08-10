@@ -7,7 +7,7 @@ import { withTranslation } from 'react-i18next';
 import Interweave from 'interweave';
 import marked from 'marked'
 
-
+marked.setOptions({ breaks: true });
 class Post extends Component {
   constructor(props) {
     super(props);
