@@ -1,6 +1,25 @@
 .feed {
-  
-
+  h1 {
+    font-size: 1.3rem;
+  }
+  h2, h3, h4, h5, h6 {
+    font-size: 1.15rem;
+  }
+  table {
+    width: 100%;
+    border: 2px solid var(--soft);
+    th {
+      padding: .2rem .4rem;
+      text-align: center;
+      border: 1px solid var(--soft);
+      border-bottom: 2px solid var(--soft);
+      background: var(--soft);
+    }
+    td {
+      border: 1px solid var(--soft);
+      padding: .2rem;
+    }
+  }
   .info {
     display: flex;
     img{

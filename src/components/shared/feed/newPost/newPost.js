@@ -13,6 +13,7 @@ class NewPost extends Component {
     let self = this
     e.preventDefault();
     const data = new FormData(e.target);
+    this.newPostRef.reset();
 
     axios.post('http://54.37.228.12/api/newPost', data, 
     {onUploadProgress(progressEvent){
@@ -25,13 +26,14 @@ class NewPost extends Component {
         'Content-Type': 'multipart/form-data'
       }})
       .then(res => {
-        console.log(res.data)
-        this.props.addPost([res.data]);
-        self.setState({
-          isLoading: false,
-          file: null,
-          inputKey : Date.now()
-        })
+        if(res.status === 200){
+          this.props.addPost([res.data]);
+          self.setState({
+            isLoading: false,
+            file: null,
+            inputKey : Date.now()
+          })
+        }
     })
   }
 
@@ -56,6 +58,7 @@ class NewPost extends Component {
           <form
             encType="multipart/form-data"
             onSubmit={ this.submitPost }
+            ref={(el) => this.newPostRef = el }
           >
             <textarea
               className="p-g"
