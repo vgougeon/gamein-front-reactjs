@@ -2,50 +2,67 @@ import React, { Component } from "react";
 import './comments.scss';
 import axios from "axios";
 import PostComments from './postComments/postComments';
+import AnimateHeight from 'react-animate-height';
 
 class Comments extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={comments: [],
-            idpost: this.props.idpost
-            }
+        this.state = {
+            comments: [],
+            idpost: this.props.idpost,
+            height: 0
+        }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.appendComments();
     }
 
     getComments() {
-        return axios.get("http://54.37.228.12/api/getComments?post="+this.state.idpost, {
+        return axios.get("http://54.37.228.12/api/getComments?post=" + this.state.idpost, {
         });
-      }
+    }
 
-      appendComments(){
+    appendComments() {
         this.getComments().then(response => {
             if (response.data.length) {
-              this.setState(state => ({
-                comments: [...this.state.comments, ...response.data]
-              }));
+                this.setState(state => ({
+                    comments: [...this.state.comments, ...response.data],
+                }));
+                
             }
-          });
-      }
+            this.setState({
+                height: 'auto'
+            })
+        });
+        
+    }
+    newComment = (data) => {
+        this.setState(state => ({
+            comments: [...this.state.comments, ...data]
+        }));
+    }
     render() {
-        return(
-            <div className={"box comments " + ((this.props.active) ? "toggleOn" : "")}>
-                <div className="px-g d-flex flex-column" id="comment-container">
-                {this.state.comments.map((comment, index) => (
-                    <div key={index + "-" + this.state.idpost} className="d-flex mt-g comment-item">
-                        <img className="small-avatar mr-2" src={ "http://njak.fr/assets/imgs/accounts/" + comment.avatar } alt=""/>
+        return (
+            <AnimateHeight
+            duration={ 300 }
+            height={ this.state.height }
+            >
+            <div className={"box comments toggleOn"}>
+                <div className="d-flex flex-column" id="comment-container">
+                    {this.state.comments.map((comment, index) => (
+                        <div key={index + "-" + this.state.idpost} className="d-flex comment-item px-3 py-2">
+                            <img className="small-avatar mr-2" src={"http://njak.fr/assets/imgs/accounts/" + comment.avatar} alt="" />
                             <div className="d-flex flex-column">
-                                <a className="w-fit" href={ "./user/" + comment.display_name }><span className="mb-0">{comment.username}</span></a>
-                                    <span>{comment.content}</span>
+                                <a className="w-fit" href={"./user/" + comment.display_name}><span className="mb-0">{comment.username}</span></a>
+                                <span>{comment.content}</span>
                             </div>
-                    </div>
-                ))}
+                        </div>
+                    ))}
                 </div>
-                <PostComments />
+                <PostComments id={this.state.idpost} newComment={this.newComment} />
             </div>
-            
+            </AnimateHeight>
 
         );
     }
