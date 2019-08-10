@@ -23,7 +23,7 @@ class GamesPage extends Component {
 		state = {...this.state, scroll: document.getElementById("page-content").scrollTop};
 	}
 	getGames() {
-		return axios.get('http://api.njak.fr/getGames', { params: { offset: this.state.offset } });
+		return axios.get('http://54.37.228.12/api/getGames', { params: { offset: this.state.offset } });
 	}
 	appendGames() {
 		this.setState({ isLoading : true })
