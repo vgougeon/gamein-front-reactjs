@@ -15,7 +15,7 @@ class NewPost extends Component {
     const data = new FormData(e.target);
     this.newPostRef.reset();
 
-    axios.post('http://127.0.0.1:3001/newPost', data, 
+    axios.post('http://54.37.228.12/api/newPost', data, 
     {onUploadProgress(progressEvent){
       self.setState({
         isLoading: (progressEvent.loaded / progressEvent.total) * 100
