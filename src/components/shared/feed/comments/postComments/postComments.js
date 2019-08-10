@@ -6,7 +6,6 @@ import './postComments.scss';
 class PostComments extends Component {
     static contextType = UserContext;
     submitComment = (e) => {
-        
         e.preventDefault();
         const data = new FormData(e.target);
         data.append("post_id", this.props.id);
@@ -22,7 +21,9 @@ class PostComments extends Component {
         return(
         <form onSubmit={ this.submitComment } ref={(el) => this.newCommentRef = el }>
             <div className="textarea-post m-g d-flex align-items-center">
-                <textarea className="p-g comment-textarea" name="content" placeholder="Commentez !" style={{overflow: 'hidden', overflowWrap: 'break-word', resize: 'none', height: '54px'}} />
+                <textarea className="p-g comment-textarea" name="content" placeholder="Commentez !" 
+                style={{overflow: 'hidden', overflowWrap: 'break-word', resize: 'none', height: '54px'}}
+                />
                 <input type="submit" className="submit-comment ml-2" value="Envoyer"/>
             </div>
         </form>
