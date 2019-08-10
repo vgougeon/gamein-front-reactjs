@@ -18,16 +18,20 @@ class PostComments extends Component {
         })
     }
     render() {
-        return(
-        <form onSubmit={ this.submitComment } ref={(el) => this.newCommentRef = el }>
-            <div className="textarea-post m-g d-flex align-items-center">
-                <textarea className="p-g comment-textarea" name="content" placeholder="Commentez !" 
-                style={{overflow: 'hidden', overflowWrap: 'break-word', resize: 'none', height: '54px'}}
-                />
-                <input type="submit" className="submit-comment ml-2" value="Envoyer"/>
-            </div>
-        </form>
-        );
+        if(this.context.isLoggedIn){
+            return(
+            <form onSubmit={ this.submitComment } ref={(el) => this.newCommentRef = el }>
+                <div className="textarea-post m-g d-flex align-items-center">
+                    <textarea className="p-g comment-textarea" name="content" placeholder="Commentez !" 
+                    style={{overflow: 'hidden', overflowWrap: 'break-word', resize: 'none', height: '54px'}}
+                    />
+                    <input type="submit" className="submit-comment ml-2" value="Envoyer"/>
+                </div>
+            </form>
+            );
+            } else {
+            return null
+        }
     }
 }
 export default PostComments;
