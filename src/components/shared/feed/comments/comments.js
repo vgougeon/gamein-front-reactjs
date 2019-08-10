@@ -49,7 +49,7 @@ class Comments extends Component {
             height={ this.state.height }
             >
             <div className={"box comments toggleOn"}>
-                <div className="d-flex flex-column" id="comment-container">
+                <div className="d-flex flex-column py-2" id="comment-container">
                     {this.state.comments.map((comment, index) => (
                         <div key={index + "-" + this.state.idpost} className="d-flex comment-item px-3 py-2">
                             <img className="small-avatar mr-2" src={"http://njak.fr/assets/imgs/accounts/" + comment.avatar} alt="" />
