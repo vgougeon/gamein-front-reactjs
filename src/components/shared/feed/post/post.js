@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './post.scss';
 import Comments from '../comments/comments';
 import { withTranslation } from 'react-i18next';
+import Interweave from 'interweave';
+import marked from 'marked'
+
 
 class Post extends Component {
   constructor(props) {
@@ -67,7 +70,7 @@ class Post extends Component {
             </div>
         </div>
         <div className="content px-g">
-            <p>{ this.props.content }</p>
+          <Interweave content={ marked(this.props.content) } />
         </div>
         <div className="content-images" onClick={ this.expand }>
           {

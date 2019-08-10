@@ -22,7 +22,7 @@ class HomePage extends Component {
     }))
   }
   getPosts() {
-    return axios.get("http://54.37.228.12/api/getPosts", {
+    return axios.get("http://localhost:3001/getPosts", {
       params: { offset: this.state.offset }
     });
   }
