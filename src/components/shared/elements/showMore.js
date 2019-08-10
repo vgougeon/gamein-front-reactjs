@@ -18,11 +18,11 @@ class ShowMore extends Component {
     return (
       <React.Fragment>
         <button
-          className={(this.state.ready ? "ready " : "") + "mx-auto stroked showMore"}
+          className={(this.state.ready ? "ready " : "") + "mx-auto showMore"}
           onClick={this.props.action}
           style={{ marginBottom: this.state.spacing }}
         >
-          Voir plus !
+          Afficher plus
         </button>
       </React.Fragment>
     );

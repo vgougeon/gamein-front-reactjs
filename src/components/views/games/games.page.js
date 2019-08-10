@@ -47,7 +47,17 @@ class GamesPage extends Component {
 		return (
 			<section id="page-content">
 				<div className="row mt-g g-g row-p-0">
-					<div className="col-xl-12 col-lg-12">
+					<div className="col-sm-3">test</div>
+					<div className="col-xl-9 col-lg-9">
+						<div className="panel-games d-flex justify-content-space-between">
+						<div className="rank-select">
+							<span>Classement par popularité </span>
+						<span class="ml-5 opacity">
+						<i class="fas fa-chevron-down"></i></span></div>
+						</div>
+
+						<div className="toggle-layout"></div>
+
 						<div className={"games " + this.state.view}>
 							{this.state.games.map((game) =>
 								<GameCard key={game.id} {...game} />

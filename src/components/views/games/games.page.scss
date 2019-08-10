@@ -10,3 +10,15 @@
   margin-left: -7px;
   margin-right: -7px;
 }
+.panel-games {
+  margin-bottom:16px;
+  .rank-select {
+    background:rgba(0,0,0,0.15);
+    padding:0.4rem 1.7rem;
+    border-radius:999px;
+    box-sizing: border-box;
+    .opacity {
+      opacity:0.6;
+    }
+  }
+}

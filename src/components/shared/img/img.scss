@@ -6,7 +6,7 @@ img.loadImg {
   }
 }
 .img-ratio {
-  width: 120px;
+  width: 110px;
   @media screen and (max-width: 800px) {
     width: 95px;
   }
@@ -15,7 +15,7 @@ img.loadImg {
   position: relative;
   .ratio-box {
     width: 100%;
-    padding-top: 115%;
+    padding-top: 135%;
     img.ratio {
       height: 100%;
       width: 100%;
@@ -24,7 +24,6 @@ img.loadImg {
       left: 0;
       object-fit: cover;
       border: 3px solid var(--soft);
-      border-radius: 6px;
     }
   }
   

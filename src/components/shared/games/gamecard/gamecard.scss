@@ -1,6 +1,9 @@
 .games{
+  .box {
+    border-radius: 0;
+  }
   .game-item {
-    padding: .5rem;
+    padding: 1rem;
     height: auto;
     animation: 0.5s fromTop ease-in-out;
     display: flex;
@@ -8,11 +11,49 @@
     max-width: 100%;
     min-width: 250px;
     flex-basis: 400px;
+
+    .game-item-content {
+      z-index: 1;
+      display: flex;
+      flex-grow: 1;
+      flex-basis: 400px;
+
+      .gi-infos {
+        line-height: 1.2rem;
+      }
+
+      .rank-icon {
+        position: relative;
+        width:45px;
+        .bg-rank-icon {
+          position: absolute;
+          width:100%;
+        }
+        .rank-number {
+          margin-top:0.15rem;
+          font-size:0.9em;
+          sup {
+            font-size:0.6em;
+          }
+        }
+      }
+      
+    }
+    .bg-game {
+      background: url('https://i.pinimg.com/originals/a0/83/08/a08308e2a86b5053dc000e152081a12c.jpg') center no-repeat;
+      background-size: cover;
+      position: absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      opacity: 0.25;
+    }
     a {
       color: var(--color);
       font-weight: 600;
       opacity: 1;
-      line-height: 0.9rem;
+      line-height: 1rem;
       &:hover {
         color: var(--theme);
       }
@@ -20,6 +61,7 @@
     span {
       &.date {
         font-size: .9rem;
+        opacity: 0.6;
       }
     }
   }
@@ -54,10 +96,10 @@
 span.console {
   width: fit-content;
   height: fit-content;
-  border-radius: 3px;
+  border-radius: 999px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .2rem .8rem;
+  padding: .2rem 1.2rem;
   font-size: 0.7rem;
 }

@@ -2,8 +2,17 @@ button.showMore {
   opacity: 0;
   visibility: hidden;
   transition: 0.2s;
+  background:var(--header);
+  border:none;
+  border-radius: 999px !important ;
+  padding:0 3rem;
+  outline:none;
+  box-shadow: none;
   &.ready {
     opacity: 1;
     visibility: visible;
   }
+}
+.showMore:hover {
+  filter: brightness(1.1);
 }
