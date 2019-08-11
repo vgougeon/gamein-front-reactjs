@@ -63,7 +63,7 @@ class FilterPanel extends Component {
             this.setState({
                 consoles: res.data
             })
-            this.expand(0)
+            //this.expand(0)
         })
     }
     expand = (id) => {
@@ -73,7 +73,7 @@ class FilterPanel extends Component {
             expanded
         })
     } 
-    //car imaginons il y je ne sais pas 36 élements à affficher bah ça va descendre bien bas ah oui pas faux
+    
     render() { 
         const { t } = this.props
         return ( 
