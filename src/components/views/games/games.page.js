@@ -73,10 +73,12 @@ class GamesPage extends Component {
 					</div>
 					<div className="col-xl-9 col-lg-9">
 						<div className="panel-games d-flex justify-content-between">
-							<div className="rank-select">
-								<span>Classement par popularité </span>
-								<i className="ml-5 fas fa-chevron-down"/>
-							</div>
+								<div className="rank-select">
+									<div className="rs-item">
+										<span>Classement par popularité </span>
+										<i className="ml-5 fas fa-chevron-down"/>
+									</div>
+								</div>
 							<div className="toggle-layout">
 								<span className="tl-active pt-1"><i className="fas fa-th"></i></span>
 							</div>
