@@ -21,5 +21,8 @@
 
   "admin": "Admin",
   "mod": "Mod",
-  "member": "Member"
+  "member": "Member",
+
+  "search-filter": "Search a filter...",
+  "entries" : "entries"
 }

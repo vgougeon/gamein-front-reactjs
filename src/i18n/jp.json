@@ -19,5 +19,8 @@
 
   "admin": "管理人",
   "mod": "モデレータ",
-  "member": "メンバー"
+  "member": "メンバー",
+
+  "search-filter": "フィルターを検索する",
+  "entries" : "選択"
   }

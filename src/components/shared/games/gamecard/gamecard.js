@@ -6,7 +6,8 @@ class GameCard extends Component {
   render() {
     return (
       <div className="game-item box s-1 mx-g2 mb-g">
-        <div className="bg-game"></div>
+        <div className="bg-gradient"></div>
+        {/* <Img className="bg-game" src={`http://54.37.228.12/f/skin/${this.props.skin[0]}.jpg`} /> */}
         <div className="game-item-content">
           <Img 
             src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} 

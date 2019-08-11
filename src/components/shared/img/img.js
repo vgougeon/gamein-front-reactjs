@@ -12,7 +12,7 @@ class Img extends Component {
     if(this.props.ratio === undefined){
       return ( 
         <img 
-        className={ 'loadImg ' + (this.state.loaded ? "loaded" : "")}
+        className={ this.props.className + ' loadImg ' + (this.state.loaded ? "loaded" : "")}
         src={ this.props.src } 
         alt={ this.props.alt } 
         onLoad={ this.onLoad }

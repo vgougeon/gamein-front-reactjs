@@ -3,32 +3,36 @@ import axios from 'axios';
 import GameCard from "../../shared/games/gamecard/gamecard";
 import Spinner from '../../shared/spinner/spinner-standard';
 import ShowMore from '../../shared/elements/showMore';
+import FilterPanel from './filterPanel/filterPanel';
 
 import './games.page.scss';
 
-let state = { games: [], offset: 0, scroll: 0, isLoading: true }
+let state = { games: [], offset: 0, scroll: 0, isLoading: true, filters: {} }
 
 class GamesPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = state;
-		this.appendGames = this.appendGames.bind(this);
 	}
 	componentDidMount() {
 		if (!this.state.games.length)
-			this.appendGames();
+			this.getGames();
 		document.getElementById("page-content").scrollTop = this.state.scroll
 	}
 	componentWillUnmount() {
 		state = {...this.state, scroll: document.getElementById("page-content").scrollTop};
 	}
-	getGames() {
-		return axios.get('http://54.37.228.12/api/getGames', { params: { offset: this.state.offset } });
+	componentDidUpdate(prevProps, prevState) {
+		if(prevState.filters !== this.state.filters){
+			this.getGames()
+		}
 	}
-	appendGames() {
-		this.setState({ isLoading : true })
+	getGames = () => {
 		let self = this
-		this.getGames().then(response => {
+		console.log(this.state)
+		console.log('req with offset ' + this.state.offset)
+		axios.post('http://localhost:3001/getGames',{ offset: this.state.offset, filters: this.state.filters })
+		.then(response => {
 			if(response.data.length){
 				self.setState(state => ({
 					games: [...self.state.games, ...response.data],
@@ -43,21 +47,41 @@ class GamesPage extends Component {
 			}
 		})
 	}
+	resetGames = (filters) => {
+		this.setState({
+			games: [],
+			offset: 0,
+			scroll: 0,
+			isLoading: true
+		}, this.getGames(filters))
+	}
+	setFilters = (filters) => {
+		console.log('Set FILTERS')
+		this.setState({
+			games: [],
+			offset: 0,
+			scroll: 0,
+			isLoading: true,
+			filters: filters
+		})
+	}
 	render() {
 		return (
 			<section id="page-content">
 				<div className="row mt-g g-g row-p-0">
-					<div className="col-sm-3">test</div>
+					<div className="col-xl-3">
+						<FilterPanel setFilters={ this.setFilters } /> 
+					</div>
 					<div className="col-xl-9 col-lg-9">
-						<div className="panel-games d-flex justify-content-space-between">
-						<div className="rank-select">
-							<span>Classement par popularité </span>
-						<span class="ml-5 opacity">
-						<i class="fas fa-chevron-down"></i></span></div>
+						<div className="panel-games d-flex justify-content-between">
+							<div className="rank-select">
+								<span>Classement par popularité </span>
+								<i className="ml-5 fas fa-chevron-down"/>
+							</div>
+							<div className="toggle-layout">
+								<span className="tl-active pt-1"><i className="fas fa-th"></i></span>
+							</div>
 						</div>
-
-						<div className="toggle-layout"></div>
-
 						<div className={"games " + this.state.view}>
 							{this.state.games.map((game) =>
 								<GameCard key={game.id} {...game} />
@@ -66,7 +90,7 @@ class GamesPage extends Component {
 						<div className="loading-block">
 							{ this.state.isLoading ? 
 							<div className="d-flex justify-content-center w-100"><Spinner size={30} /></div>
-							: <ShowMore action={ this.appendGames }/>
+							: <ShowMore action={ this.getGames }/>
 							}
 						</div>
 					</div>

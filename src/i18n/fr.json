@@ -19,5 +19,8 @@
 
   "admin": "Admin",
   "mod": "Mod",
-  "member": "Membre"
+  "member": "Membre",
+
+  "search-filter": "Rechercher un filtre...",
+  "entries" : "sélections"
 }

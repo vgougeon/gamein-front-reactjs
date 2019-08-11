@@ -39,15 +39,27 @@
       }
       
     }
-    .bg-game {
-      background: url('https://i.pinimg.com/originals/a0/83/08/a08308e2a86b5053dc000e152081a12c.jpg') center no-repeat;
-      background-size: cover;
+    img.bg-game {
       position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       top:0;
       bottom:0;
       left:0;
       right:0;
       opacity: 0.25;
+    }
+    .bg-gradient {
+      background: linear-gradient(transparent, var(--bg));
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.65;
     }
     a {
       color: var(--color);
