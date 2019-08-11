@@ -23,6 +23,10 @@
   "mod": "Mod",
   "member": "Member",
 
+  "show-more" : "Show more",
   "search-filter": "Search a filter...",
-  "entries" : "entries"
+  "entries" : "entries",
+  "consoles" : "Consoles",
+  "genres" : "Genres",
+  "unselall" : "Unselect all"
 }

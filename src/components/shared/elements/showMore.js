@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./showMore.scss";
+import { withTranslation } from 'react-i18next';
 
 class ShowMore extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class ShowMore extends Component {
     );
   }
   render() {
+    const { t } = this.props
     return (
       <React.Fragment>
         <button
@@ -22,11 +24,11 @@ class ShowMore extends Component {
           onClick={this.props.action}
           style={{ marginBottom: this.state.spacing }}
         >
-          Afficher plus
+          {t('show-more')}
         </button>
       </React.Fragment>
     );
   }
 }
 
-export default ShowMore;
+export default withTranslation()(ShowMore);

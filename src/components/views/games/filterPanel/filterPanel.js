@@ -82,7 +82,7 @@ class FilterPanel extends Component {
                 <input className="search-filter w-100 p-4" type="search" placeholder={t('search-filter')} />
                 <div className="filter-category">
                     <div className="head" onClick={() => this.expand(0) }>
-                        <span>Consoles <span className="quantity">{ this.state.consoles.length }</span></span>
+                        <span>{t('consoles')} <span className="quantity">{ this.state.consoles.length }</span></span>
                         { this.state.filters.consoles.length !== 0 &&
                         <div className="current-filters">
                             <span>{this.state.filters.consoles.length + ' ' + t('entries') }</span>
@@ -112,9 +112,9 @@ class FilterPanel extends Component {
                 </div>
                 <div className="filter-category">
                     <div className="head" onClick={() => this.expand(1) }>
-                        <span>Genre <span className="quantity">45</span></span>
+                        <span>{t('genres')} <span className="quantity">45</span></span>
                         <div className="current-filters">
-                            <span>1 sélection</span>
+                            <span>1 {t('entries')}</span>
                             <i className="fas fa-times" />
                         </div>
                     </div>
@@ -137,7 +137,7 @@ class FilterPanel extends Component {
                     </AnimateHeight>
                 </div>
                 <div className="btn-unselect-all mt-2 mb-2"
-                onClick={ this.deselectAll }>Tout désélectionner</div>
+                onClick={ this.deselectAll }>{t('unselall')}</div>
             </div>
             </React.Fragment>
         );

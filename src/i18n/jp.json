@@ -21,6 +21,10 @@
   "mod": "モデレータ",
   "member": "メンバー",
 
+  "show-more" : "をさらに表示",
   "search-filter": "フィルターを検索する",
-  "entries" : "選択"
+  "entries" : "選択",
+  "consoles" : "ゲーム機",
+  "genres":"ジャンル",
+  "unselall" : "すべて選択解除"
   }

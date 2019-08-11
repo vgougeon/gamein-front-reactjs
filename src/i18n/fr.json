@@ -21,6 +21,10 @@
   "mod": "Mod",
   "member": "Membre",
 
+  "show-more" : "Afficher plus",
   "search-filter": "Rechercher un filtre...",
-  "entries" : "sélections"
+  "entries" : "sélections",
+  "consoles" : "Consoles",
+  "genres" : "Genres",
+  "unselall" : "Tout désélectionner"
 }
