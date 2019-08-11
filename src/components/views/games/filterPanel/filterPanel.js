@@ -104,7 +104,9 @@ class FilterPanel extends Component {
                             { this.state.consoles.map((console) =>
                                 <div className={ 'item ' + (this.state.filters.consoles.indexOf(console) !== -1 ? 'selected' : '')}
                                 onClick={() => this.consoleClick(console)}>
-                                    <img src={'http://54.37.228.12/f/consoles/' + console.id + '.jpg' } />
+                                    <div className="img-item" style={{ background: console.background }}>
+                                        <img src={'http://54.37.228.12/f/consoles/' + console.id + '.png'} alt={ console.name }/>
+                                    </div>
                                 </div>
                             )}
                         </div>
