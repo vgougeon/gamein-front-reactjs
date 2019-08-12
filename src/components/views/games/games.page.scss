@@ -12,18 +12,33 @@
 }
 .panel-games {
   margin-bottom:16px;
+
+  .panel-game-inner{
+    position: absolute;
+  }
   .rank-select {
     background:rgba(0,0,0,0.15);
     padding: 0 1.5rem;
     display: flex;
+    flex-direction: column;
     height: 2.5rem;
-    align-items: center;
     border-radius: 999px;
     cursor:pointer;
+    overflow: hidden;
+    transition:0.5s;
     i {
       opacity: 0.75;
       margin-top: 2px;
     }
+    .rs-item {
+      display:flex;
+      align-items: center;
+      height: 2.5rem;
+    }
+  }
+  .rs-expanded {
+    height: auto;
+    border-radius: 10px;
   }
 
   .toggle-layout {
@@ -43,3 +58,4 @@
 
   }
 }
+
