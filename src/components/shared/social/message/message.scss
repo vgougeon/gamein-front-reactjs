@@ -1,0 +1,26 @@
+.message-container {
+    width: 100%;
+    padding: 15px 20px 15px 18px;
+    display: flex;
+    border-bottom: 1px solid var(--soft);
+    .avatar-container {
+        min-width: 45px;
+        flex-basis: 45px;
+        height: 45px;
+        margin-right: 14px;
+    }
+    .message-content {
+        display: flex;
+        flex-direction: column;
+    }
+    span.username {
+        font-weight: 600;
+        color: var(--theme);
+    }
+    span.message {
+        font-weight: 400;
+        opacity: .65;
+        font-size: .9rem;
+        letter-spacing: .01rem;
+    }
+}

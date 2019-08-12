@@ -63,7 +63,6 @@ class FilterPanel extends Component {
             this.setState({
                 consoles: res.data
             })
-            //this.expand(0)
         })
     }
     expand = (id) => {

@@ -1,0 +1,52 @@
+.social-container {
+    height: 100%;
+    width: var(--header-size);
+    box-shadow: var(--boxshadow);
+    background: var(--module);
+    position: relative;
+    z-index: 14;
+    right: 0px;
+    transition: 0.15s;
+    .user {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        overflow: hidden;
+        &:hover {
+            background: var(--soft);
+        }
+        .avatar {
+            min-width: var(--header-size);
+            padding: 7px;
+        }
+    }
+    section.chat-container {
+        width: 350px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: var(--header-size);
+        z-index: 14;
+        background: var(--module);
+        box-shadow: -2px 0 3px rgba(0,0,0,0.15);
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 0;
+        }
+        .chat-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}

@@ -24,7 +24,6 @@ body {
   color: var(--color);
 }
 section#page-content {
-  overflow-y: scroll;
   overflow-x: hidden;
   flex-grow: 1;
   height: 100%;
@@ -180,19 +179,23 @@ select {
 .text-size-xs {
   font-size: 0.75rem;
 }
-//A DEPLACER
+
+body {
+  scrollbar-color: var(--soft) var(--soft);
+  scrollbar-width: thin;
+}
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 4px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.2);
+  background: var(--soft);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #3b3b3b;
+  background: var(--soft);
 }
 
 /* Handle on hover */

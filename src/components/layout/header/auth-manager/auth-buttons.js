@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Dropdown from '../../../shared/dropdown/dropdown';
 import UserProfile from '../user-profile/user-profile';
-
+import Avatar from '../../../shared/social/avatar/avatar';
 class AuthButtons extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +20,11 @@ class AuthButtons extends Component {
                     <i className="fas fa-bell"></i>
                 </div>
                 <div className="icon-button" onClick={ this.toggleUserProfile }>
-                    <img alt="User profile" src={"http://njak.fr/assets/imgs/accounts/" + this.props.avatar } />
+                    {/* <img alt="User profile" src={"http://njak.fr/assets/imgs/accounts/" + this.props.avatar } /> */}
+                    <Avatar 
+                    img={"http://njak.fr/assets/imgs/accounts/" + this.props.avatar }
+                    status={ 1 }
+                    />
                 </div>
                 <Dropdown top={0} toggle={ this.toggleUserProfile } show={ this.state.userProfile }>
                     <UserProfile {...this.props } toggle={ this.toggleUserProfile } />
