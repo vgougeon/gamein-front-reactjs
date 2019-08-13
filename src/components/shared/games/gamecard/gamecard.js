@@ -5,7 +5,7 @@ import "./gamecard.scss";
 class GameCard extends Component {
   render() {
     return (
-      <div className="game-item box s-1 mx-g2 mb-g">
+      <div className="game-item s-1 mx-g2 mb-g">
         <div className="bg-gradient"></div>
         { (this.props.skin && this.props.skin.length !== 0) ?
         <Img className="bg-game" src={`http://54.37.228.12/f/skin/${this.props.skin[0]}.jpg`} />

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "./header/header";
 import SideNav from "./sidenav/sidenav";
 import LoginPopup from "../shared/popup/login-popup/login-popup";
-import Chat from '../shared/social/social';
+import Social from '../shared/social/social';
 import { UserContext } from '../../services/auth/userProvider';
 
 
@@ -36,7 +36,7 @@ class Layout extends Component {
         <SideNav toggleOpen={this.toggleOpen} isOpen = {this.state.Open} />
         {this.props.message}
         {this.props.children}
-        {/* <Chat /> */}
+        {/* <Social /> */}
         </section>
       </React.Fragment>
     );

@@ -1,7 +1,4 @@
 .games{
-  .box {
-    border-radius: 0;
-  }
   .game-item {
     padding: 1rem;
     height: auto;
@@ -11,6 +8,10 @@
     max-width: 100%;
     min-width: 250px;
     flex-basis: 400px;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
 
     .game-item-content {
       z-index: 1;

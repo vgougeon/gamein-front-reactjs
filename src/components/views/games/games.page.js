@@ -4,10 +4,11 @@ import GameCard from "../../shared/games/gamecard/gamecard";
 import Spinner from '../../shared/spinner/spinner-standard';
 import ShowMore from '../../shared/elements/showMore';
 import FilterPanel from './filterPanel/filterPanel';
-
+import SelectRank from './selectRank/selectRank';
 import './games.page.scss';
+import SwitchLayout from "./switchLayout/switchLayout";
 
-let state = { games: [], offset: 0, scroll: 0, isLoading: true, filters: {} }
+let state = { games: [], offset: 0, scroll: 0, isLoading: true, filters: {}}
 
 class GamesPage extends Component {
 	constructor(props) {
@@ -64,6 +65,7 @@ class GamesPage extends Component {
 			filters: filters
 		})
 	}
+
 	render() {
 		return (
 			<section id="page-content">
@@ -72,16 +74,9 @@ class GamesPage extends Component {
 						<FilterPanel setFilters={ this.setFilters } /> 
 					</div>
 					<div className="col-xl-9 col-lg-9">
-						<div className="panel-games d-flex justify-content-between">
-								<div className="rank-select">
-									<div className="rs-item">
-										<span>Classement par popularité </span>
-										<i className="ml-5 fas fa-chevron-down"/>
-									</div>
-								</div>
-							<div className="toggle-layout">
-								<span className="tl-active pt-1"><i className="fas fa-th"></i></span>
-							</div>
+						<div className="panel-games mb-g d-flex justify-content-between">
+							<SelectRank />
+							<SwitchLayout />
 						</div>
 						<div className={"games " + this.state.view}>
 							{this.state.games.map((game) =>
