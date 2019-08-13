@@ -11,15 +11,18 @@ class SwitchLayout extends Component {
     }
     switchTo = (id) => { this.setState({ switch: id }) }
     render(){
-        alert("ok");
+        let style;
+        if(this.state.switch === 0){ style = { justifyContent: 'flex-start'}}
+        else if(this.state.switch === 1){ style = { justifyContent: 'center'}}
+        else if(this.state.switch === 2){ style = { justifyContent: 'flex-end'}}
         return(
-            <div className='switch-layout'>
+            <div className='switch-layout' style={ style }>
                 { this.state.items.map((item, i) =>
-                    <i className={item + (this.state.switch === i ? ' active' : '')} 
+                    <i key={ i } className={item + (this.state.switch === i ? ' active' : '')} 
                     onClick={() => { this.switchTo(i) }} />
                 )}
             </div>
-        )
+        );
     }
 }
 export default SwitchLayout;

@@ -1,4 +1,3 @@
-
   .switch-layout {
     display: flex;
     background: rgba(0,0,0,0.15);
@@ -6,7 +5,6 @@
     overflow: hidden;
     width: 45px;
     transition: 0.15s ease-in-out;
-    justify-content: center;
     &:hover {
       width: 135px;
     }
@@ -22,46 +20,6 @@
       cursor: pointer;
       &.active {
         background: var(--header);
-        order: 1;
       }
     }
   }
-  
-  
-  // .switch-layout {
-  //   background:rgba(0,0,0,0.15);
-  //   display: flex;
-  //   height: 2.5rem;
-  //   align-items: center;
-  //   border-radius:999px;
-  //   cursor:pointer;
-  //   font-size:1.2em;
-  //   overflow:hidden;
-  //   .tl-active {
-  //     height:100%;
-  //     background:var(--header);
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: center;
-  //     border-radius:999px;
-  //     width:2.5rem;
-  //   }
-  //   .layout-list {
-  //       height:100%;
-  //       display: flex;
-  //       flex-direction: row;
-  //       .item {
-  //           display: flex;
-  //           align-items: center;
-  //           height:100%;
-  //           padding: 0 1rem;
-  //       }
-  //       .item:hover {
-  //           background:rgba(255,255,255,0.1);
-  //       }
-  //   }
-  // }
-
-  // .sl-expanded {
-  //   width:auto;
-  // }
