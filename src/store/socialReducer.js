@@ -1,12 +1,7 @@
 import socket from '../services/socket/openSocket'
 import chatListener from '../services/socket/chatListener';
 const initialState = {
-    messages: [
-        {
-            username: 'Njak', 
-            message: 'Salut les copains, message de test'
-        }
-    ]
+    messages: []
 }
 
 let socialReducer = (state = initialState, action = {}) => {

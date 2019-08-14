@@ -40,7 +40,7 @@ class Social extends Component {
                             { this.props.messages.map((message, i) =>
                                 <Message
                                 key={ i }
-                                img={ 'http://njak.fr/assets/imgs/accounts/91563805015.png' } 
+                                img={ message.avatar } 
                                 message={ message.message }
                                 username={ message.username }
                                 />

@@ -6,7 +6,7 @@ const Message = (props) => {
     return (  
         <div className="message-container">
             <div className="avatar-container">
-                <Avatar img={ props.img }/>  
+                <Avatar img={ 'http://njak.fr/assets/imgs/accounts/' + props.img }/>  
             </div>
             <div className="message-content">
                 <span className="username">{props.username}</span>
