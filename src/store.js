@@ -1,6 +1,7 @@
 import { createStore, combineReducers } from 'redux'
 import socialReducer from './store/socialReducer';
 
+
 const reducer = combineReducers({
     social: socialReducer
 })

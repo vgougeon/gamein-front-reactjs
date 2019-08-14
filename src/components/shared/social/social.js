@@ -37,8 +37,9 @@ class Social extends Component {
                 <section className="chat-container">
                     <div className="chat-content">
                         <div className="messages">
-                            { this.props.messages.map((message) =>
-                                <Message 
+                            { this.props.messages.map((message, i) =>
+                                <Message
+                                key={ i }
                                 img={ 'http://njak.fr/assets/imgs/accounts/91563805015.png' } 
                                 message={ message.message }
                                 username={ message.username }
@@ -61,6 +62,6 @@ const mapStateToProps = (state) => ({
     messages: state.social.messages
 })
 const mapDispatchToProps = (dispatch) => ({
-    addMessage: (message) => dispatch({ type: 'SOCIAL_ADD_MESSAGE', message: message})
+    addMessage: (message) => dispatch({ type: 'SOCIAL_SEND_MESSAGE', message: message})
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Social)
