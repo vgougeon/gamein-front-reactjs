@@ -36,7 +36,7 @@ class Layout extends Component {
         <SideNav toggleOpen={this.toggleOpen} isOpen = {this.state.Open} />
         {this.props.message}
         {this.props.children}
-        {/* <Social /> */}
+        <Social />
         </section>
       </React.Fragment>
     );

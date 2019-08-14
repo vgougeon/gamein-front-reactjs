@@ -9,8 +9,8 @@ const Message = (props) => {
                 <Avatar img={ props.img }/>  
             </div>
             <div className="message-content">
-                <span className="username">Elec</span>
-                <span className="message">Coucou les copains, je ne me présente plus, je suis le maître PUBG</span>
+                <span className="username">{props.username}</span>
+                <span className="message">{props.message}</span>
             </div>
         </div>
     );
