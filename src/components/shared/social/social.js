@@ -48,7 +48,7 @@ class Social extends Component {
                             <div style={{ float:"left", clear: "both" }} ref={(el) => { this.messagesEnd = el; }} />
                         </div>
                         <form onSubmit={ this.handleSubmitMessage }>
-                        <input type='text' name='message' placeholder="Envoyez un message..." />
+                        <input type='text' name='message' placeholder="Envoyez un message..." autoComplete='off' />
                         <input type='submit' className='d-none' />
                         </form>
                     </div>
