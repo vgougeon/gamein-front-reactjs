@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "./i18n";
+import socket from './services/listener/openSocket'
 
 import './styles/animations.scss';
 import './styles/master.scss';

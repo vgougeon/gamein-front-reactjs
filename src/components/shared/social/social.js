@@ -40,9 +40,7 @@ class Social extends Component {
                             { this.props.messages.map((message, i) =>
                                 <Message
                                 key={ i }
-                                img={ message.avatar } 
-                                message={ message.message }
-                                username={ message.username }
+                                { ...message }
                                 />
                             )}
                             <div style={{ float:"left", clear: "both" }} ref={(el) => { this.messagesEnd = el; }} />
