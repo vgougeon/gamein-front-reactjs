@@ -36,6 +36,16 @@ class Social extends Component {
                 </div>
                 <section className="chat-container">
                     <div className="chat-content">
+                        <div className="chat-head">
+                            <div className="chat-head-user-infos">
+                                <div className="avatar">
+                                    <Avatar img = {'http://njak.fr/assets/imgs/accounts/91563805015.png'} status={ 0 } />
+                                </div>
+                                <span className="username">Njak</span>
+                              
+                            </div>
+                            <i class="hide-chat fas fa-angle-double-right"></i>
+                        </div>
                         <div className="messages">
                             { this.props.messages.map((message, i) =>
                                 <Message

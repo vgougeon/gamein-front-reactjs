@@ -47,9 +47,45 @@
             flex-direction: column;
             position: relative;
             z-index: 1;
+
+            .chat-head {
+                padding:0.7rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                .chat-head-user-infos {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    .avatar {
+                        width:40px;
+                        height: 40px;
+                        object-fit: cover;
+                        border-radius: 9999px;
+                    }
+                    .username {
+                        padding-left:0.5rem;
+                    }
+                }
+               
+                .hide-chat {
+                    font-size:1.2rem;
+                    cursor: pointer;
+                    border-radius:9999px;
+                    padding:0.6rem;
+                    padding-left:0.75rem;
+                }
+                .hide-chat:hover {
+                    background:var(--soft);
+                }
+            }
             .messages {
                 flex-grow: 1;
                 overflow-y: scroll;
+                border-top : solid 1px var(--soft);
+                border-bottom : solid 1px var(--soft);
             }
             
             form {
