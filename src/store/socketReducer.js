@@ -1,4 +1,4 @@
-import socket from '../services/listener/openSocket'
+import socket from '../services/socket/openSocket'
 const initialState = {
     status: false
 }

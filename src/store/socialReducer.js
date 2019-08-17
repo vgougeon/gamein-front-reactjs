@@ -1,21 +1,24 @@
-import socket from '../services/listener/openSocket'
-import chatListener from '../services/listener/chatListener';
+import socket from '../services/socket/openSocket'
 const initialState = {
-    messages: []
+    messages: {},
+    currentChat: null
 }
-let id = 0
 let socialReducer = (state = initialState, action = {}) => {
-    console.log(state)
     switch (action.type) {
         case 'SOCIAL_ADD_MESSAGE' :
-            action.message.id = id++
             return { ...state, messages: [...state.messages, action.message]}
         case 'SOCIAL_SEND_MESSAGE' :
             socket.emit('new-message', action.message)
             return state
+        case 'SOCIAL_CHAT_WITH' :
+            if(!state.messages[action.id]){
+                return { ...state, currentChat: action.id, messages: { ...state.messages, [action.id] : []}}
+            }
+            else {
+                return { ...state, currentChat: action.id}
+            }
         default:
             return state
     }
 }
-chatListener()
 export default socialReducer;
