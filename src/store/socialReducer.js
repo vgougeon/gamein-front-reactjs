@@ -8,7 +8,7 @@ let socialReducer = (state = initialState, action = {}) => {
         case 'SOCIAL_ADD_MESSAGE' :
             return { ...state, messages: [...state.messages, action.message]}
         case 'SOCIAL_SEND_MESSAGE' :
-            socket.emit('new-message', action.message)
+            socket.emit('new-message', { ...action.message, to: state.currentChat })
             return state
         case 'SOCIAL_CHAT_WITH' :
             if(!state.messages[action.id]){

@@ -6,8 +6,8 @@ const actions = {
         let data = {
             id: id++,
             message: message,
-            username: 'Njak', // from user store
-            avatar: '61563909495.png' // from user store
+            username: 'Njak',
+            avatar: '61563909495.png' 
         }
         console.log(data)
         store.dispatch({ type: 'SOCIAL_ADD_MESSAGE', message: data})

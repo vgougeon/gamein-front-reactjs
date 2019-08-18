@@ -8,7 +8,7 @@ class SelectRank extends Component {
         super(props);
         this.state = {
             height : 0,
-            selected: 0,
+            selected: 2,
             items: ['Classement par popularité','Classement par notation', 'Classement par nouveauté']
         }
     }
