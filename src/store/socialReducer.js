@@ -2,7 +2,8 @@ import socket from '../services/socket/openSocket'
 import actions from './socialActions';
 const initialState = {
     messages: {},
-    currentChat: null
+    currentChat: null,
+    friends: []
 }
 let socialReducer = (state = initialState, action = {}) => {
     switch (action.type) {
@@ -23,6 +24,8 @@ let socialReducer = (state = initialState, action = {}) => {
             else {
                 return { ...state, currentChat: action.id}
             }
+        case 'SOCIAL_SET_FRIENDLIST':
+            return { ...state, friends: action.friends}
         default:
             return state
     }

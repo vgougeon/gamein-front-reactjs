@@ -1,6 +1,6 @@
 import store from '../store';
 import socket from '../services/socket/openSocket';
-import { async } from 'q';
+import axios from 'axios';
 let id = 0
 const actions = {
     sendMessage: (message) => {
@@ -29,8 +29,19 @@ const actions = {
         else {
             store.dispatch({ type: 'SOCIAL_CHAT_WITH', id: id})
         }
+    },
+    getFriends: () => {
+        // const index = Data.findIndex(item => item.name === 'John');
+        axios.get('http://54.37.228.12/api/getFriends').then(res => {
+            if(res.data !== false){
+                console.log(res.data)
+                store.dispatch({ type: 'SOCIAL_SET_FRIENDLIST', friends: res.data})
+                console.log(store.getState())
+            }
+        })
     }
 }
+actions.getFriends()
 socket.on('new',(data) => {
     console.log(data)
     actions.addMessage(data)

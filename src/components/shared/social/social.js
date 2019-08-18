@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import './social.scss';
 
 class Social extends Component {
-    state = {  }
+    state = { }
     handleSubmitMessage = (e) => {
         e.preventDefault()
         this.props.addMessage({ username: 'Njak', message: e.target.message.value})
@@ -16,35 +16,28 @@ class Social extends Component {
         // this.messagesEnd.scrollIntoView({ behavior: "smooth" });
     }
     render() {
+        const currentFriend = this.props.friends[this.props.friends.findIndex(item => item.id === this.props.currentChat)]
         return (  
             <div className="social-container">
-                <div className="user">
-                    <div className="avatar" onClick={() => socialActions.chatWith(6)}>
-                        <Avatar 
-                        img={ 'http://njak.fr/assets/imgs/accounts/61563909495.png' }
-                        status={ 0 }
-                        />
+                { this.props.friends.map((friend) =>
+                    <div className="user">
+                        <div className="avatar" onClick={() => socialActions.chatWith(friend.id)}>
+                            <Avatar 
+                            img={ 'http://njak.fr/assets/imgs/accounts/' + friend.avatar }
+                            status={ 0 }
+                            />
+                        </div>
                     </div>
-                    <div className="username">Njak</div>
-                </div>
-                <div className="user">
-                    <div className="avatar" onClick={() => socialActions.chatWith(9)}>
-                        <Avatar 
-                        img={ 'http://njak.fr/assets/imgs/accounts/91563805015.png' }
-                        status={ 0 }
-                        />
-                    </div>
-                    <div className="username">Njak</div>
-                </div>
-                { this.props.currentChat &&
+                )}
+                { this.props.currentChat && 
                 <section className="chat-container">
                     <div className="chat-content">
                         <div className="chat-head">
                             <div className="chat-head-user-infos">
                                 <div className="avatar">
-                                    <Avatar img = {'http://njak.fr/assets/imgs/accounts/91563805015.png'} status={ 0 } />
+                                    <Avatar img = {'http://njak.fr/assets/imgs/accounts/' + currentFriend.avatar } status={ 0 } /> 
                                 </div>
-                                <span className="username">Njak</span>
+                                <span className="username">{ currentFriend.display_name }</span>
                               
                             </div>
                             <i class="hide-chat fas fa-angle-double-right" onClick={() => socialActions.chatWith(null)}></i>
@@ -72,7 +65,8 @@ class Social extends Component {
 
 const mapStateToProps = (state) => ({
     messages: state.social.messages,
-    currentChat: state.social.currentChat
+    currentChat: state.social.currentChat,
+    friends: state.social.friends
 })
 const mapDispatchToProps = (dispatch) => ({
     addMessage: (message) => dispatch({ type: 'SOCIAL_SEND_MESSAGE', message: message})
