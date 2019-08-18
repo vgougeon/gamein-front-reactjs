@@ -13,7 +13,7 @@ class Social extends Component {
         e.target.message.value = ''
     }
     componentDidUpdate() {
-        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+        // this.messagesEnd.scrollIntoView({ behavior: "smooth" });
     }
     render() {
         return (  

@@ -1,5 +1,6 @@
 import store from '../store';
 import socket from '../services/socket/openSocket';
+import { async } from 'q';
 let id = 0
 const actions = {
     sendMessage: (message) => {
@@ -9,11 +10,16 @@ const actions = {
             username: 'Njak',
             avatar: '61563909495.png' 
         }
-        console.log(data)
-        store.dispatch({ type: 'SOCIAL_ADD_MESSAGE', message: data})
+        // console.log(data)
+        // store.dispatch({ type: 'SOCIAL_ADD_MESSAGE', message: data})
     },
-    addMessage: (data) => {
+    addMessage: async (data) => {
         data.id = id++
+        let auth = await store.getState().auth.auth
+        console.log(auth.id)
+        if(data.userId === auth.id){
+            data.userId = data.target
+        }
         store.dispatch({ type: 'SOCIAL_ADD_MESSAGE', message: data})
     },
     chatWith: (id) => {
@@ -26,6 +32,8 @@ const actions = {
     }
 }
 socket.on('new',(data) => {
+    console.log(data)
     actions.addMessage(data)
+    console.log(store.getState())
 })
 export default actions;

@@ -3,6 +3,7 @@
     padding: 15px 20px 15px 18px;
     display: flex;
     border-bottom: 1px solid var(--soft);
+    animation: fromTop 0.1s ease-in-out;
     .avatar-container {
         min-width: 45px;
         flex-basis: 45px;
