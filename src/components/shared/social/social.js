@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Avatar from './avatar/avatar';
 import Message from './message/message';
 import socialActions from '../../../store/socialActions';
@@ -13,7 +14,8 @@ class Social extends Component {
         e.target.message.value = ''
     }
     componentDidUpdate() {
-        // this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+        if(this.messagesEnd)
+            this.messagesEnd.scrollIntoView({ behavior: "smooth" });
     }
     render() {
         const currentFriend = this.props.friends[this.props.friends.findIndex(item => item.id === this.props.currentChat)]
@@ -37,8 +39,10 @@ class Social extends Component {
                                 <div className="avatar">
                                     <Avatar img = {'http://njak.fr/assets/imgs/accounts/' + currentFriend.avatar } status={ 0 } /> 
                                 </div>
-                                <span className="username">{ currentFriend.display_name }</span>
-                              
+                                <div className='info'>
+                                    <Link to='/' className='username'>{ currentFriend.display_name }</Link>
+                                    <span className='status'>Listening to <Link to='/'>Mario Party 4</Link></span>
+                                </div>      
                             </div>
                             <i class="hide-chat fas fa-angle-double-right" onClick={() => socialActions.chatWith(null)}></i>
                         </div>

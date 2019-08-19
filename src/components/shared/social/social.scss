@@ -6,7 +6,12 @@
     position: relative;
     z-index: 14;
     right: 0px;
-    transition: 0.15s;
+    opacity: 1;
+    transition: opacity 0.5s;
+    &:empty {
+        width: 0;
+        opacity: 0;
+    }
     .user {
         height: 60px;
         display: flex;
@@ -57,16 +62,30 @@
                 background: var(--soft);
                 .chat-head-user-infos {
                     display: flex;
-                    flex-direction: row;
                     align-items: center;
+                    min-height: 50px;
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: .7rem;
+                        line-height: 1.2rem;
+                        .username {
+                            font-weight: 600; 
+                        }
+                        .status {
+                            opacity: .7;
+                            font-size: .9rem;
+                            a {
+                                font-weight: 600;
+                                color: var(--theme);
+                            }
+                        }
+                    }
                     .avatar {
                         width:40px;
                         height: 40px;
                         object-fit: cover;
-                        border-radius: 9999px;
-                    }
-                    .username {
-                        padding-left:0.5rem;
+                        border-radius: 99px;
                     }
                 }
                
