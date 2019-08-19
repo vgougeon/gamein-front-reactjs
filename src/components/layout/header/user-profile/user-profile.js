@@ -36,7 +36,7 @@ class UserProfile extends Component {
         </div>
       </div>
       <ExperienceBar experience={ this.props.experience } />
-      <div className="d-flex justify-content-between my-1">
+      <div className="d-flex justify-content-between">
         <div className="stat pb-1 pt-2">
           <span className="font-weight-bold text-size-l">{ this.props.level }</span>
           <span className="text-size-xs">{t('level')}</span>
@@ -50,7 +50,22 @@ class UserProfile extends Component {
           <span className="text-size-xs">{t('followers')}</span>
         </div>
       </div>
-      <div className="d-flex flex-column mt-1">
+      <div className="wide-button cristals">
+            <img className="icon-cristal mr-2" src="../../../../../assets/gem2.svg" alt='cristals' />
+            <span className="bold ml-2 mr-1">584 </span>
+            <span className="text-size-m"> Cristaux</span>
+            <img className="background-cristal" src="../../../../../assets/gem.svg" alt='cristals' />
+            <img className="background-cristal blur" src="../../../../../assets/gem.svg" alt='cristals' />
+
+            <img className="p1" src="../../../../../assets/gem.svg" alt='cristals' />
+            <img className="p2" src="../../../../../assets/gem.svg" alt='cristals' />
+            <img className="p3" src="../../../../../assets/gem.svg" alt='cristals' />
+            <img className="p4" src="../../../../../assets/gem.svg" alt='cristals' />
+            <img className="p5" src="../../../../../assets/gem.svg" alt='cristals' />
+          
+            
+        </div>
+      <div className="d-flex flex-column">
         <div className="wide-button">
           <i className="fas fa-user-circle mr-3" /><span>{t('my-account')}</span>
         </div>

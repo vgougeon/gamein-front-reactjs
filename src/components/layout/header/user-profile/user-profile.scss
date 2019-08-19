@@ -139,3 +139,109 @@
 .rotate {
   transform: rotate(180deg);
 }
+
+.cristals {
+  padding: 1.563rem 1rem;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  background:rgba(0,0,0,0.1);
+  .icon-cristal {
+  max-height:25px;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 1000ms;
+  
+  }
+  
+  .background-cristal {
+    position: absolute;
+    height:90px;
+    object-fit: cover;
+    right:10px;
+    top:-20px;
+    opacity: 0.4;
+    transform: rotate(25deg);
+    z-index: 2;
+  }
+  .blur {
+    filter: blur(8px);
+    opacity: 0.7;
+    z-index: 1;
+  }
+}
+
+.cristals:hover {
+  .icon-cristal {
+    transform: rotate3d(0, 1, 0, 360deg);
+    
+  }
+  %transtion {
+    transition: 500ms ease-in-out;
+    opacity: 0.5;
+  }
+  .p1 {
+    right: 90px;
+    @extend %transtion;
+    transition-delay: 100ms;
+  }
+  .p2 {
+    right: 70px;
+    @extend %transtion;
+    transition-delay: 130ms;
+  }
+  .p3 {
+    right: 100px;
+    @extend %transtion;
+    transition-delay: 170ms;
+  }
+  .p4 {
+    right: 120px;
+    @extend %transtion;
+    transition-delay: 110ms;
+  }
+  .p5 {
+    right: 70px;
+    @extend %transtion;
+    transition-delay: 70ms;
+  }
+
+}
+%particles {
+  transition: 500ms ease-in-out;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transform: rotate(25deg);
+  z-index: 2;
+}
+.p1 {
+  @extend %particles;
+  height:25px;
+  top:20px ;
+  right:-90px;
+}
+.p2 {
+  @extend %particles;
+  height:20px ;
+  top:5px ;
+  right: -70px;
+}
+.p3 {
+  @extend %particles;
+  height:15px ;
+  top:0px ;
+  right: -100px;
+}
+.p4 {
+  @extend %particles;
+  height:30px;
+  top:28px ;
+  right: -120px;
+}
+.p5 {
+  @extend %particles;
+  height:18px;
+  top:30px ;
+  right: -70px;
+}
