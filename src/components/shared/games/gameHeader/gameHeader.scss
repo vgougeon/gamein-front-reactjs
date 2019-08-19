@@ -47,6 +47,10 @@
         width: 100%;
         display: flex;
         align-items: center;
+        padding-bottom: 45px;
+        @media screen and (max-width: 1250px) {
+            padding-bottom: 0;
+        }
         .info {
             margin-left: 1.5rem;
             text-shadow: 0 0 6px black, 0 1px 3px black;
@@ -85,7 +89,7 @@
             position: absolute;
             img.cover {
                 height: 65%;
-            }
+            }  
         }
     }
 }
@@ -94,11 +98,17 @@
     .menu {
         width: 100%;
         overflow-x: visible;
-        background: var(--module);
+        background: rgba(0,0,0,0.4);
         height: 45px;
+        margin-top: -44px;
         display: flex;
         align-items: center;
         padding: 0 1rem;
+        position: relative;
+        z-index: 6;
+        @media screen and (max-width: 1250px) {
+            margin-top: 0;
+        }
         a,.menu-item {
             color: var(--color);
             font-size: 16px;
@@ -112,7 +122,7 @@
             justify-content: center;
             padding: 4px 14px 0 14px;
             transition: 0.15s;
-            opacity: 0.8;
+            opacity: 1;
             cursor: pointer;
             i {
                 font-size: 1.4rem;

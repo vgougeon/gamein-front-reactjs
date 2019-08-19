@@ -47,7 +47,7 @@ class GameHeader extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="box s-1 account">
+                <div className="s-1 account">
                     <div className="menu justify-content-between">
                         <div className="d-flex h-100">
                             <NavLink exact={true} activeClassName='active' to={'/game/' + this.props.id}>LE JEU</NavLink>
