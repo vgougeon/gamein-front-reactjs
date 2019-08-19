@@ -134,6 +134,7 @@
             color: var(--theme);
             border-bottom: 4px solid var(--theme);
             background: var(--soft);
+            text-shadow: 0 0 3px rgba(0,0,0,.5);
         }
         a:hover,.menu-item:hover {
             color: var(--theme);

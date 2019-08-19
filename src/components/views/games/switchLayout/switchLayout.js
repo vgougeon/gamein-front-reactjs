@@ -4,7 +4,7 @@ class SwitchLayout extends Component {
     constructor(props) {
         super(props);
         this.state={
-            switch: 2,
+            switch: 0,
             items: ['fas fa-th', 'fab fa-cc-paypal', 'fab fa-paypal']
         }
     }

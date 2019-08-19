@@ -70,9 +70,6 @@ class GamesPage extends Component {
 		return (
 			<section id="page-content">
 				<div className="row mt-g g-g row-p-0">
-					<div className="col-xl-3">
-						<FilterPanel setFilters={ this.setFilters } /> 
-					</div>
 					<div className="col-xl-9 col-lg-9">
 						<div className="panel-games mb-g d-flex justify-content-between">
 							<SelectRank />
@@ -89,6 +86,9 @@ class GamesPage extends Component {
 							: <ShowMore action={ this.getGames }/>
 							}
 						</div>
+					</div>
+					<div className="col-xl-3">
+						<FilterPanel setFilters={ this.setFilters } /> 
 					</div>
 				</div>
 			</section>
