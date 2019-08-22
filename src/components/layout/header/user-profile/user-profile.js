@@ -52,8 +52,8 @@ class UserProfile extends Component {
       </div>
       <div className="wide-button cristals">
             <img className="icon-cristal mr-2" src="../../../../../assets/gem2.svg" alt='cristals' />
-            <span className="bold ml-2 mr-1">584 </span>
-            <span className="text-size-m"> Cristaux</span>
+            <span className="bold ml-2 mr-1">{ this.props.money}</span>
+            <span className="text-size-m">Cristaux</span>
             <img className="background-cristal" src="../../../../../assets/gem.svg" alt='cristals' />
             <img className="background-cristal blur" src="../../../../../assets/gem.svg" alt='cristals' />
 
