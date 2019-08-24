@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './game-ost.scss';
+import Spinner from '../../spinner/spinner-standard';
 class GameOst extends Component {
     constructor(props) {
         super(props);
-        this.state = { osts : [] }
+        this.state = { osts : [], ready: false}
         this.getOsts()
     }
     getOsts = () => {
         axios.get('http://54.37.228.12/api/getGameOst', { params: { game: this.props.id} }).then(res => {
             this.setState(state => ({
-                osts: res.data
+                osts: res.data,
+                ready: true
             }));
         })
     }
     render() { 
         return (  
             <React.Fragment>
+                { this.state.ready ?
                 <table className="osts">
                     <thead>
                         <tr className="head">
@@ -41,6 +44,7 @@ class GameOst extends Component {
                     )}                 
                     </tbody>
                 </table>
+                : <div className="mt-5"><Spinner /></div>}
             </React.Fragment>
         );
     }
