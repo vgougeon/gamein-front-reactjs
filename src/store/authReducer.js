@@ -1,3 +1,4 @@
+// eslint-disable-line no-unused-vars
 import actions from './authActions';
 const initialState = {
     auth: {},

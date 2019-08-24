@@ -29,7 +29,7 @@ class SelectRank extends Component {
                 < AnimateHeight className="rs-list" height={this.state.height} duration={200} >
                     <div className="bg-adjust">
                         { this.state.items.map((item, i) =>
-                            <React.Fragment>
+                            <React.Fragment key={ i }>
                             { i !== this.state.selected &&
                                 <div className="rs-item" onClick={() => { this.switchTo(i); this.rsShow() }}>
                                     <span>{ item }</span>

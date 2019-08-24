@@ -4,17 +4,21 @@ class GameOst extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
+        console.log(props)
     }
     render() { 
         return (  
             <React.Fragment>
                 <table className="osts">
-                    <tr className="head">
-                        <th></th>
-                        <th>Name</th>
-                        <th>Game</th>
-                        <th></th>
-                    </tr>
+                    <thead>
+                        <tr className="head">
+                            <th></th>
+                            <th>Name</th>
+                            <th>Game</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     <tr>
                         <td className="play">
                             <i className="fas fa-play"/>
@@ -45,6 +49,7 @@ class GameOst extends Component {
                             <i className="far fa-heart"/>
                         </td>
                     </tr>
+                    </tbody>
                 </table>
             </React.Fragment>
         );

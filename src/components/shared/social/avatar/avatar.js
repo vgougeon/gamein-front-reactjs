@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './avatar.scss';
 
 const Avatar = (props) => {
@@ -13,7 +13,7 @@ const Avatar = (props) => {
     }
     return (
         <div className="avatar-component">
-            <img src={ props.img } />
+            <img src={ props.img } alt="Profile" />
             { status }
         </div>
     );

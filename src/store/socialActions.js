@@ -31,7 +31,6 @@ const actions = {
         }
     },
     getFriends: () => {
-        // const index = Data.findIndex(item => item.name === 'John');
         axios.get('http://54.37.228.12/api/getFriends').then(res => {
             if(res.data !== false){
                 console.log(res.data)

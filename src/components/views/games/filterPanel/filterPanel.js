@@ -93,7 +93,7 @@ class FilterPanel extends Component {
                     <AnimateHeight height={ this.state.expanded[0] }> 
                         <div className="selected-item">
                             { this.state.filters.consoles.map((console) =>
-                                <div className="si-item" onClick={() => this.consoleClick(console)}>
+                                <div className="si-item" key={ console.id } onClick={() => this.consoleClick(console)}>
                                     <span>{ console.name }</span>
                                     <i className="fas fa-times" />
                                 </div>
@@ -101,7 +101,7 @@ class FilterPanel extends Component {
                         </div>
                         <div className="content">
                             { this.state.consoles.map((console) =>
-                                <div className={ 'item ' + (this.state.filters.consoles.indexOf(console) !== -1 ? 'selected' : '')}
+                                <div key = { console.id } className={ 'item ' + (this.state.filters.consoles.indexOf(console) !== -1 ? 'selected' : '')}
                                 onClick={() => this.consoleClick(console)}>
                                     <div className="img-item" style={{ background: console.background }}>
                                         <img src={'http://54.37.228.12/f/consoles/' + console.id + '.png'} alt={ console.name }/>

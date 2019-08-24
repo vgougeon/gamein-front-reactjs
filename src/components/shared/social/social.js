@@ -22,7 +22,7 @@ class Social extends Component {
         return (  
             <div className="social-container">
                 { this.props.friends.map((friend) =>
-                    <div className="user">
+                    <div className="user" key={ friend.id }>
                         <div className="avatar" onClick={() => socialActions.chatWith(friend.id)}>
                             <Avatar 
                             img={ 'http://njak.fr/assets/imgs/accounts/' + friend.avatar }

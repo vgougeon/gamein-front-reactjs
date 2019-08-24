@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Post from "../../shared/feed/post/post";
 import NewPost from "../../shared/feed/newPost/newPost";
-import Test from './test';
-import ClassTest from './classtest';
-import TestWithTranslation from './withTranslation';
 let state = { posts: [], offset: 0, scroll: 0 };
 
 class HomePage extends Component {
