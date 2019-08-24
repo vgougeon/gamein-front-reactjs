@@ -36,7 +36,7 @@ class GamePage extends Component {
                 <div className="d-flex align-items-center justify-content-center">
                 <Route exact path="/game/:id/" component={ Spinner }></Route>
                 <Route path="/game/:id/images" component={ Spinner }></Route>
-                <Route path="/game/:id/ost" render={(props) => <GameOst {...props} />}></Route>
+                <Route path="/game/:id/ost" render={(props) => <GameOst id={ this.state.id} />}></Route>
                 </div>
             </section>
         );
