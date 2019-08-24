@@ -28,10 +28,10 @@ class GameCard extends Component {
               </span>
             )}
             </div>
-            <div className="rank-icon d-flex justify-content-center mt-1">
+            {/* <div className="rank-icon d-flex justify-content-center mt-1">
               <img className="bg-rank-icon" src="../../../assets/gold.png" alt="rank"/>
               <span className="rank-number pt-2">2<sup>e</sup></span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

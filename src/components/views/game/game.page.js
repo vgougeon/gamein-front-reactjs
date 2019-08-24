@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import GameHeader from '../../shared/games/gameHeader/gameHeader';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Spinner from '../../shared/spinner/spinner-standard';
+import GameOst from '../../shared/games/game-ost/game-ost';
 
 class GamePage extends Component {
     constructor(props) {
@@ -11,7 +14,6 @@ class GamePage extends Component {
                 console: []
             },
             editor: false,
-
             toggleEdit: this.toggleEdit
         }
     }
@@ -31,6 +33,12 @@ class GamePage extends Component {
         return ( 
             <section id="page-content">
                 <GameHeader {...this.state.gameInfo} editor={this.state.editor} toggleEdit={this.state.toggleEdit} />
+                <div className="d-flex align-items-center justify-content-center">
+                <Route exact path="/game/:id/" component={ Spinner }></Route>
+                <Route path="/game/:id/images" component={ Spinner }></Route>
+                {/* <Route path="/game/:id/ost" component={ GameOst }></Route> */}
+                <Route path="/game/:id/ost" render={(props) => <GameOst {...props} />}></Route>
+                </div>
             </section>
         );
     }
