@@ -1,0 +1,8 @@
+#player {
+    min-width: 100%;
+    flex-grow: 1;
+    min-height: 80px;
+    background: var(--header);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    z-index: 15;
+}

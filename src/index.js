@@ -6,7 +6,6 @@ import socket from './services/socket/openSocket'
 import './styles/animations.scss';
 import './styles/master.scss';
 import './styles/grid.scss';
-import './styles/responsive.scss';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';

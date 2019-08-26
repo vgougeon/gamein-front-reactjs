@@ -3,6 +3,7 @@ import Header from "./header/header";
 import SideNav from "./sidenav/sidenav";
 import LoginPopup from "../shared/popup/login-popup/login-popup";
 import Social from '../shared/social/social';
+import Player from '../shared/player/player';
 import { UserContext } from '../../services/auth/userProvider';
 
 
@@ -31,12 +32,14 @@ class Layout extends Component {
         show={ this.context.layout.login }
         toggle={ this.context.layout.toggleLogin } />
         }
+        <section id="container">
         <Header toggleOpen={this.toggleOpen} />
         <section id="main">
         <SideNav toggleOpen={this.toggleOpen} isOpen = {this.state.Open} />
-        {this.props.message}
         {this.props.children}
         <Social />
+        </section>
+        <Player />
         </section>
       </React.Fragment>
     );
