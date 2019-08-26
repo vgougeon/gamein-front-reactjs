@@ -24,9 +24,14 @@
   "member": "Member",
 
   "show-more" : "Show more",
+  "filters": "Filters",
   "search-filter": "Search a filter...",
   "entries" : "entries",
   "consoles" : "Consoles",
   "genres" : "Genres",
-  "unselall" : "Unselect all"
+  "unselall" : "Unselect all",
+
+  "by-date": "Sort by date",
+  "by-popularity": "Sort by popularity",
+  "by-note": "Sort by note"
 }

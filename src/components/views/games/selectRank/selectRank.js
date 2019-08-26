@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './selectRank.scss';
 import AnimateHeight from "react-animate-height";
 import SwitchLayout from "../switchLayout/switchLayout";
+import { withTranslation } from 'react-i18next';
 
 class SelectRank extends Component {
     constructor(props){
@@ -9,7 +10,7 @@ class SelectRank extends Component {
         this.state = {
             height : 0,
             selected: 2,
-            items: ['Classement par popularité','Classement par notation', 'Classement par nouveauté']
+            items: ['by-popularity','by-note', 'by-date']
         }
     }
 
@@ -18,11 +19,12 @@ class SelectRank extends Component {
     }
     switchTo = (id) => { this.setState({ selected: id })}
     render(){
+        const { t } = this.props
         return(
             <React.Fragment>
                 <div className="rank-select" onClick={this.rsShow}>
                     <div className="rs-item">
-                        <span>{ this.state.items[this.state.selected] }</span>
+                        <span>{ t(this.state.items[this.state.selected]) }</span>
                         <i className="fas fa-chevron-down"/>
                     </div>
                     < AnimateHeight className="rs-list" height={this.state.height} duration={200} >
@@ -30,7 +32,7 @@ class SelectRank extends Component {
                             <React.Fragment key={ i }>
                             { i !== this.state.selected &&
                                 <div className="rs-item" onClick={() => { this.switchTo(i); this.rsShow() }}>
-                                    <span>{ item }</span>
+                                    <span>{ t(item) }</span>
                                 </div>
                             }
                             </React.Fragment>
@@ -42,4 +44,4 @@ class SelectRank extends Component {
         )
     }
 }
-export default SelectRank;
+export default withTranslation()(SelectRank);

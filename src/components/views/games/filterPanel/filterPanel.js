@@ -77,10 +77,17 @@ class FilterPanel extends Component {
         const { t } = this.props
         return ( 
             <React.Fragment>
-            <div className="filter-panel s-1 rounded overflow-hidden">
-                <input className="search-filter w-100 p-4" type="search" placeholder={t('search-filter')} />
+            <div className="filter-panel s-1 box">
+                <div className="box-head">
+                    {t('filters')}
+                    <i className="fas fa-filter" />
+                </div>
+                <div className="search-input-container">
+                    <input className="search-filter" type="search" placeholder={t('search-filter')} />
+                    <i class="fas fa-search"></i>
+                </div>
                 <div className="filter-category">
-                    <div className="head" onClick={() => this.expand(0) }>
+                    <div className="head" onClick={() => this.expand(0) } >
                         <span>{t('consoles')} <span className="quantity">{ this.state.consoles.length }</span></span>
                         { this.state.filters.consoles.length !== 0 &&
                         <div className="current-filters">
@@ -111,34 +118,7 @@ class FilterPanel extends Component {
                         </div>
                     </AnimateHeight>
                 </div>
-                <div className="filter-category">
-                    <div className="head" onClick={() => this.expand(1) }>
-                        <span>{t('genres')} <span className="quantity">45</span></span>
-                        <div className="current-filters">
-                            <span>1 {t('entries')}</span>
-                            <i className="fas fa-times" />
-                        </div>
-                    </div>
-                    <AnimateHeight height={ this.state.expanded[1] }> 
-                        <div className="content">
-                            <div className="item" />
-                            <div className="item" />
-                            <div className="item" />
-                            <div className="item" />
-                            <div className="item" />
-                            <div className="item" />
-                            <div className="item" />
-                            <div className="item" />
-                            <div className="item" />
-                            <div className="item" />
-                            <div className="item" />
-                            <div className="item" />
-                            <div className="item" />
-                        </div>
-                    </AnimateHeight>
-                </div>
-                <div className="btn-unselect-all mt-2 mb-2"
-                onClick={ this.deselectAll }>{t('unselall')}</div>
+                <button className="soft mx-auto my-2" onClick={ this.deselectAll }>{t('unselall')}</button>
             </div>
             </React.Fragment>
         );

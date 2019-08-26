@@ -22,9 +22,14 @@
   "member": "Membre",
 
   "show-more" : "Afficher plus",
+  "filters": "Filtres",
   "search-filter": "Rechercher un filtre...",
   "entries" : "sélections",
   "consoles" : "Consoles",
   "genres" : "Genres",
-  "unselall" : "Tout désélectionner"
+  "unselall" : "Tout désélectionner",
+
+  "by-date": "Classement par date",
+  "by-popularity": "Classement par popularité",
+  "by-note": "Classement par note"
 }
