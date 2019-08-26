@@ -23,11 +23,9 @@ class SelectRank extends Component {
                 <div className="rank-select" onClick={this.rsShow}>
                     <div className="rs-item">
                         <span>{ this.state.items[this.state.selected] }</span>
-                        <i className="ml-5 fas fa-chevron-down"/>
+                        <i className="fas fa-chevron-down"/>
                     </div>
-                </div>
-                < AnimateHeight className="rs-list" height={this.state.height} duration={200} >
-                    <div className="bg-adjust">
+                    < AnimateHeight className="rs-list" height={this.state.height} duration={200} >
                         { this.state.items.map((item, i) =>
                             <React.Fragment key={ i }>
                             { i !== this.state.selected &&
@@ -37,8 +35,9 @@ class SelectRank extends Component {
                             }
                             </React.Fragment>
                         )}
-                    </div>
-                </ AnimateHeight>
+                    </ AnimateHeight>
+                </div>
+                
             </React.Fragment>
         )
     }

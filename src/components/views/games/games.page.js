@@ -69,12 +69,12 @@ class GamesPage extends Component {
 	render() {
 		return (
 			<section id="page-content">
+				<div className="games-menu mb-g d-flex justify-content-between s-1">
+					<SelectRank />
+					<SwitchLayout />
+				</div>
 				<div className="row mt-g g-g row-p-0">
 					<div className="col-xl-9 col-lg-9">
-						<div className="panel-games mb-g d-flex justify-content-between">
-							<SelectRank />
-							<SwitchLayout />
-						</div>
 						<div className={"games " + this.state.view}>
 							{this.state.games.map((game) =>
 								<GameCard key={game.id} {...game} />

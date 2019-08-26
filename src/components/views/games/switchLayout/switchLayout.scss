@@ -1,25 +1,29 @@
   .switch-layout {
     display: flex;
-    background: rgba(0,0,0,0.15);
-    border-radius: 99px;
-    overflow: hidden;
-    width: 45px;
     transition: 0.15s ease-in-out;
+    background: rgba(var(--themergb), 0.1);
+    border: 2px solid var(--soft);
     &:hover {
-      width: 135px;
+      border: 2px solid rgba(var(--themergb), 0.2);
     }
     i {
       display: flex;
       min-width: 45px;
       flex-basis: 45px;
       height: 100%;
-      border-radius: 99px;
       align-items: center;
       justify-content: center;
       order: 2;
+      color: var(--color);
       cursor: pointer;
+      position: relative;
+      transition: 0.2s;
+      z-index: 1;
+      &:hover {
+        background: rgba(var(--themergb), 0.25);
+      }
       &.active {
-        background: var(--header);
+        background: rgba(var(--themergb), 0.25);
       }
     }
   }
