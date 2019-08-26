@@ -1,3 +1,6 @@
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(-35px) }
+}
 @keyframes fromTop {
     from { opacity: 0; transform: translateY(-10rem); }
 }

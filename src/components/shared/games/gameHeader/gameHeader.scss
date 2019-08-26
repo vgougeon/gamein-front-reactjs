@@ -99,6 +99,7 @@
         width: 100%;
         overflow-x: visible;
         background: rgba(0,0,0,0.4);
+        
         height: 45px;
         margin-top: -44px;
         display: flex;
@@ -110,7 +111,7 @@
             margin-top: 0;
         }
         a,.menu-item {
-            color: var(--color);
+            color: white;
             font-size: 16px;
             min-width: fit-content;
             height: 45px;

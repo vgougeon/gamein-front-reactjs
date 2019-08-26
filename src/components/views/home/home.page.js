@@ -39,6 +39,15 @@ class HomePage extends Component {
       <section id="page-content">
         <div className="row mt-g g-g row-p-0">
           <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
+            <div className="box s-1">
+              <div className="box-head">
+                Suggestions d'amis
+                <i className="fas fa-users" />
+              </div>
+              <div className="box-content">
+
+              </div>
+            </div>
 					</div>
           <div className="col-xl-6 col-lg-12">
             <NewPost addPost={this.addPost}/>

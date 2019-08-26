@@ -113,9 +113,7 @@
 }
 
 .feed-content {
-  overflow: hidden;
-  border-radius:6px;
-  animation: 0.5s fromTop ease-in-out;
+  animation: 0.8s cardIn ease-in-out;
 
    .box {
      border-radius: 0 ;
