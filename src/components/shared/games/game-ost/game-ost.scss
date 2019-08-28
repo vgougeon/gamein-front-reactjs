@@ -1,12 +1,10 @@
 table.osts {
     animation: appear 0.4s ease-in-out;
     width: 100%;
+    background: var(--module);
     tr {
         &:nth-child(2n+1) {
-            background: rgba(255,255,255,0.02);
-        }
-        &:nth-child(2n) {
-            background: rgba(255,255,255,0.05);
+            background: var(--soft);
         }
         &.head {
             background: var(--module);
@@ -20,7 +18,7 @@ table.osts {
         padding-right: 14px;
     }
     td {
-        &.play, &.like {
+        &.play, &.like, &.stop {
             margin-right: 5px;
             width: 50px;
             text-align: center;
@@ -37,6 +35,9 @@ table.osts {
                     transform: scale(1.5) rotateZ(-5deg);
                 }
             }
+        }
+        &.stop {
+            color: rgb(218, 89, 89);
         }
     }
 }

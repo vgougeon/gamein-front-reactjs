@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './game-ost.scss';
+import { connect } from 'react-redux';
 import Spinner from '../../spinner/spinner-standard';
 class GameOst extends Component {
     constructor(props) {
@@ -21,22 +22,18 @@ class GameOst extends Component {
             <React.Fragment>
                 { this.state.ready ?
                 <table className="osts">
-                    <thead>
-                        <tr className="head">
-                            <th></th>
-                            <th>Name</th>
-                            <th>Game</th>
-                            <th></th>
-                        </tr>
-                    </thead>
                     <tbody>
                     { this.state.osts.map((ost) =>
                         <tr>
-                            <td className="play">
+                            { this.props.videoId !== ost.video_id ?
+                            <td className="play" onClick={() => { this.props.playOst(ost.video_id)}}>
                                 <i className="fas fa-play"/>
                             </td>
+                            :<td className="stop" onClick={() => { this.props.playOst(false)}}>
+                                <i className="fas fa-pause"/>
+                            </td>
+                            }
                             <td>{ ost.name }</td>
-                            <td>Minecraft</td>
                             <td className="like">
                                 <i className="far fa-heart"/>
                             </td>
@@ -50,4 +47,10 @@ class GameOst extends Component {
     }
 }
  
-export default GameOst;
+const mapStateToProps = (state) => ({
+    videoId: state.player.videoId
+})
+const mapDispatchToProps = (dispatch) => ({
+    playOst: (videoId) => dispatch({ type: 'PLAYER_SET_VIDEO', videoId})
+})
+export default connect(mapStateToProps, mapDispatchToProps)(GameOst)
