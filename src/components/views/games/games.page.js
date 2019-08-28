@@ -70,7 +70,10 @@ class GamesPage extends Component {
 		return (
 			<section id="page-content">
 				<div className="games-menu mb-g d-flex justify-content-between s-1">
+					<div className="d-flex align-items-center">
 					<SelectRank />
+					<button className="transparent-button ml-2">+ de filtres</button>
+					</div>
 					<SwitchLayout />
 				</div>
 				<div className="row mt-g g-g row-p-0">

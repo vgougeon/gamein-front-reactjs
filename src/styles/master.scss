@@ -142,6 +142,22 @@ button,label.button {
     border: 2px solid var(--soft);
     color: var(--color);
   }
+  &.transparent-button {
+    background: transparent;
+    border: none;
+    color: var(--color);
+    &:hover {
+      background: var(--soft);
+      box-shadow: none;
+    }
+    &:focus-within {
+      outline: none;
+      border: none;
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  }
 }
 input {
   &.success {
