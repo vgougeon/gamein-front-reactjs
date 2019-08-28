@@ -10,10 +10,15 @@
     z-index: 7;
     right: 0px;
     opacity: 1;
-    transition: opacity 0.5s;
+    transition: opacity 0.5s, width 0.4s;
     &:empty {
         width: 0;
         opacity: 0;
+    }
+    &.closed {
+        opacity: 0;
+        visibility: hidden;
+        width: 0;
     }
     .user {
         height: 60px;

@@ -10,7 +10,7 @@ class Social extends Component {
     state = { }
     handleSubmitMessage = (e) => {
         e.preventDefault()
-        this.props.addMessage({ username: 'Njak', message: e.target.message.value})
+        this.props.addMessage({ message: e.target.message.value})
         e.target.message.value = ''
     }
     componentDidUpdate() {
@@ -20,7 +20,7 @@ class Social extends Component {
     render() {
         const currentFriend = this.props.friends[this.props.friends.findIndex(item => item.id === this.props.currentChat)]
         return (  
-            <div className="social-container">
+            <div className={ 'social-container ' + (this.props.open ? '' : 'closed') }>
                 { this.props.friends.map((friend) =>
                     <div className="user" key={ friend.id }>
                         <div className="avatar" onClick={() => socialActions.chatWith(friend.id)}>
@@ -70,7 +70,8 @@ class Social extends Component {
 const mapStateToProps = (state) => ({
     messages: state.social.messages,
     currentChat: state.social.currentChat,
-    friends: state.social.friends
+    friends: state.social.friends,
+    open: state.social.open
 })
 const mapDispatchToProps = (dispatch) => ({
     addMessage: (message) => dispatch({ type: 'SOCIAL_SEND_MESSAGE', message: message})

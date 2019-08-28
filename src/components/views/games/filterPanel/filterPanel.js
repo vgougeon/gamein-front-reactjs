@@ -77,7 +77,7 @@ class FilterPanel extends Component {
         const { t } = this.props
         return ( 
             <React.Fragment>
-            <div className="filter-panel s-1 box">
+            <div className="s-1 box">
                 <div className="box-head">
                     {t('filters')}
                     <i className="fas fa-filter" />
@@ -86,8 +86,10 @@ class FilterPanel extends Component {
                     <input className="search-filter" type="search" placeholder={t('search-filter')} />
                     <i class="fas fa-search"></i>
                 </div>
+            </div>
+            <div className="s-1 box mt-g">
                 <div className="filter-category">
-                    <div className="head" onClick={() => this.expand(0) } >
+                    <div className="box-head" onClick={() => this.expand(0) } >
                         <span>{t('consoles')} <span className="quantity">{ this.state.consoles.length }</span></span>
                         { this.state.filters.consoles.length !== 0 &&
                         <div className="current-filters">
@@ -118,8 +120,8 @@ class FilterPanel extends Component {
                         </div>
                     </AnimateHeight>
                 </div>
-                <button className="soft mx-auto my-2" onClick={ this.deselectAll }>{t('unselall')}</button>
             </div>
+            <button className="transparent-button mx-auto my-2" onClick={ this.deselectAll }>{t('unselall')}</button>
             </React.Fragment>
         );
     }

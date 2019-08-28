@@ -1,26 +1,15 @@
-.filter-panel {
-    background:var(--module);
-    height: fit-content;
-    overflow: hidden;
-}
-
 .filter-category {
-    .head {
-        height: 2.8rem;
-        border-top: 2px solid rgba(var(--themergb), 0.30);
-        border-bottom: 2px solid rgba(var(--themergb), 0.30);
+    .box-head {
         margin-top: 1px;
         padding: 0 1rem;
         display: flex;
         align-items: center;
         cursor:pointer;
         justify-content: space-between;
-
         span.quantity {
             opacity: .6;
             font-size: .9rem;
         }
-
         .current-filters {
             border-radius: 99px;
             height: 1.8rem;

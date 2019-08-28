@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Dropdown from '../../../shared/dropdown/dropdown';
 import UserProfile from '../user-profile/user-profile';
 import Avatar from '../../../shared/social/avatar/avatar';
+import { connect } from 'react-redux';
 class AuthButtons extends Component {
     constructor(props) {
         super(props);
@@ -19,8 +20,10 @@ class AuthButtons extends Component {
                 <div className="icon-button mr-3 d-none d-md-flex">
                     <i className="fas fa-bell"></i>
                 </div>
+                <div className="icon-button mr-3 d-none d-md-flex" onClick={ this.props.toggleChat }>
+                    <i className="fas fa-comments"></i>
+                </div>
                 <div className="icon-button" onClick={ this.toggleUserProfile }>
-                    {/* <img alt="User profile" src={"http://njak.fr/assets/imgs/accounts/" + this.props.avatar } /> */}
                     <Avatar 
                     img={"http://njak.fr/assets/imgs/accounts/" + this.props.avatar }
                     status={ 1 }
@@ -33,4 +36,9 @@ class AuthButtons extends Component {
          );
     }
 }
-export default AuthButtons;
+const mapStateToProps = (state) => ({
+})
+const mapDispatchToProps = (dispatch) => ({
+    toggleChat: () => dispatch({ type: 'SOCIAL_TOGGLE_CHAT'})
+})
+export default connect(mapStateToProps, mapDispatchToProps)(AuthButtons)
