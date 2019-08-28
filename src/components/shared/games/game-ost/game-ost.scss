@@ -7,11 +7,15 @@ table.osts {
             background: var(--soft);
         }
         &:hover {
-            background: rgba(var(--themergb), 0.15);
+            background: rgba(var(--themergb), 0.2);
         }
         transition: 0.1s;
         height: 50px;
         vertical-align: middle;
+        border-left: 4px solid transparent;
+        &.active {
+            border-left: 4px solid var(--theme);
+        }
     }
     td, th {
         padding-left: 14px;
