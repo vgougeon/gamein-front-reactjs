@@ -65,6 +65,9 @@ class Player extends Component {
         this.state.player.playVideo()
         this.timeStart()
     }
+    getError = (event) => {
+        console.log(event)
+    }
     render() { 
         return (
             <React.Fragment>
@@ -78,6 +81,7 @@ class Player extends Component {
                 onReady={this.getPlayer}
                 onPlay={this.getInfo}
                 onStateChange={this.updateState}
+                onError={this.getError}
                 />
                 </div>
 
@@ -86,7 +90,14 @@ class Player extends Component {
                 </div>
                 
                 <div className="info">
-                    <div className="data"></div>
+                    {/* <img className="splash" src={ 'http://54.37.228.12/f/skin/5.jpg'} /> */}
+                    <div className="data">
+                        <img src={ 'http://njak.fr/assets/imgs/cover/' + this.props.ostData.media_id + '.jpg'} />
+                        <div className="ost-data">
+                            <span>{ this.props.ostData.name }</span>
+                            <span className="game-title">{ this.props.ostData.media_name }</span>
+                        </div>
+                    </div>
                     <div className="actions">
                         <i className="fas fa-random"/>
                         <i className="fas fa-step-backward"/>
@@ -115,6 +126,7 @@ class Player extends Component {
  
 const mapStateToProps = (state) => ({
     playing: state.player.playing,
-    videoId: state.player.videoId
+    videoId: state.player.videoId,
+    ostData: state.player.data
 })
 export default connect(mapStateToProps)(Player)

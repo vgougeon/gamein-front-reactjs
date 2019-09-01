@@ -3,6 +3,7 @@ import axios from 'axios';
 import './game-ost.scss';
 import { connect } from 'react-redux';
 import Spinner from '../../spinner/spinner-standard';
+import player from '../../../../store/playerActions';
 class GameOst extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +27,7 @@ class GameOst extends Component {
                     { this.state.osts.map((ost) =>
                         <tr>
                             { this.props.videoId !== ost.video_id ?
-                            <td className="play" onClick={() => { this.props.playOst(ost.video_id)}}>
+                            <td className="play" onClick={() => { player.playOst(ost.id)}}>
                                 <i className="fas fa-play"/>
                             </td>
                             :<td className="stop" onClick={() => { this.props.playOst(false)}}>

@@ -4,22 +4,54 @@
     min-width: 100%;
     flex-grow: 1;
     min-height: 0px;
+    max-height: 110px;
     height: 0;
-    background: var(--module);
+    background: rgba(var(--module2), 1);
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
     z-index: 8;
     margin-left: var(--header-size);
     transition: 0.2s ease-out;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
     &.show {
         min-height:110px;
+        opacity: 1;
+        visibility: visible;
     }
     .info {
         display: flex;
         flex-grow: 1;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
         .data {
             flex: 1 1 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            .ost-data {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .game-title {
+                    opacity: .7;
+                }
+            }
+            img {
+                height: 80px;
+                margin: 0 1rem;
+            } 
+        }
+        img.splash {
+            width: 100vw;
+            opacity: .5;
+            position: absolute;
+            top: -40px;
+            z-index: 0;
+            filter: blur(2px);
         }
         .actions {
             flex: 1 1 0;
@@ -56,6 +88,7 @@
 }
 .player-progress {
     height: 7px;
+    min-height: 7px;
     background: var(--theme);
     width: 0;
     transition: .1s linear;
@@ -64,13 +97,7 @@
         position: absolute;
         width: 100%;
         height: 7px;
-        background: var(--soft);
-    }
-    &:hover {
-        height: 12px;
-        &::before {
-            height: 12px;
-        }
+        background: rgba(var(--themergb), .4);
     }
 }
 .video-container {
