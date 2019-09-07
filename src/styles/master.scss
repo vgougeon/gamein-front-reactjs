@@ -33,7 +33,7 @@ section#main {
 section#page-content {
   overflow-x: hidden;
   width: 100%;
-  flex-grow: 1;
+  flex: 1 1 0;
   overflow-y: scroll;
   margin-left: var(--header-size);
   @media screen and (max-width: 800px){
