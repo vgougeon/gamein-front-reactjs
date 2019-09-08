@@ -1,22 +1,26 @@
-.video-container {
-}
 #player {
     min-width: 100%;
     flex-grow: 1;
     min-height: 0px;
-    max-height: 110px;
+    max-height: 140px;
     height: 0;
     background: rgba(var(--module2), 1);
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    z-index: 8;
-    margin-left: var(--header-size);
+    z-index: 8; 
     transition: 0.2s ease-out;
     display: flex;
     flex-direction: column;
     opacity: 0;
     visibility: hidden;
+    margin-left: var(--header-size);
+    @media screen and (max-width: 800px){
+        margin-left: 0;
+    }
     &.show {
         min-height:110px;
+        @media screen and (max-width: 800px){
+            min-height: 140px;
+        }
         opacity: 1;
         visibility: visible;
     }
@@ -25,12 +29,18 @@
         flex-grow: 1;
         height: 100%;
         position: relative;
+        @media screen and (max-width: 800px){
+            flex-direction: column-reverse;
+        }
         .data {
             flex: 1 1 0;
             display: flex;
             align-items: center;
             position: relative;
             z-index: 1;
+            @media screen and (max-width: 800px){
+                padding: 7px 0;
+            }
             .ost-data {
                 display: flex;
                 flex-direction: column;
@@ -41,8 +51,11 @@
             }
             img {
                 height: 80px;
-                margin: 0 1rem;
+                margin: 0 .7rem;
                 position: relative;
+                @media screen and (max-width: 800px){
+                    height: 40px;
+                }
             } 
         }
         img.splash {
@@ -58,6 +71,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            @media screen and (max-width: 800px){
+                padding: 7px 0;
+            }
             i {
                 &.fa-play, &.fa-pause {
                     font-size: 1.5rem;
@@ -83,6 +99,9 @@
         }
         .right {
             flex: 1 1 0;
+            @media screen and (max-width: 800px){
+                display: none;
+            }
         }
     }
 }
