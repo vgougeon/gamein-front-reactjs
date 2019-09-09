@@ -36,7 +36,6 @@ class LikeOST extends Component {
         })
     }
     render() { 
-        console.log(this.state)
         return (  
             <React.Fragment>
             <div className="like-ost-container" onClick={ this.like }>
