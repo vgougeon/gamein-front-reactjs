@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Youtube from 'react-youtube';
 import Spinner from '../spinner/spinner-standard';
 import { Link } from 'react-router-dom';
+import LikeOST from './likeOst/likeOst';
 class Player extends Component {
     constructor(props) {
         super(props);
@@ -116,7 +117,9 @@ class Player extends Component {
                         <i className="fas fa-step-forward"/>
                         <i className="fas fa-redo-alt"/>
                     </div>
-                    <div className="right"></div>
+                    <div className="right">
+                        <LikeOST id={ this.props.ostData.id } liked={ false } />
+                    </div>
                 </div>
                  
             </div>

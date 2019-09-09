@@ -1,5 +1,5 @@
 #player {
-    min-width: 100%;
+    width: calc(100% - var(--header-size));
     flex-grow: 1;
     min-height: 0px;
     max-height: 140px;
@@ -15,6 +15,7 @@
     margin-left: var(--header-size);
     @media screen and (max-width: 800px){
         margin-left: 0;
+        width: 100%;
     }
     &.show {
         min-height:110px;
@@ -88,7 +89,7 @@
                 transition: 0.2s ease-out;
                 &:hover {
                     color: var(--theme);
-                    transform: scale(1.5);
+                    transform: scale(1.2);
                 }
             }
             .middle-button {
@@ -99,9 +100,13 @@
         }
         .right {
             flex: 1 1 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
             @media screen and (max-width: 800px){
                 display: none;
             }
+            padding: 0 14px;
         }
     }
 }

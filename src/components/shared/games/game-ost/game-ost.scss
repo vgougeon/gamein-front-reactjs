@@ -20,10 +20,12 @@ table.osts {
     td, th {
         padding-left: 14px;
         padding-right: 14px;
+        position: relative;
     }
     td {
-        &.play, &.like, &.stop {
+        &.play, &.stop {
             margin-right: 5px;
+            max-width: 50px;
             width: 50px;
             text-align: center;
             font-size: 1rem;
@@ -42,6 +44,23 @@ table.osts {
         }
         &.stop {
             color: rgb(218, 89, 89);
+        }
+        &.like {
+            width: 80px;
+            height: 50px;
+            text-align: center;
+            padding: 0;
+            cursor: pointer;
+            i {
+                transition: 0.1s;
+            }
+            &:hover {
+                background: var(--soft);
+                i {
+                    color: var(--theme);
+                    transform: scale(1.25);
+                }
+            }
         }
     }
 }

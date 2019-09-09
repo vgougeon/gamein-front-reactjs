@@ -4,6 +4,7 @@ import './game-ost.scss';
 import { connect } from 'react-redux';
 import Spinner from '../../spinner/spinner-standard';
 import player from '../../../../store/playerActions';
+import LikeOST from '../../player/likeOst/likeOst';
 class GameOst extends Component {
     constructor(props) {
         super(props);
@@ -36,7 +37,7 @@ class GameOst extends Component {
                             }
                             <td>{ ost.name }</td>
                             <td className="like">
-                                <i className="far fa-heart"/>
+                                <LikeOST id={ ost.id } liked={ ost.liked } likes={ ost.likes }/>
                             </td>
                         </tr>
                     )}                 

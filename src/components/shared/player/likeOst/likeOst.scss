@@ -1,0 +1,26 @@
+.right .like {
+    font-size: 1.3rem;
+    transition: 0.15s;
+    &.liked {
+        color: var(--theme);
+    }
+}
+.like-ost-count {
+    margin-right: 7px;
+    opacity: .9;
+    font-size: .95rem;
+}
+.like-ost-container {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    &:hover {
+        .like {
+            color: var(--theme);
+            transform: scale(1.1);
+        }
+    }
+}
