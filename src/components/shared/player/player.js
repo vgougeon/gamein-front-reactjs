@@ -70,11 +70,10 @@ class Player extends Component {
     getError = (event) => {
         console.log(event)
     }
-    render() { 
+    render() {
         return (
             <React.Fragment>
             <div id="player" className={ this.props.playing && this.props.videoId !== false ? 'show' : ''}>
-                
                 <div className="video-container">
                 <Youtube videoId={ this.props.videoId} 
                 opts={{ height:'0', width:'0', playerVars:{
@@ -118,7 +117,7 @@ class Player extends Component {
                         <i className="fas fa-redo-alt"/>
                     </div>
                     <div className="right">
-                        <LikeOST id={ this.props.ostData.id } liked={ false } />
+                        <LikeOST id={ this.props.ostData.id } liked={ this.props.ostData.liked } likes={ this.props.ostData.likes } />
                     </div>
                 </div>
                  

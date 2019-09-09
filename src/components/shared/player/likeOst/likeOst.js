@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './likeOst.scss';
-// const LikeOST = (props) => {
-//     const like = () => {
-//         axios.post('http://54.37.228.12/api/likeOst', { id: props.id})
-//         .then(res => {
-//             console.log(res)
-//         })
-//     }
-//     return (
-//         <React.Fragment>
-//             <div className="like-ost-container" onClick={ like }>
-//                 { props.likes !== undefined &&
-//                 <span className="like-ost-count">{ props.likes }</span>
-//                 }
-//                 { props.liked ?
-//                 <i className="fas fa-heart like liked" />
-//                 :<i className="far fa-heart like" />
-//                 }
-//             </div>
-//         </React.Fragment>
-//     );
-// }
 
 class LikeOST extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {  
+            liked: props.liked,
+            likes: props.likes,
+        }
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+        if(nextProps !== this.props){
+            this.setState({
+                likes: this.props.likes,
+                liked: this.props.liked
+            })
+            return true
+        }
+        if(nextState.likes !== this.state.likes || nextState.liked !== this.state.liked)
+            return true
+        return false
+    }
     like = () => {
         axios.post('http://54.37.228.12/api/likeOst', { id: this.props.id})
         .then(res => {
@@ -37,11 +35,8 @@ class LikeOST extends Component {
             }
         })
     }
-    state = { 
-        liked: this.props.liked,
-        likes: this.props.likes,
-    }
     render() { 
+        console.log(this.state)
         return (  
             <React.Fragment>
             <div className="like-ost-container" onClick={ this.like }>
@@ -57,5 +52,4 @@ class LikeOST extends Component {
         );
     }
 }
- 
 export default LikeOST;
