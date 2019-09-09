@@ -3,6 +3,7 @@ import './player.scss';
 import { connect } from 'react-redux';
 import Youtube from 'react-youtube';
 import Spinner from '../spinner/spinner-standard';
+import { Link } from 'react-router-dom';
 class Player extends Component {
     constructor(props) {
         super(props);
@@ -95,7 +96,7 @@ class Player extends Component {
                         <img src={ 'http://njak.fr/assets/imgs/cover/' + this.props.ostData.media_id + '.jpg'} />
                         <div className="ost-data">
                             <span>{ this.props.ostData.name }</span>
-                            <span className="game-title">{ this.props.ostData.media_name }</span>
+                            <Link to={ '/game/' + this.props.ostData.media_id + '/ost'}>{ this.props.ostData.media_name }</Link>
                         </div>
                     </div>
                     <div className="actions">
