@@ -11,7 +11,7 @@ class UserHeader extends Component {
             <React.Fragment>
                 <div className="user-wrapper">
                     { this.props.skin && 
-                    <img src={ "http://njak.fr/assets/imgs/skins/" + this.props.skin + ".png"} 
+                    <img src={ "http://54.37.228.12/f/skin/" + this.props.skin + ".jpg"} 
                     className="appear wrapper-banner" 
                     alt="User Banner"
                     /> }
