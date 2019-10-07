@@ -93,7 +93,7 @@ class Player extends Component {
                 <div className="info">
                     {/* <img className="splash" src={ 'http://54.37.228.12/f/skin/5.jpg'} /> */}
                     <div className="data">
-                        <img src={ 'http://njak.fr/assets/imgs/cover/' + this.props.ostData.media_id + '.jpg'} />
+                        <img src={ 'http://54.37.228.12/f/covers/' + this.props.ostData.media_id + '.jpg'} />
                         <div className="ost-data">
                             <span>{ this.props.ostData.name }</span>
                             <Link to={ '/game/' + this.props.ostData.media_id + '/ost'}>{ this.props.ostData.media_name }</Link>

@@ -12,7 +12,7 @@ class GameCard extends Component {
         }
         <div className="game-item-content">
           <Img 
-            src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} 
+            src={"http://54.37.228.12/f/covers/" + this.props.id + ".jpg"} 
             alt={this.props.name + " - Cover"}
             ratio='120%'
           />

@@ -29,7 +29,7 @@ class GameHeader extends Component {
                         </Suspense>
                         }
                         <div className="d-flex info-container">
-                            { this.props.id && <img src={"http://njak.fr/assets/imgs/cover/" + this.props.id + ".jpg"} 
+                            { this.props.id && <img src={"http://54.37.228.12/f/covers/" + this.props.id + ".jpg"} 
                             className="cover s-1"
                             alt="Game Cover"
                             /> }
