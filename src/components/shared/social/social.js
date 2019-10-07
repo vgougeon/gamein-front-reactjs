@@ -25,7 +25,7 @@ class Social extends Component {
                     <div className="user" key={ friend.id }>
                         <div className="avatar" onClick={() => socialActions.chatWith(friend.id)}>
                             <Avatar 
-                            img={ 'http://njak.fr/assets/imgs/accounts/' + friend.avatar }
+                            img={ 'http://54.37.228.12/f/accounts/' + friend.avatar }
                             status={ 0 }
                             />
                         </div>
@@ -37,7 +37,7 @@ class Social extends Component {
                         <div className="chat-head">
                             <div className="chat-head-user-infos">
                                 <div className="avatar">
-                                    <Avatar img = {'http://njak.fr/assets/imgs/accounts/' + currentFriend.avatar } status={ 0 } /> 
+                                    <Avatar img = {'http://54.37.228.12/f/accounts/' + currentFriend.avatar } status={ 0 } /> 
                                 </div>
                                 <div className='info'>
                                     <Link to='/' className='username'>{ currentFriend.display_name }</Link>

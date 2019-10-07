@@ -15,7 +15,7 @@ class UserHeader extends Component {
                     className="appear wrapper-banner" 
                     alt="User Banner"
                     /> }
-                    { this.props.avatar && <img src={ "http://njak.fr/assets/imgs/accounts/" + this.props.avatar} 
+                    { this.props.avatar && <img src={ "http://54.37.228.12/f/accounts/" + this.props.avatar} 
                     className="avatar s-1" 
                     alt="User Profile"
                     /> }

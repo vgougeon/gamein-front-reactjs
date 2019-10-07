@@ -28,7 +28,7 @@ class UserProfile extends Component {
           <div className="closeUserProfile" onClick={ this.props.toggle }>
             <i className="fas fa-angle-double-right"></i>
           </div>
-          <img src={ 'http://njak.fr/assets/imgs/accounts/' + this.props.avatar} className="user-avatar" alt="User Profile" />
+          <img src={ 'http://54.37.228.12/f/accounts/' + this.props.avatar} className="user-avatar" alt="User Profile" />
           <div className=" m-g d-flex flex-column">
             <Link to={ "/user/" + this.props.username } className="bold">{ this.props.display_name }</Link>
             <span className='username'>@{ this.props.username }</span>
