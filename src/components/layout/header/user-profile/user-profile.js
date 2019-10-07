@@ -21,7 +21,7 @@ class UserProfile extends Component {
     return ( 
       <div className="user-profile">
       <div className="head">
-        <img src={ 'http://njak.fr/assets/imgs/skins/' + this.props.skin + '.png'} 
+        <img src={ 'http://54.37.228.12/f/skin/' + this.props.skin + '.png'} 
         className="user-banner" 
         alt="Your banner" />
         <div className="profile-head-content">
