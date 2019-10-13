@@ -24,6 +24,11 @@ class SideNav extends Component {
                 <i className="fas fa-gamepad" /><Trans>nav-games</Trans>
               </div>
             </NavLink>
+            <NavLink exact={true} activeClassName='active' to='/party'>
+              <div className="button">
+                <i className="fas fa-chess-queen" /><Trans>nav-party</Trans>
+              </div>
+            </NavLink>
           </div>
           <div className="d-flex flex-column">
             { this.context.isLoggedIn &&

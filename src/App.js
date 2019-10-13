@@ -5,6 +5,7 @@ import HomePage from "./components/views/home/home.page";
 import GamesPage from "./components/views/games/games.page";
 import UserPage from "./components/views/user/user.page";
 import GamePage from "./components/views/game/game.page";
+import PartyPage from "./components/views/party/party.page";
 import UserProvider from "./services/auth/userProvider";
 
 import { Provider } from 'react-redux';
@@ -19,6 +20,7 @@ const Container = () => (
         <Route exact path="/games" component={GamesPage} />
         <Route exact path="/user/:username/:menu?" component={UserPage} />
         <Route exact path="/game/:id/:menu?" component={GamePage} />
+        <Route exact path="/party/:game?" component={PartyPage} />
       </Layout>
     </BrowserRouter>
 );
