@@ -18,3 +18,15 @@
   z-index: 5;
   position: relative;
 }
+
+.game-list-container {
+  display: flex; //To grid
+}
+.game-list {
+  flex-grow: 1;
+}
+.filters-container {
+  width: 350px;
+  min-width: 350px;
+  margin-left: 14px;
+}
