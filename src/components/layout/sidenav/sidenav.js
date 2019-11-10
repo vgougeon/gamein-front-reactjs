@@ -22,7 +22,7 @@ class SideNav extends Component {
     return (
         <aside className={this.isOpen()} >
           <div className="d-flex flex-column">
-            <NavLink isActive={() => { return this.check([''])}} activeClassName='active' to='/' onClick={() => this.navClicked()}>
+            <NavLink isActive={() => { return this.check(['', 'user'])}} activeClassName='active' to='/' onClick={() => this.navClicked()}>
               <div className="button">
                 <i className="fas fa-compass" /><Trans>nav-home</Trans>
               </div>
@@ -32,11 +32,6 @@ class SideNav extends Component {
                 <i className="fas fa-gamepad" /><Trans>nav-games</Trans>
               </div>
             </NavLink>
-            {/* <NavLink exact={true} activeClassName='active' to='/party'>
-              <div className="button">
-                <i className="fas fa-chess-queen" /><Trans>nav-party</Trans>
-              </div>
-            </NavLink> */}
             <NavLink isActive={() => { return this.check(['party'])}} activeClassName='active' to='/party'>
               <div className="button">
                 <i className="fas fa-chess-queen" /><Trans>nav-party</Trans>
