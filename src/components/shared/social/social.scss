@@ -10,7 +10,7 @@
     z-index: 7;
     right: 0px;
     opacity: 1;
-    transition: opacity 0.5s, width 0.4s;
+    transition: opacity 0.2s;
     &:empty {
         width: 0;
         opacity: 0;

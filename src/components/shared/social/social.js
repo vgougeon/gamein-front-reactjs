@@ -15,7 +15,7 @@ class Social extends Component {
     }
     componentDidUpdate() {
         if(this.messagesEnd)
-            this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+            this.messagesEnd.scrollIntoView({behavior: "smooth", block: "end"});
     }
     render() {
         const currentFriend = this.props.friends[this.props.friends.findIndex(item => item.id === this.props.currentChat)]
