@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Post from "../../shared/feed/post/post";
 import NewPost from "../../shared/feed/newPost/newPost";
-let state = { posts: [], offset: 0, scroll: 0 };
+import Spinner from "../../shared/spinner/spinner-standard";
+let state = { posts: [], offset: 0, scroll: 0, isLoading: true };
 
 class HomePage extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class HomePage extends Component {
     this.getPosts().then(response => {
       if (response.data.length) {
         self.setState(state => ({
+          isLoading: false,
           posts: [...self.state.posts, ...response.data],
           offset: [...self.state.posts, ...response.data].length
         }));
@@ -52,9 +54,12 @@ class HomePage extends Component {
           <div className="col-xl-6 col-lg-12">
             <NewPost addPost={this.addPost}/>
             <div className={"feed-container " + this.state.view}>
-              {this.state.posts.map(post => (
+              { this.state.isLoading ? 
+              <div className="d-flex justify-content-center w-100"><Spinner size={30} /></div>
+              :this.state.posts.map(post => (
                 <Post key={post.id} {...post} />
-              ))}
+              ))
+              }
             </div>
           </div>
           <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block" />
@@ -63,5 +68,4 @@ class HomePage extends Component {
     );
   }
 }
-
 export default HomePage;
