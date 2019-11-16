@@ -14,7 +14,7 @@ class SideNav extends Component {
   }
   check = (paths) => {
     for(const path of paths)
-      if(path == this.props.location.pathname.substr(1).split('/')[0])
+      if(path === this.props.location.pathname.substr(1).split('/')[0])
         return true
     return false
   }

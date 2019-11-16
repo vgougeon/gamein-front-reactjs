@@ -8,8 +8,8 @@
   visibility: hidden;
   right: -100px;
   top: 0;
-  transition: 0.2s;
-  box-shadow: 0 0px 16px rgba(0,0,0,0.5);
+  transition: 0.5s;
+  border-left: 2px solid var(--soft);
   &.open {
     right: 0px;
     opacity: 1;
