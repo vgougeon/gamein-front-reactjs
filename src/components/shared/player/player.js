@@ -5,6 +5,7 @@ import Youtube from 'react-youtube';
 import Spinner from '../spinner/spinner-standard';
 import { Link } from 'react-router-dom';
 import LikeOST from './likeOst/likeOst';
+import Img from '../img/img';
 class Player extends Component {
     constructor(props) {
         super(props);
@@ -55,7 +56,7 @@ class Player extends Component {
                     };
                 });
             },
-            500
+            200
         )
     }
     resetInfo = (event) => {
@@ -74,6 +75,10 @@ class Player extends Component {
     }
     playerTime = (event) => {
         this.state.player.seekTo(event.target.value)
+        this.setState({
+            progress: event.target.value
+        })
+        console.log(this.props.ostData)
     }
     getError = (event) => {
         console.log(event)
@@ -81,7 +86,7 @@ class Player extends Component {
     render() {
         return (
             <React.Fragment>
-            <div id="player" className={ this.props.playing && this.props.videoId !== false ? 'show' : ''}>
+            <div id="player" className={(this.props.playing && this.props.videoId !== false ? 'show' : '')}>
                 <div className="video-container">
                 <Youtube videoId={ this.props.videoId} 
                 opts={{ height:'0', width:'0', playerVars:{
@@ -103,9 +108,12 @@ class Player extends Component {
                 value={ this.state.progress }
                 onChange={ this.playerTime }>
                 </input>
-                
+                { this.props.ostData.skins !== undefined &&
+                <Img className="splash" src={ 'http://54.37.228.12/f/skin/' +
+                this.props.ostData.skins[this.props.ostData.skins.length - 1].id
+                + '.jpg'} />
+                }
                 <div className="info">
-                    {/* <img className="splash" src={ 'http://54.37.228.12/f/skin/5.jpg'} /> */}
                     <div className="data">
                         <img src={ 'http://54.37.228.12/f/covers/' + this.props.ostData.media_id + '.jpg'} />
                         <div className="ost-data">
