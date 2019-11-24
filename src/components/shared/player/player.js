@@ -43,14 +43,19 @@ class Player extends Component {
         })
         this.timeStart()
     }
+    getCurrentTime = () => {
+        return (this.state.player === false) ? 0 : this.state.player.getCurrentTime();
+    }
     timeStart = () => {
         this.interval = setInterval(
             () => {
                 this.setState(prevState => {
-                    return { progress: prevState.progress + .1 };
+                    return { 
+                        progress: this.getCurrentTime()
+                    };
                 });
             },
-            100
+            500
         )
     }
     resetInfo = (event) => {
@@ -66,6 +71,9 @@ class Player extends Component {
     play = () => {
         this.state.player.playVideo()
         this.timeStart()
+    }
+    playerTime = (event) => {
+        this.state.player.seekTo(event.target.value)
     }
     getError = (event) => {
         console.log(event)
@@ -88,7 +96,13 @@ class Player extends Component {
 
                 <div className="player-progress" 
                 style={{ width: '' + (this.state.progress / this.state.duration) * 100 + '%'}}>
+                    
                 </div>
+                <input type="range" min="0" max={ this.state.duration } 
+                className="range-progress"
+                value={ this.state.progress }
+                onChange={ this.playerTime }>
+                </input>
                 
                 <div className="info">
                     {/* <img className="splash" src={ 'http://54.37.228.12/f/skin/5.jpg'} /> */}
