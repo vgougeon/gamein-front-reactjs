@@ -128,10 +128,10 @@ class Player extends Component {
                             { this.state.status === 1 &&
                             <i className="fas fa-pause" onClick={ this.pause }/>
                             }
-                            { this.state.status === 2 &&
+                            { (this.state.status === 2 || this.state.status === 0) &&
                             <i className="fas fa-play" onClick={ this.play }/>
                             }
-                            { (this.state.status === 3 || this.state.status === -1 || this.state.status === 0) &&
+                            { (this.state.status === 3 || this.state.status === -1) &&
                             <Spinner size='40'/>
                             }
                         </div>
