@@ -24,3 +24,6 @@
     from { filter: hue-rotate(0deg) }
     to { filter: hue-rotate(360deg)}
 }
+@keyframes fromLeft {
+    from { transform: translateX(-4px); }
+}
