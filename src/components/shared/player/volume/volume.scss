@@ -17,8 +17,15 @@
         bottom: 0;
         margin: auto auto;
         position: absolute;
+        z-index: 4;
+        opacity: 0;
     }
-
+    .volume-container {
+        height: 5px;
+        position: relative;
+        width: 100px;
+        border-radius: 4px;
+    }
     .volume-range {
         height: 5px;
         min-height: 5px;

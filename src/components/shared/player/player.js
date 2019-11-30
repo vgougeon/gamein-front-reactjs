@@ -15,7 +15,8 @@ class Player extends Component {
             progress: 0,
             videoId: false,
             player: false,
-            status: -1
+            status: -1,
+            volume: 0
         }
     }
     componentDidUpdate(prevProps, prevState) {
@@ -42,6 +43,7 @@ class Player extends Component {
         clearInterval(this.interval)
         this.setState({
             duration: event.target.getDuration(),
+            volume: event.target.getVolume()
         })
         this.timeStart()
     }
@@ -80,6 +82,10 @@ class Player extends Component {
             progress: event.target.value
         })
         console.log(this.props.ostData)
+    }
+    setVolume = (event) => {
+        this.state.player.setVolume(event.target.value);
+        this.setState({ volume: event.target.value });
     }
     getError = (event) => {
         console.log(event)
@@ -141,7 +147,7 @@ class Player extends Component {
                         <i className="fas fa-redo-alt"/>
                     </div>
                     <div className="right">
-                        <Volume/>
+                        <Volume volume={ this.state.volume } setVolume={ this.setVolume }/>
                     </div>
                 </div>
                  
