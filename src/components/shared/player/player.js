@@ -148,7 +148,7 @@ class Player extends Component {
                             <i className="fas fa-play" onClick={ this.play }/>
                             }
                             { (this.state.status === 3 || this.state.status === -1) &&
-                            <Spinner size='40'/>
+                            <Spinner size={ 30 }/>
                             }
                         </div>
                         <i className="fas fa-step-forward"/>
