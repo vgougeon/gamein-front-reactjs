@@ -111,6 +111,17 @@
                 display: flex;
                 justify-content: center;
             }
+            .player-current-time {
+                opacity: .9;
+                background: rgba(255,255,255,0.15);
+                font-size: .7rem;
+                position: absolute;
+                bottom: 5px;
+                border-radius: 4px;
+                text-align: center;
+                border: 1px solid var(--soft);
+                padding: .1rem .3rem;
+            }
         }
         .right {
             flex: 1 1 0;
