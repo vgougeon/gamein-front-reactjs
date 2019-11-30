@@ -5,6 +5,7 @@ import Youtube from 'react-youtube';
 import Spinner from '../spinner/spinner-standard';
 import { Link } from 'react-router-dom';
 import LikeOST from './likeOst/likeOst';
+import Volume from './volume/volume';
 import Img from '../img/img';
 class Player extends Component {
     constructor(props) {
@@ -14,7 +15,8 @@ class Player extends Component {
             progress: 0,
             videoId: false,
             player: false,
-            status: -1
+            status: -1,
+            volume: 0
         }
     }
     componentDidUpdate(prevProps, prevState) {
@@ -41,6 +43,7 @@ class Player extends Component {
         clearInterval(this.interval)
         this.setState({
             duration: event.target.getDuration(),
+            volume: event.target.getVolume()
         })
         this.timeStart()
     }
@@ -79,6 +82,11 @@ class Player extends Component {
             progress: event.target.value
         })
         console.log(this.props.ostData)
+    }
+    setVolume = (event) => {
+        let volume = typeof(event) === "number" ? event : event.target.value
+        this.state.player.setVolume(volume);
+        this.setState({ volume: volume });
     }
     getError = (event) => {
         console.log(event)
@@ -140,6 +148,7 @@ class Player extends Component {
                         <i className="fas fa-redo-alt"/>
                     </div>
                     <div className="right">
+                        <Volume volume={ this.state.volume } setVolume={ this.setVolume }/>
                     </div>
                 </div>
                  
