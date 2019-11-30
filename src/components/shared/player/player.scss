@@ -53,7 +53,7 @@ $maximized-height: 110px;
                     max-height: 3rem;
                     margin-top: .4rem;
                 }
-                img {
+                img.player-relative-cover {
                     margin: 0 .7rem 0 .7rem;
                 }
             }
@@ -116,16 +116,13 @@ $maximized-height: 110px;
                     transition: .2s;
                 }
             }
-            img {
+            img.player-relative-cover {
                 height: 80px;
-                margin: -40px .7rem 0 .7rem;
-                position: relative;
-                transition: .5s ease-in;
+                margin: -46px .7rem 0 .7rem;
+                bottom: .5rem;
                 border: 3px solid var(--bg);
-                @media screen and (max-width: 800px){
-                    height: 40px;
-                }
-            } 
+                transition: .3s ease-in-out;
+            }
         }
         .actions {
             flex: 1 1 0;

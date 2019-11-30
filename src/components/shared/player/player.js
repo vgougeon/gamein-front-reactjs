@@ -98,6 +98,9 @@ class Player extends Component {
         const durationS = String(Math.floor(this.state.duration % 60)).padStart(2, '0');
         return progressM + ":" + progressS + " / " + durationM + ":" + durationS
     }
+    keyDown = (event) => {
+        console.log("TEST")
+    }
     render() {
         return (
             <React.Fragment>
@@ -130,7 +133,7 @@ class Player extends Component {
                 }
                 <div className="info">
                     <div className="data">
-                        <img src={ 'http://54.37.228.12/f/covers/' + this.props.ostData.media_id + '.jpg'} />
+                        <img className="player-relative-cover" src={ 'http://54.37.228.12/f/covers/' + this.props.ostData.media_id + '.jpg'} />
                         <div className="ost-data">
                             <span>{ this.props.ostData.name }</span>
                             <Link to={ '/game/' + this.props.ostData.media_id + '/ost'}>{ this.props.ostData.media_name }</Link>
