@@ -119,6 +119,7 @@ class Player extends Component {
                         <div className="ost-data">
                             <span>{ this.props.ostData.name }</span>
                             <Link to={ '/game/' + this.props.ostData.media_id + '/ost'}>{ this.props.ostData.media_name }</Link>
+                            <LikeOST id={ this.props.ostData.id } liked={ this.props.ostData.liked } likes={ this.props.ostData.likes } />
                         </div>
                     </div>
                     <div className="actions">
@@ -139,7 +140,6 @@ class Player extends Component {
                         <i className="fas fa-redo-alt"/>
                     </div>
                     <div className="right">
-                        <LikeOST id={ this.props.ostData.id } liked={ this.props.ostData.liked } likes={ this.props.ostData.likes } />
                     </div>
                 </div>
                  

@@ -14,7 +14,7 @@
 }
 .game-wrapper {
     width: 100%;
-    background: var(--module);
+    background: linear-gradient(20deg, var(--theme), var(--header));
     display: flex;
     align-items: center;
     position: relative;
