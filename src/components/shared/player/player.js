@@ -91,6 +91,13 @@ class Player extends Component {
     getError = (event) => {
         console.log(event)
     }
+    getProgress = () => {
+        const progressM = String(Math.floor(this.state.progress / 60)).padStart(2, '0');
+        const progressS = String(Math.floor(this.state.progress % 60)).padStart(2, '0');
+        const durationM = String(Math.floor(this.state.duration / 60)).padStart(2, '0');
+        const durationS = String(Math.floor(this.state.duration % 60)).padStart(2, '0');
+        return progressM + ":" + progressS + " / " + durationM + ":" + durationS
+    }
     render() {
         return (
             <React.Fragment>
@@ -146,6 +153,7 @@ class Player extends Component {
                         </div>
                         <i className="fas fa-step-forward"/>
                         <i className="fas fa-redo-alt"/>
+                        <span className="player-current-time">{ this.getProgress() }</span>
                     </div>
                     <div className="right">
                         <Volume volume={ this.state.volume } setVolume={ this.setVolume }/>
