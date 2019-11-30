@@ -120,7 +120,7 @@ $maximized-height: 110px;
                 height: 80px;
                 margin: -40px .7rem 0 .7rem;
                 position: relative;
-                transition: .1s ease-in-out;
+                transition: .5s ease-in;
                 border: 3px solid var(--bg);
                 @media screen and (max-width: 800px){
                     height: 40px;
