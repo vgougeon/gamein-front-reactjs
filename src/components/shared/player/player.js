@@ -5,6 +5,7 @@ import Youtube from 'react-youtube';
 import Spinner from '../spinner/spinner-standard';
 import { Link } from 'react-router-dom';
 import LikeOST from './likeOst/likeOst';
+import Volume from './volume/volume';
 import Img from '../img/img';
 class Player extends Component {
     constructor(props) {
@@ -140,6 +141,7 @@ class Player extends Component {
                         <i className="fas fa-redo-alt"/>
                     </div>
                     <div className="right">
+                        <Volume/>
                     </div>
                 </div>
                  

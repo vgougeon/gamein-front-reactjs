@@ -1,0 +1,40 @@
+.volume {
+    margin: 0 .5rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    i {
+        margin-right: 1rem;
+    }
+    input.volume-input-range {
+        appearance: none;
+        opacity: .4;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        height: 30px;
+        top: 0;
+        bottom: 0;
+        margin: auto auto;
+        position: absolute;
+    }
+
+    .volume-range {
+        height: 5px;
+        min-height: 5px;
+        background: var(--color);
+        width: 0;
+        transition: .2s linear;
+        z-index: 2;
+        max-width: 6rem;
+        width: 100px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: var(--theme);
+        }
+    }
+}
