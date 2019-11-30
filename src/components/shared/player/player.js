@@ -84,8 +84,9 @@ class Player extends Component {
         console.log(this.props.ostData)
     }
     setVolume = (event) => {
-        this.state.player.setVolume(event.target.value);
-        this.setState({ volume: event.target.value });
+        let volume = typeof(event) === "number" ? event : event.target.value
+        this.state.player.setVolume(volume);
+        this.setState({ volume: volume });
     }
     getError = (event) => {
         console.log(event)
