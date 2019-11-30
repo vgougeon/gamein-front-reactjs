@@ -1,20 +1,20 @@
+$progress-bar-height: 12px;
+$minimized-height: 64px;
+$maximized-height: 110px;
 #player {
     width: calc(100% - var(--header-size));
     flex-grow: 1;
-    min-height: 0px;
-    max-height: 140px;
     height: 0;
     position: relative;
     background: rgba(var(--module2), 1);
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
     z-index: 8; 
-    transition: 0.2s ease-out;
+    transition: 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     opacity: 0;
     visibility: hidden;
     margin-left: var(--header-size);
-    overflow: hidden;
     @media screen and (max-width: 800px){
         margin-left: 0;
         width: 100%;
@@ -33,17 +33,49 @@
         user-select: none;
     }
     &.show {
-        min-height:110px;
+        min-height: $minimized-height;
         @media screen and (max-width: 800px){
             min-height: 140px;
         }
         opacity: 1;
         visibility: visible;
+        &:hover {
+            min-height: $maximized-height;
+            .info .data a {
+                visibility: visible;
+                opacity: 1;
+                max-height: 1rem;
+            }
+            .info .data {
+                .ost-data .like-ost-container {
+                    visibility: visible;
+                    opacity: 1;
+                    max-height: 3rem;
+                    margin-top: .4rem;
+                }
+                img {
+                    margin: 0 .7rem 0 .7rem;
+                }
+            }
+            .actions .player-current-time {
+                visibility: visible;
+                opacity: .9;
+            }
+            .actions i {
+                &.fa-play, &.fa-pause {
+                    font-size: 1.4rem;
+                }
+                &.fa-random, &.fa-redo-alt {
+                    font-size: .8rem;
+                    opacity: .6;
+                }
+            }
+        }
     }
     .info {
         display: flex;
         flex-grow: 1;
-        height: 100%;
+        height: calc(100% - #{$progress-bar-height});
         position: relative;
         z-index: 2;
         @media screen and (max-width: 800px){
@@ -58,6 +90,13 @@
             @media screen and (max-width: 800px){
                 padding: 7px 0;
             }
+            a {
+                visibility: hidden;
+                opacity: 0;
+                transition: .2s ease-in-out;
+                max-height: 0;
+                display: block;
+            }
             .ost-data {
                 display: flex;
                 flex-direction: column;
@@ -68,14 +107,21 @@
                     opacity: .7;
                 }
                 .like-ost-container {
-                    margin-top: .4rem;
+                    margin-top: 0;
+                    visibility: hidden;
+                    opacity: 0;
                     justify-content: left;
+                    display: block;
+                    max-height: 0;
+                    transition: .2s;
                 }
             }
             img {
                 height: 80px;
-                margin: 0 .7rem;
+                margin: -40px .7rem 0 .7rem;
                 position: relative;
+                transition: .1s ease-in-out;
+                border: 3px solid var(--bg);
                 @media screen and (max-width: 800px){
                     height: 40px;
                 }
@@ -91,14 +137,14 @@
             }
             i {
                 &.fa-play, &.fa-pause {
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 }
                 &.fa-random, &.fa-redo-alt {
-                    font-size: .9rem;
+                    font-size: .7rem;
                     opacity: .6;
                 }
                 margin: 0 2rem;
-                font-size: 1.2rem;
+                font-size: 1.0rem;
                 cursor: pointer;
                 transition: 0.2s ease-out;
                 &:hover {
@@ -121,6 +167,9 @@
                 text-align: center;
                 border: 1px solid var(--soft);
                 padding: .05rem .3rem;
+                visibility: hidden;
+                opacity: 0;
+                transition: .2s ease-in-out;
             }
         }
         .right {
