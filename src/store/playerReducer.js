@@ -1,5 +1,4 @@
 // eslint-disable-line no-unused-vars
-import actions from './playerActions';
 const initialState = {
     playing: true,
     videoId: false,

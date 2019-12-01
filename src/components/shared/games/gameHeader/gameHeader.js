@@ -1,12 +1,11 @@
 import React, { Component, Suspense } from 'react';
 import { NavLink } from 'react-router-dom';
-import { UserContext } from '../../../../services/auth/userProvider';
+import { connect } from 'react-redux';
 import './gameHeader.scss';
 import '../gamecard/gamecard.scss'
 import Img from '../../img/img';
 const NewSkin = React.lazy(() => import('../../editor/newSkin/newSkin'))
 class GameHeader extends Component {
-    static contextType = UserContext;
     static defaultProps = {
         skins: []
     };
@@ -56,7 +55,7 @@ class GameHeader extends Component {
                             <NavLink exact={true} activeClassName='active' to={'/game/' + this.props.id + '/ost'}>OST</NavLink>
                         </div>
                         <div className="d-flex h-100">
-                            { this.context.isLoggedIn &&
+                            { this.props.auth &&
                             <div className={'menu-item ' + (this.props.editor ? 'active' : '')}
                             onClick={ this.props.toggleEdit }
                             >
@@ -72,4 +71,7 @@ class GameHeader extends Component {
     }
 }
 
-export default GameHeader;
+const mapStateToProps = (state) => ({
+    auth: state.auth.auth,
+})
+export default connect(mapStateToProps)(GameHeader)

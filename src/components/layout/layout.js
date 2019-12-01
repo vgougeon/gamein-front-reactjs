@@ -1,14 +1,14 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import authActions from '../../store/authActions';
 import Header from "./header/header";
 import SideNav from "./sidenav/sidenav";
 import LoginPopup from "../shared/popup/login-popup/login-popup";
 import Social from '../shared/social/social';
 import Player from '../shared/player/player';
-import { UserContext } from '../../services/auth/userProvider';
 
 
 class Layout extends Component {
-  static contextType = UserContext;
   constructor(props) {
     super(props);
     this.state = {Open: false};
@@ -25,12 +25,13 @@ class Layout extends Component {
   }
   
   render() {
+    console.log(this.props)
     return (
       <React.Fragment>
-        { this.context.layout.login &&
+        { this.props.loginlayout &&
         <LoginPopup 
-        show={ this.context.layout.login }
-        toggle={ this.context.layout.toggleLogin } />
+        show={ this.props.loginlayout }
+        toggle={ authActions.toggleLogin } />
         }
         <section id="container">
         <Header toggleOpen={this.toggleOpen} />
@@ -46,4 +47,7 @@ class Layout extends Component {
   }
 }
 
-export default Layout;
+const mapStateToProps = (state) => ({
+  loginlayout: state.auth.loginlayout
+})
+export default connect(mapStateToProps)(Layout)

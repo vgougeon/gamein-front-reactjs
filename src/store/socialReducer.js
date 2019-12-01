@@ -1,5 +1,4 @@
 import socket from '../services/socket/openSocket'
-import actions from './socialActions';
 const initialState = {
     messages: {},
     currentChat: null,

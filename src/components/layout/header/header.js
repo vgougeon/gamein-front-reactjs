@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import AuthManager from './auth-manager/auth-manager';
-import { UserContext } from "../../../services/auth/userProvider";
 import SearchBar from "./search-bar/search-bar";
 import "./header.scss";
 
 class Header extends Component {
-  static contextType = UserContext;
   render() {
     return (
       <header>
