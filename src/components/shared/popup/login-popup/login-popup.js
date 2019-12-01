@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import authActions from '../../../../store/authActions';
 import { withTranslation } from 'react-i18next';
-import { UserContext } from '../../../../services/auth/userProvider';
 
 import './login-popup.scss';
 
 class LoginPopup extends Component {
-    static contextType = UserContext; 
     constructor(props) {
         super(props);
         this.state = { username: '', password: '' }
@@ -19,14 +18,14 @@ class LoginPopup extends Component {
     }
     handleClick = (e) => {
         if(!this.node.contains(e.target)) {
-            this.context.layout.toggleLogin()
+            this.props.toggle()
         }
     }
     checkUsername = () => {
         console.log(this.state.username)
     }
     login = (e) => {
-        this.context.signIn(this.state.username, this.state.password)
+        authActions.signIn(this.state.username, this.state.password)
         e.preventDefault()
     }
     render() { 

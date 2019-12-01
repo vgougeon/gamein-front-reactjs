@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { UserContext } from '../../../../services/auth/userProvider';
+import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 import './newPost.scss';
 import axios from "axios";
 class NewPost extends Component {
-  static contextType = UserContext;
   constructor(props) {
     super(props);
     this.state = { file: null, inputKey : Date.now(), isLoading: false};
@@ -51,7 +50,7 @@ class NewPost extends Component {
   }
 
   render() {
-    if(this.context.isLoggedIn){
+    if(this.props.auth){
       const { t } = this.props;
       return (
         <div className="box s-1 textarea-post mb-g overflow-hidden">
@@ -101,4 +100,8 @@ class NewPost extends Component {
   }
 }
 
-export default withTranslation()(NewPost);
+const mapStateToProps = (state) => ({
+  auth: state.auth.auth
+})
+export default connect(mapStateToProps)(withTranslation()(NewPost));
+

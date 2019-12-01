@@ -6,7 +6,6 @@ import GamesPage from "./components/views/games/games.page";
 import UserPage from "./components/views/user/user.page";
 import GamePage from "./components/views/game/game.page";
 import PartyPage from "./components/views/party/party.page";
-import UserProvider from "./services/auth/userProvider";
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -28,9 +27,7 @@ const Container = () => (
 function App() {
   return (
     <Provider store={ store }>
-      <UserProvider>
-        <Container />
-      </UserProvider>
+      <Container />
     </Provider>
   );
 }

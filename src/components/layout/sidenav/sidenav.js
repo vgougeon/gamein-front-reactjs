@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import {withRouter} from 'react-router-dom';
 import { Trans } from 'react-i18next';
-import { UserContext } from '../../../services/auth/userProvider';
 import "./sidenav.scss";
+import authActions from "../../../store/authActions";
 class SideNav extends Component {
-  static contextType = UserContext;
   isOpen() {
     return ((this.props.isOpen) ? "" : "aside-fold");
   }
@@ -39,8 +39,8 @@ class SideNav extends Component {
             </NavLink>
           </div>
           <div className="d-flex flex-column">
-            { this.context.isLoggedIn &&
-            <div className="button" onClick={ this.context.signOut } >
+            { this.props.auth &&
+            <div className="button" onClick={ authActions.signOut } >
               <i className="fas fa-sign-out-alt" /><Trans>sign-out</Trans>
             </div>
             }
@@ -50,4 +50,7 @@ class SideNav extends Component {
   }
 }
 
-export default withRouter(SideNav)
+const mapStateToProps = (state) => ({
+  auth: state.auth.auth,
+})
+export default connect(mapStateToProps)(withRouter(SideNav))

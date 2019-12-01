@@ -1,16 +1,19 @@
 // eslint-disable-line no-unused-vars
-import actions from './authActions';
 const initialState = {
-    auth: {},
+    auth: false,
     isLoading: true,
-    isLoggedIn: false,
-
     loginlayout: false
 }
 let authReducer = (state = initialState, action = {}) => {
     switch (action.type) {
         case 'AUTH_SET_USER' :
-            return { ...state, auth: action.auth}
+            return { ...state, auth: action.auth, isLoading: false}
+        case 'AUTH_TOGGLE_LOGIN' :
+            return { ...state, loginlayout: !state.loginlayout}
+        case 'AUTH_IS_LOADING' :
+            return { ...state, isLoading: true }
+        case 'AUTH_RESET' :
+            return { ...state, isLoading: false, auth: false}
         default:
             return state
     }

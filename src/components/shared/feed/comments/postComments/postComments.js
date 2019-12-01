@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { UserContext } from '../../../../../services/auth/userProvider';
+import { connect } from 'react-redux';
 import axios from 'axios';
 import './postComments.scss';
 
 class PostComments extends Component {
-    static contextType = UserContext;
     submitComment = (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
@@ -18,7 +17,7 @@ class PostComments extends Component {
         })
     }
     render() {
-        if(this.context.isLoggedIn){
+        if(this.props.auth){
             return(
             <form onSubmit={ this.submitComment } ref={(el) => this.newCommentRef = el }>
                 <div className="textarea-post m-g d-flex align-items-center">
@@ -34,4 +33,7 @@ class PostComments extends Component {
         }
     }
 }
-export default PostComments;
+const mapStateToProps = (state) => ({
+    auth: state.auth.auth
+})
+export default connect(mapStateToProps)(PostComments)
