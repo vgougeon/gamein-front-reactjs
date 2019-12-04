@@ -15,7 +15,7 @@ function Login (props) {
 class AuthManager extends Component {
     render() {
         let auth;
-        if(this.props.isLoading){ auth = <Spinner size={30}/> }
+        if(this.props.isLoading){ auth = <Spinner/> }
         else if(this.props.auth){ auth = <AuthButtons {...this.props.auth} /> } 
         else { auth = <Login click={ authActions.toggleLogin } />; }
         return (

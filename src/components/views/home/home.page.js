@@ -55,7 +55,7 @@ class HomePage extends Component {
             <NewPost addPost={this.addPost}/>
             <div className={"feed-container " + this.state.view}>
               { this.state.isLoading ? 
-              <div className="d-flex justify-content-center w-100"><Spinner size={30} /></div>
+              <div className="d-flex justify-content-center w-100"><Spinner /></div>
               :this.state.posts.map(post => (
                 <Post key={post.id} {...post} />
               ))
