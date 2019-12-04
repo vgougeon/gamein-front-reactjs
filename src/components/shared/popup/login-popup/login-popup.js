@@ -22,7 +22,7 @@ class LoginPopup extends Component {
         }
     }
     checkUsername = () => {
-        console.log(this.state.username)
+        console.log("Check username")
     }
     login = (e) => {
         authActions.signIn(this.state.username, this.state.password)

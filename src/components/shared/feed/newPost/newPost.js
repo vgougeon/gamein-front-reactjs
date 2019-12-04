@@ -37,7 +37,6 @@ class NewPost extends Component {
   }
 
   changeFile = (e) => {
-      console.log(e.target.files[0])
       this.setState({
         file: URL.createObjectURL(e.target.files[0])
       })

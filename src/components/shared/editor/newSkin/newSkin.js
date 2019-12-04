@@ -20,7 +20,6 @@ class NewSkin extends Component {
     sendSkin = async () => {
         let formData = new FormData();
         let img = await this.cropper.getCroppedCanvas().toDataURL('image/jpeg', 0.9);
-        console.log(img)
         img = await this.dataURItoBlob(img)
         await formData.append("skin", img);
         await formData.append("gameId", this.props.gameId);

@@ -19,7 +19,6 @@ class Post extends Component {
     }
   }
   expand = (e) => {
-    console.log()
     if(e.currentTarget.classList.contains('open')) {
       e.currentTarget.style.maxHeight = '250px';
       e.currentTarget.classList.remove('open')

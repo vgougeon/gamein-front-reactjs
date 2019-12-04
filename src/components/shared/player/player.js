@@ -34,7 +34,6 @@ class Player extends Component {
         })
     }
     updateState = (event) => {
-        console.log(event.data)
         this.setState({
             status: event.data
         })
@@ -81,7 +80,6 @@ class Player extends Component {
         this.setState({
             progress: event.target.value
         })
-        console.log(this.props.ostData)
     }
     setVolume = (event) => {
         let volume = typeof(event) === "number" ? event : event.target.value
@@ -89,7 +87,7 @@ class Player extends Component {
         this.setState({ volume: volume });
     }
     getError = (event) => {
-        console.log(event)
+        console.log("YOUTUBE player error")
     }
     getProgress = () => {
         const progressM = String(Math.floor(this.state.progress / 60)).padStart(2, '0');
@@ -97,9 +95,6 @@ class Player extends Component {
         const durationM = String(Math.floor(this.state.duration / 60)).padStart(2, '0');
         const durationS = String(Math.floor(this.state.duration % 60)).padStart(2, '0');
         return progressM + ":" + progressS + " / " + durationM + ":" + durationS
-    }
-    keyDown = (event) => {
-        console.log("TEST")
     }
     render() {
         return (
@@ -155,7 +150,7 @@ class Player extends Component {
                             <i className="fas fa-play" onClick={ this.play }/>
                             }
                             { (this.state.status === 3 || this.state.status === -1) &&
-                            <Spinner size={ 30 }/>
+                            <Spinner/>
                             }
                         </div>
                         <i className="fas fa-step-forward"/>

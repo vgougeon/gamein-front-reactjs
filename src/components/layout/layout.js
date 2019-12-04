@@ -17,7 +17,6 @@ class Layout extends Component {
 
   
   toggleOpen() {
-    console.log('Le lien a été cliqué.');
     this.setState(state => ({
       Open : !state.Open
     }));
@@ -25,7 +24,6 @@ class Layout extends Component {
   }
   
   render() {
-    console.log(this.props)
     return (
       <React.Fragment>
         { this.props.loginlayout &&

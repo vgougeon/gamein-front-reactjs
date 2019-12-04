@@ -26,7 +26,7 @@ class GameOst extends Component {
                 <table className="osts">
                     <tbody>
                     { this.state.osts.map((ost) =>
-                        <tr>
+                        <tr key={ ost.id }>
                             { this.props.videoId !== ost.video_id ?
                             <td className="play" onClick={() => { player.playOst(ost.id)}}>
                                 <i className="fas fa-play"/>

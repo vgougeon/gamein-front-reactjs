@@ -24,7 +24,7 @@ class Img extends Component {
       return (
         <div className="img-ratio">
           <div className="ratio-box">
-            <Spinner></Spinner>
+            <Spinner/>
             <img className={ this.props.className + ' ratio dynamic' + (this.state.loaded ? "" : " loadImg")}
             src={ this.props.src } 
             alt={ this.props.alt } 

@@ -8,7 +8,6 @@ class PostComments extends Component {
         e.preventDefault();
         const data = new FormData(e.target);
         data.append("post_id", this.props.id);
-        console.log(data)
         axios.post('http://54.37.228.12/api/newComment', data).then(res => {
             if(res.status === 200){
                 this.newCommentRef.reset();
