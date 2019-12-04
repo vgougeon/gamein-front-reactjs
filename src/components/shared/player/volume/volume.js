@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './volume.scss';
 class Volume extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() { 
         return (  
             <div className="volume">

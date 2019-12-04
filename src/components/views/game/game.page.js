@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GameHeader from '../../shared/games/gameHeader/gameHeader';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Spinner from '../../shared/spinner/spinner-standard';
 import GameOst from '../../shared/games/game-ost/game-ost';
 

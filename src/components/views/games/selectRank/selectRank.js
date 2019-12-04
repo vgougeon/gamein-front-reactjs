@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import './selectRank.scss';
 import AnimateHeight from "react-animate-height";
-import SwitchLayout from "../switchLayout/switchLayout";
 import { withTranslation } from 'react-i18next';
 
 class SelectRank extends Component {
@@ -39,7 +38,6 @@ class SelectRank extends Component {
                         )}
                     </ AnimateHeight>
                 </div>
-                
             </React.Fragment>
         )
     }

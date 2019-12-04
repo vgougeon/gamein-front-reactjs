@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Cropper from 'cropperjs';
-import { appendFile } from 'fs';
 import 'cropperjs/dist/cropper.css';
 import './newSkin.scss';
 class NewSkin extends Component {

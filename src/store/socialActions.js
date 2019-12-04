@@ -4,12 +4,12 @@ import axios from 'axios';
 let id = 0
 const actions = {
     sendMessage: (message) => {
-        let data = {
-            id: id++,
-            message: message,
-            username: 'Njak',
-            avatar: '61563909495.png' 
-        }
+        // let data = {
+        //     id: id++,
+        //     message: message,
+        //     username: 'Njak',
+        //     avatar: '61563909495.png' 
+        // }
         // console.log(data)
         // store.dispatch({ type: 'SOCIAL_ADD_MESSAGE', message: data})
     },

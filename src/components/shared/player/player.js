@@ -106,20 +106,20 @@ class Player extends Component {
             <React.Fragment>
             <div id="player" className={(this.props.playing && this.props.videoId !== false ? 'show' : '')}>
                 <div className="video-container">
-                <Youtube videoId={ this.props.videoId} 
-                opts={{ height:'0', width:'0', playerVars:{
-                    autoplay: 1
-                }}}
-                onReady={this.getPlayer}
-                onPlay={this.getInfo}
-                onStateChange={this.updateState}
-                onError={this.getError}
-                />
+                { this.props.videoId &&
+                    <Youtube videoId={ this.props.videoId} 
+                        opts={{ height:'0', width:'0', playerVars:{
+                            autoplay: 1
+                        }}}
+                        onReady={this.getPlayer}
+                        onPlay={this.getInfo}
+                        onStateChange={this.updateState}
+                        onError={this.getError}
+                    />
+                }
                 </div>
-
                 <div className="player-progress" 
                 style={{ width: '' + (this.state.progress / this.state.duration) * 100 + '%'}}>
-                    
                 </div>
                 <input type="range" min="0" max={ this.state.duration } 
                 className="range-progress"
@@ -129,11 +129,15 @@ class Player extends Component {
                 { this.props.ostData.skins !== undefined &&
                 <Img className="splash" src={ 'http://54.37.228.12/f/skin/' +
                 this.props.ostData.skins[this.props.ostData.skins.length - 1].id
-                + '.jpg'} />
+                + '.jpg'} 
+                alt="Media skin"/>
                 }
                 <div className="info">
                     <div className="data">
-                        <img className="player-relative-cover" src={ 'http://54.37.228.12/f/covers/' + this.props.ostData.media_id + '.jpg'} />
+                        <Img className="player-relative-cover" 
+                        src={ 'http://54.37.228.12/f/covers/' + this.props.ostData.media_id + '.jpg'} 
+                        alt="Game cover"
+                        />
                         <div className="ost-data">
                             <span>{ this.props.ostData.name }</span>
                             <Link to={ '/game/' + this.props.ostData.media_id + '/ost'}>{ this.props.ostData.media_name }</Link>

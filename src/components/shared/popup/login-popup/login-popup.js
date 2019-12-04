@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import authActions from '../../../../store/authActions';
-import { withTranslation } from 'react-i18next';
+import Img from '../../img/img';
 
 import './login-popup.scss';
 
@@ -33,7 +33,7 @@ class LoginPopup extends Component {
             <div className="popup-wrapper">
                 <div className="login-popup" ref={node => this.node = node}>
                     <div className="login-head z1">
-                        <img src="http://54.37.228.12/assets/favicon.png"></img>
+                        <Img src="http://54.37.228.12/assets/favicon.png" alt="Favicon"/>
                         Gamein
                     </div>
                     <div className="info-wrapper">
