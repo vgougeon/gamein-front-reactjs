@@ -18,7 +18,7 @@ class GamePage extends Component {
         }
     }
     componentDidMount() {
-        axios.get('http://54.37.228.12/api/getGame', { params: { game: this.state.id } }).then(res => {
+        axios.get('/api/getGame', { params: { game: this.state.id } }).then(res => {
             this.setState(state => ({
                 gameInfo: res.data
             }));

@@ -23,7 +23,7 @@ class NewSkin extends Component {
         img = await this.dataURItoBlob(img)
         await formData.append("skin", img);
         await formData.append("gameId", this.props.gameId);
-        axios.post('http://54.37.228.12/api/newSkin', formData,
+        axios.post('/api/newSkin', formData,
         {
         headers: {
             'Content-Type': 'multipart/form-data'

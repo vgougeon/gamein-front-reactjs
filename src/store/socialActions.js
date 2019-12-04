@@ -29,7 +29,7 @@ const actions = {
         }
     },
     getFriends: () => {
-        axios.get('http://54.37.228.12/api/getFriends').then(res => {
+        axios.get('/api/getFriends').then(res => {
             if(res.data !== false){
                 store.dispatch({ type: 'SOCIAL_SET_FRIENDLIST', friends: res.data})
             }

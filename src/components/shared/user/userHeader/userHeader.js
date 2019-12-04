@@ -11,11 +11,11 @@ class UserHeader extends Component {
             <React.Fragment>
                 <div className="user-wrapper">
                     { this.props.skin && 
-                    <img src={ "http://54.37.228.12/f/skin/" + this.props.skin + ".jpg"} 
+                    <img src={ "/f/skin/" + this.props.skin + ".jpg"} 
                     className="appear wrapper-banner" 
                     alt="User Banner"
                     /> }
-                    { this.props.avatar && <img src={ "http://54.37.228.12/f/accounts/" + this.props.avatar} 
+                    { this.props.avatar && <img src={ "/f/accounts/" + this.props.avatar} 
                     className="avatar s-1" 
                     alt="User Profile"
                     /> }

@@ -33,7 +33,7 @@ class LoginPopup extends Component {
             <div className="popup-wrapper">
                 <div className="login-popup" ref={node => this.node = node}>
                     <div className="login-head z1">
-                        <Img src="http://54.37.228.12/assets/favicon.png" alt="Favicon"/>
+                        <Img src="/assets/favicon.png" alt="Favicon"/>
                         Gamein
                     </div>
                     <div className="info-wrapper">

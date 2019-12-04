@@ -19,7 +19,7 @@ class Comments extends Component {
     }
 
     getComments() {
-        return axios.get("http://54.37.228.12/api/getComments?post=" + this.state.idpost, {
+        return axios.get("/api/getComments?post=" + this.state.idpost, {
         });
     }
 
@@ -52,7 +52,7 @@ class Comments extends Component {
                 <div className="d-flex flex-column py-2" id="comment-container">
                     {this.state.comments.map((comment, index) => (
                         <div key={index + "-" + this.state.idpost} className="d-flex comment-item px-3 py-2">
-                            <img className="small-avatar mr-2" src={"http://54.37.228.12/f/accounts/" + comment.avatar} alt="" />
+                            <img className="small-avatar mr-2" src={"/f/accounts/" + comment.avatar} alt="" />
                             <div className="d-flex flex-column">
                                 <a className="w-fit" href={"./user/" + comment.display_name}><span className="mb-0">{comment.username}</span></a>
                                 <span>{comment.content}</span>

@@ -31,7 +31,7 @@ class GamesPage extends Component {
 	getGames = () => {
 		let self = this
 		this.setState({ isLoading: true })
-		axios.post('http://54.37.228.12/api/getGames',{ offset: this.state.offset, filters: this.state.filters })
+		axios.post('/api/getGames',{ offset: this.state.offset, filters: this.state.filters })
 		.then(response => {
 			if(response.data.length){
 				self.setState(state => ({

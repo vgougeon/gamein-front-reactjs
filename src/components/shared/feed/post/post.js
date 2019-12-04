@@ -37,7 +37,7 @@ class Post extends Component {
 
   likePost = () => {
     let data = { id: this.props.id}
-    axios.post('http://54.37.228.12/api/likePost', data)
+    axios.post('/api/likePost', data)
     .then(res => {
       if(res.data === 1){ 
         this.setState(state => ({
@@ -61,7 +61,7 @@ class Post extends Component {
     <div className="feed-content mb-g s-1">
     <div className="box feed">
         <div className="info">
-            <img className="m-g" src={"http://54.37.228.12/f/accounts/" + this.props.avatar }
+            <img className="m-g" src={"/f/accounts/" + this.props.avatar }
             alt="Post user profile" />
             <div className="d-flex flex-column mt-g mb-g justify-content-center">
                 <Link to={"user/" + this.props.username } className="username font-weight-bold">{ this.props.display_name }<i className="fas fa-check-circle"></i></Link>
@@ -76,7 +76,7 @@ class Post extends Component {
             this.props.path &&
             <React.Fragment>
               <div className="fas fa-angle-double-down expand"></div>
-              <img alt="Post media" src={'http://54.37.228.12/f/posts/' + this.props.path }/>
+              <img alt="Post media" src={'/f/posts/' + this.props.path }/>
             </React.Fragment>
           }
         </div>

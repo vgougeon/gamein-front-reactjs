@@ -59,7 +59,7 @@ class FilterPanel extends Component {
         this.consoleReset(e);
     }
     getConsoles = () => {
-        axios.get('http://54.37.228.12/api/getConsoles').then(res => {
+        axios.get('/api/getConsoles').then(res => {
             this.setState({
                 consoles: res.data
             })
@@ -113,7 +113,7 @@ class FilterPanel extends Component {
                                 <div key = { console.id } className={ 'item ' + (this.state.filters.consoles.indexOf(console) !== -1 ? 'selected' : '')}
                                 onClick={() => this.consoleClick(console)}>
                                     <div className="img-item" style={{ background: console.background }}>
-                                        <img src={'http://54.37.228.12/f/consoles/' + console.id + '.png'} alt={ console.name }/>
+                                        <img src={'/f/consoles/' + console.id + '.png'} alt={ console.name }/>
                                     </div>
                                 </div>
                             )}

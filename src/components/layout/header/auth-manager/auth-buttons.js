@@ -25,7 +25,7 @@ class AuthButtons extends Component {
                 </div>
                 <div className="icon-button" onClick={ this.toggleUserProfile }>
                     <Avatar 
-                    img={"http://54.37.228.12/f/accounts/" + this.props.avatar }
+                    img={"/f/accounts/" + this.props.avatar }
                     status={ 1 }
                     />
                 </div>

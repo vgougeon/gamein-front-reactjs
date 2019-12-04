@@ -23,7 +23,7 @@ class LikeOST extends Component {
         return false
     }
     like = () => {
-        axios.post('http://54.37.228.12/api/likeOst', { id: this.props.id})
+        axios.post('/api/likeOst', { id: this.props.id})
         .then(res => {
             if(res.status === 200){
                 this.setState(prevState => {

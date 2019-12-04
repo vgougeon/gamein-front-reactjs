@@ -19,7 +19,7 @@ class GameHeader extends Component {
                 <div className="game-wrapper-container">
                     <div className={ 'game-wrapper ' + (this.props.editor ? 'editor' : '')}>
                         { this.props.skins.length > 0 &&
-                        <Img src={"http://54.37.228.12/f/skin/" + this.props.skins[0].id + ".jpg"} 
+                        <Img src={"/f/skin/" + this.props.skins[0].id + ".jpg"} 
                         className="appear wrapper-banner"
                         alt="Game Banner" 
                         /> }
@@ -29,7 +29,7 @@ class GameHeader extends Component {
                         </Suspense>
                         }
                         <div className="d-flex info-container">
-                            { this.props.id && <Img src={"http://54.37.228.12/f/covers/" + this.props.id + ".jpg"} 
+                            { this.props.id && <Img src={"/f/covers/" + this.props.id + ".jpg"} 
                             className="cover s-1"
                             alt="Game Cover"
                             /> }

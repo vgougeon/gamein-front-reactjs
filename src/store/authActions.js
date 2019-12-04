@@ -9,7 +9,7 @@ class AuthActions {
         this.getMe()
     }
     getMe() {
-        axios.get('http://54.37.228.12/api/me').then(res => {
+        axios.get('/api/me').then(res => {
             if(res.data.id !== undefined){
                 store.dispatch({ type: 'AUTH_SET_USER', auth: res.data})
             }
@@ -20,7 +20,7 @@ class AuthActions {
     }
     signIn(username, password) { 
         store.dispatch({ type: 'AUTH_IS_LOADING'})
-        axios.post('http://54.37.228.12/api/signIn', 
+        axios.post('/api/signIn', 
         { params: { 
             username: username,
             password: password

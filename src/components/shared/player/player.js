@@ -122,7 +122,7 @@ class Player extends Component {
                 onChange={ this.playerTime }>
                 </input>
                 { this.props.ostData.skins !== undefined &&
-                <Img className="splash" src={ 'http://54.37.228.12/f/skin/' +
+                <Img className="splash" src={ '/f/skin/' +
                 this.props.ostData.skins[this.props.ostData.skins.length - 1].id
                 + '.jpg'} 
                 alt="Media skin"/>
@@ -130,7 +130,7 @@ class Player extends Component {
                 <div className="info">
                     <div className="data">
                         <Img className="player-relative-cover" 
-                        src={ 'http://54.37.228.12/f/covers/' + this.props.ostData.media_id + '.jpg'} 
+                        src={ '/f/covers/' + this.props.ostData.media_id + '.jpg'} 
                         alt="Game cover"
                         />
                         <div className="ost-data">

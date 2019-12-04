@@ -21,14 +21,14 @@ class UserProfile extends Component {
     return ( 
       <div className="user-profile">
       <div className="head">
-        <img src={ 'http://54.37.228.12/f/skin/' + this.props.skin + '.jpg'} 
+        <img src={ '/f/skin/' + this.props.skin + '.jpg'} 
         className="user-banner" 
         alt="Your banner" />
         <div className="profile-head-content">
           <div className="closeUserProfile" onClick={ this.props.toggle }>
             <i className="fas fa-angle-double-right"></i>
           </div>
-          <img src={ 'http://54.37.228.12/f/accounts/' + this.props.avatar} className="user-avatar" alt="User Profile" />
+          <img src={ '/f/accounts/' + this.props.avatar} className="user-avatar" alt="User Profile" />
           <div className=" m-g d-flex flex-column">
             <Link to={ "/user/" + this.props.username } className="bold">{ this.props.display_name }</Link>
             <span className='username'>@{ this.props.username }</span>

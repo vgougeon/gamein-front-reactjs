@@ -12,7 +12,7 @@ class GameOst extends Component {
         this.getOsts()
     }
     getOsts = () => {
-        axios.get('http://54.37.228.12/api/getGameOst', { params: { game: this.props.id} }).then(res => {
+        axios.get('/api/getGameOst', { params: { game: this.props.id} }).then(res => {
             this.setState(state => ({
                 osts: res.data,
                 ready: true

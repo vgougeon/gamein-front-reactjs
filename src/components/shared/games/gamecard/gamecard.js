@@ -7,12 +7,12 @@ class GameCard extends Component {
     return (
       <div className="game-item s-1 mx-g2 mb-g">
         { (this.props.skin && this.props.skin.length !== 0) ?
-        <Img className="bg-game" src={`http://54.37.228.12/f/skin/${this.props.skin[0]}.jpg`} />
+        <Img className="bg-game" src={`/f/skin/${this.props.skin[0]}.jpg`} />
         : null
         }
         <div className="game-item-content">
           <Img 
-            src={"http://54.37.228.12/f/covers/" + this.props.id + ".jpg"} 
+            src={"/f/covers/" + this.props.id + ".jpg"} 
             alt={this.props.name + " - Cover"}
             ratio='120%'
           />

@@ -2,6 +2,7 @@
   "name": "gamein-front-react",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://54.37.228.12",
   "dependencies": {
     "axios": "^0.19.0",
     "cropperjs": "^1.5.5",
