@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import LikeOST from './likeOst/likeOst';
 import Volume from './volume/volume';
 import Img from '../img/img';
+import player from '../../../store/playerActions';
+
 class Player extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +22,9 @@ class Player extends Component {
         }
     }
     componentDidUpdate(prevProps, prevState) {
+        
         if(this.props.videoId !== this.state.videoId){
+            console.log("new")
             clearInterval(this.interval)
             this.setState({
                 videoId: this.props.videoId,
@@ -34,10 +38,40 @@ class Player extends Component {
         })
     }
     updateState = (event) => {
+        //IF 0 NEXT SONG
+        console.log(event.data)
+        if(event.data === 0) this.next()
         this.setState({
             status: event.data
         })
     }
+    next = () => {
+        let index = this.props.playlist.findIndex((item) => item.video_id === this.state.videoId)
+        if(index !== -1){
+            index++;
+            player.changeOst(this.props.playlist[index % this.props.playlist.length].id)
+        }
+        else {
+            if(this.props.playlist.length !== 0){
+                player.changeOst(this.props.playlist[0].id)
+            }
+        }
+    }
+
+    previous = () => {
+        let index = this.props.playlist.findIndex((item) => item.video_id === this.state.videoId)
+        if(index !== -1 && index !== 0){
+            index--;
+            player.changeOst(this.props.playlist[index % this.props.playlist.length].id)
+        }
+        else {
+            if(this.props.playlist.length !== 0){
+                player.changeOst(this.props.playlist[0].id)
+            }
+        }
+    }
+
+
     getInfo = (event) => {
         clearInterval(this.interval)
         this.setState({
@@ -87,6 +121,8 @@ class Player extends Component {
         this.setState({ volume: volume });
     }
     getError = (event) => {
+        player.setUnplayable(this.state.videoId)
+        this.next()
         console.log("YOUTUBE player error")
     }
     getProgress = () => {
@@ -141,7 +177,7 @@ class Player extends Component {
                     </div>
                     <div className="actions">
                         <i className="fas fa-random"/>
-                        <i className="fas fa-step-backward"/>
+                        <i className="fas fa-step-backward" onClick={ this.previous }/>
                         <div className="middle-button">
                             { this.state.status === 1 &&
                             <i className="fas fa-pause" onClick={ this.pause }/>
@@ -153,7 +189,7 @@ class Player extends Component {
                             <Spinner/>
                             }
                         </div>
-                        <i className="fas fa-step-forward"/>
+                        <i className="fas fa-step-forward" onClick={ this.next }/>
                         <i className="fas fa-redo-alt"/>
                         <span className="player-current-time">{ this.getProgress() }</span>
                     </div>
@@ -171,6 +207,7 @@ class Player extends Component {
 const mapStateToProps = (state) => ({
     playing: state.player.playing,
     videoId: state.player.videoId,
+    playlist: state.player.playlist,
     ostData: state.player.data
 })
 export default connect(mapStateToProps)(Player)

@@ -26,9 +26,11 @@ class GameOst extends Component {
                 <table className="osts">
                     <tbody>
                     { this.state.osts.map((ost) =>
-                        <tr key={ ost.id }>
+                        <tr key={ ost.id } className={ 
+                            ((this.props.unplayable.findIndex((a) => ost.video_id === a)) === -1) ? "" : "unplayable"
+                        }>
                             { this.props.videoId !== ost.video_id ?
-                            <td className="play" onClick={() => { player.playOst(ost.id)}}>
+                            <td className="play" onClick={() => { player.playOst(ost.id, this.state.osts)}}>
                                 <i className="fas fa-play"/>
                             </td>
                             :<td className="stop" onClick={() => { this.props.playOst(false)}}>
@@ -50,7 +52,8 @@ class GameOst extends Component {
 }
  
 const mapStateToProps = (state) => ({
-    videoId: state.player.videoId
+    videoId: state.player.videoId,
+    unplayable: state.player.unplayable
 })
 const mapDispatchToProps = (dispatch) => ({
     playOst: (videoId) => dispatch({ type: 'PLAYER_SET_VIDEO', videoId})
