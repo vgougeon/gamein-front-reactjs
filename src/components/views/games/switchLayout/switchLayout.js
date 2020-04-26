@@ -8,7 +8,10 @@ class SwitchLayout extends Component {
             items: ['fas fa-grip-horizontal', 'fas fa-grip-vertical', 'fas fa-grip-lines']
         }
     }
-    switchTo = (id) => { this.setState({ switch: id }) }
+    switchTo = (id) => { 
+        this.setState({ switch: id })
+        this.props.setLayout(id)
+    }
     render(){
         return(
             <div className='switch-layout'>

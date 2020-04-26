@@ -8,7 +8,7 @@ import SelectRank from './selectRank/selectRank';
 import './games.page.scss';
 import SwitchLayout from "./switchLayout/switchLayout";
 
-let state = { games: [], offset: 0, scroll: 0, isLoading: true, filters: {}, showFilters: false}
+let state = { games: [], offset: 0, scroll: 0, isLoading: true, filters: {}, showFilters: false, view: "view-normal"}
 
 class GamesPage extends Component {
 	constructor(props) {
@@ -65,10 +65,15 @@ class GamesPage extends Component {
 			filters: filters
 		})
 	}
-
 	toggleFilters = () => {
 		this.setState(prevState => {
 			return { showFilters: !prevState.showFilters };
+		});
+	}
+	setLayout = (layoutId) => {
+		let layouts = ["view-normal", "view-box", "view-line"]
+		this.setState(prevState => {
+			return { view: layouts[layoutId] };
 		});
 	}
 
@@ -82,7 +87,7 @@ class GamesPage extends Component {
 					<button className="transparent-button ml-2" onClick={ this.toggleFilters }>Cacher filtres</button>
 					: <button className="transparent-button ml-2" onClick={ this.toggleFilters }>Plus de filtres</button> }
 					</div>
-					<SwitchLayout />
+					<SwitchLayout setLayout={this.setLayout} />
 				</div>
 				<div className="row mt-g g-g row-p-0">
 					<div className="col-xl-12 col-lg-12">

@@ -41,10 +41,8 @@ table.osts {
                 transition: 0.1s;
             }
             &:hover {
-                background: var(--soft);
                 i {
                     color: var(--theme);
-                    transform: scale(1.5) rotateZ(-5deg);
                 }
             }
         }
