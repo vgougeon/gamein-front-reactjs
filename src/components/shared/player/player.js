@@ -35,7 +35,8 @@ class Player extends Component {
             clearInterval(this.interval)
             this.setState({
                 videoId: this.props.videoId,
-                progress: 0
+                progress: 0,
+                listen: false
             })
         }
     }
