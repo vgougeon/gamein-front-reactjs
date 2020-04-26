@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './player.scss';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import Youtube from 'react-youtube';
 import Spinner from '../spinner/spinner-standard';
@@ -18,11 +19,17 @@ class Player extends Component {
             videoId: false,
             player: false,
             status: -1,
-            volume: 0
+            volume: 0,
+            listen: false
         }
     }
     componentDidUpdate(prevProps, prevState) {
-        
+        if(((this.state.progress > 10) || (this.state.duration / 2 < this.state.progress)) && this.state.listen === false){
+            this.setState({
+                listen: true
+            })
+            //APPEL API
+        }
         if(this.props.videoId !== this.state.videoId){
             console.log("new")
             clearInterval(this.interval)
@@ -31,6 +38,13 @@ class Player extends Component {
                 progress: 0
             })
         }
+    }
+    addListen = () => {
+        axios.post('/api/addListen', { params: { game: this.state.id } }).then(res => {
+            this.setState(state => ({
+                gameInfo: res.data
+            }));
+        })
     }
     getPlayer = (event) => {
         this.setState({
@@ -47,6 +61,10 @@ class Player extends Component {
         player.changeOst(this.props.playlist[Math.floor(Math.random() * Math.floor(this.props.playlist.length))].id)
     }
     behaviorEnd = () => {
+        this.setState({
+            listen: false,
+            progress: 0
+        })
         if(this.props.repeat) this.play()
         else if(this.props.random) this.random()
         else this.next()

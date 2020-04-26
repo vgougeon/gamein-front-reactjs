@@ -11,6 +11,7 @@ class GamePage extends Component {
         this.state = { 
             id: this.props.match.params.id,
             gameInfo: {
+                id: this.props.match.params.id,
                 console: []
             },
             editor: false,
@@ -29,14 +30,14 @@ class GamePage extends Component {
             editor: !this.state.editor
         })
     }
-    render() { 
+    render() {
         return ( 
             <section id="page-content">
                 <GameHeader {...this.state.gameInfo} editor={this.state.editor} toggleEdit={this.state.toggleEdit} />
                 <div className="d-flex align-items-center justify-content-center">
                 <Route exact path="/game/:id/" render={() => <div className="mt-5"><Spinner /></div>}></Route>
                 <Route path="/game/:id/images" render={() => <div className="mt-5"><Spinner /></div>}></Route>
-                <Route path="/game/:id/ost" render={(props) => <GameOst id={ this.state.id} />}></Route>
+                <Route path="/game/:id/ost" render={(props) => <GameOst id={ this.state.id } />}></Route>
                 </div>
             </section>
         );
