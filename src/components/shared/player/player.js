@@ -28,7 +28,7 @@ class Player extends Component {
             this.setState({
                 listen: true
             })
-            //APPEL API
+            this.addListen()
         }
         if(this.props.videoId !== this.state.videoId){
             console.log("new")
@@ -41,10 +41,7 @@ class Player extends Component {
         }
     }
     addListen = () => {
-        axios.post('/api/addListen', { params: { game: this.state.id } }).then(res => {
-            this.setState(state => ({
-                gameInfo: res.data
-            }));
+        axios.post('/api/addListenOst', { id: this.props.ostData.id }).then(res => {
         })
     }
     getPlayer = (event) => {
