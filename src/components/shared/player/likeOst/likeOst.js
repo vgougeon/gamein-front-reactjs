@@ -38,13 +38,13 @@ class LikeOST extends Component {
     render() { 
         return (  
             <React.Fragment>
-            <div className="like-ost-container" onClick={ this.like }>
-                { this.state.likes !== undefined &&
-                <span className="like-ost-count">{ this.state.likes }</span>
-                }
+            <div className={ "like-ost-container " + (this.state.liked ? "liked" : "")} onClick={ this.like }>
                 { this.state.liked ?
                 <i className="fas fa-heart like liked" />
                 :<i className="far fa-heart like" />
+                }
+                { this.state.likes !== undefined &&
+                <span className="like-ost-count">{ this.state.likes }</span>
                 }
             </div>
             </React.Fragment>
