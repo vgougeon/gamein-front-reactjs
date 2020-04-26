@@ -51,8 +51,34 @@ table.osts {
         &.stop {
             color: rgb(218, 89, 89);
         }
+        &.listens {
+            width: 0px;
+            height: 50px;
+            padding: 0;
+            text-align: right;
+            color: var(--color);
+            opacity: .6;
+            font-size: 0.8rem;
+            vertical-align: center;
+            i {
+                margin-top: -4px;
+                font-size: 0.7rem;
+            }
+            span {
+                margin-left: 0.25rem;
+            }
+        }
         &.like {
-            width: 80px;
+            .like-ost-container {
+                width: 70px;
+                padding-right: 0.8rem;
+                justify-content: flex-end;
+                font-size: 0.85rem;
+            }
+            .like-ost-count {
+                font-size: 0.85rem;
+            }
+            width: 40px;
             height: 50px;
             text-align: center;
             padding: 0;
@@ -61,7 +87,6 @@ table.osts {
                 transition: 0.1s;
             }
             &:hover {
-                background: var(--soft);
                 i {
                     color: var(--theme);
                     transform: scale(1.25);

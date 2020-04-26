@@ -38,6 +38,7 @@ class GameOst extends Component {
                             </td>
                             }
                             <td>{ ost.name }</td>
+                            <td className="listens"><i className="fas fa-compact-disc"></i><span>{ ost.plays }</span></td>
                             <td className="like">
                                 <LikeOST id={ ost.id } liked={ ost.liked } likes={ ost.likes }/>
                             </td>
