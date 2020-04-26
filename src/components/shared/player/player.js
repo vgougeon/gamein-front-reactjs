@@ -38,22 +38,31 @@ class Player extends Component {
         })
     }
     updateState = (event) => {
-        //IF 0 NEXT SONG
-        console.log(event.data)
-        if(event.data === 0) this.next()
+        if(event.data === 0) this.behaviorEnd()
         this.setState({
             status: event.data
         })
     }
+    random = () => {
+        player.changeOst(this.props.playlist[Math.floor(Math.random() * Math.floor(this.props.playlist.length))].id)
+    }
+    behaviorEnd = () => {
+        if(this.props.repeat) this.play()
+        else if(this.props.random) this.random()
+        else this.next()
+    }
     next = () => {
-        let index = this.props.playlist.findIndex((item) => item.video_id === this.state.videoId)
-        if(index !== -1){
-            index++;
-            player.changeOst(this.props.playlist[index % this.props.playlist.length].id)
-        }
+        if(this.props.random) this.random()
         else {
-            if(this.props.playlist.length !== 0){
-                player.changeOst(this.props.playlist[0].id)
+            let index = this.props.playlist.findIndex((item) => item.video_id === this.state.videoId)
+            if(index !== -1){
+                index++;
+                player.changeOst(this.props.playlist[index % this.props.playlist.length].id)
+            }
+            else {
+                if(this.props.playlist.length !== 0){
+                    player.changeOst(this.props.playlist[0].id)
+                }
             }
         }
     }
@@ -176,7 +185,7 @@ class Player extends Component {
                         </div>
                     </div>
                     <div className="actions">
-                        <i className="fas fa-random"/>
+                        <i className={(this.props.random ? "selected " : "") +  "fas fa-random"} onClick={ player.setRandom }/>
                         <i className="fas fa-step-backward" onClick={ this.previous }/>
                         <div className="middle-button">
                             { this.state.status === 1 &&
@@ -190,7 +199,8 @@ class Player extends Component {
                             }
                         </div>
                         <i className="fas fa-step-forward" onClick={ this.next }/>
-                        <i className="fas fa-redo-alt"/>
+                        <i className={(this.props.repeat ? "selected " : "") +  "fas fa-redo-alt"} onClick={ player.setRepeat }/>
+                        {/* <i className={"fas fa-redo-alt " + this.props.repeat ? "selected" : ""} onClick={ player.setRepeat }/> */}
                         <span className="player-current-time">{ this.getProgress() }</span>
                     </div>
                     <div className="right">
@@ -208,6 +218,8 @@ const mapStateToProps = (state) => ({
     playing: state.player.playing,
     videoId: state.player.videoId,
     playlist: state.player.playlist,
-    ostData: state.player.data
+    ostData: state.player.data,
+    repeat: state.player.repeat,
+    random: state.player.random
 })
 export default connect(mapStateToProps)(Player)

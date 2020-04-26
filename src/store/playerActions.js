@@ -25,6 +25,16 @@ const actions = {
             type: 'PLAYER_SET_UNPLAYABLE', 
             videoId: videoId
         })
+    },
+    setRandom: () => {
+        store.dispatch({ 
+            type: 'PLAYER_SET_RANDOM', 
+        })
+    },
+    setRepeat: () => {
+        store.dispatch({ 
+            type: 'PLAYER_SET_REPEAT', 
+        })
     }
 }
 export default actions;

@@ -63,10 +63,10 @@ $maximized-height: 110px;
             }
             .actions i {
                 &.fa-play, &.fa-pause {
-                    font-size: 1.4rem;
+                    // font-size: 1.4rem;
                 }
                 &.fa-random, &.fa-redo-alt {
-                    font-size: .8rem;
+                    // font-size: .8rem;
                     opacity: .6;
                 }
             }
@@ -137,16 +137,24 @@ $maximized-height: 110px;
                     font-size: 1.2rem;
                 }
                 &.fa-random, &.fa-redo-alt {
-                    font-size: .7rem;
-                    opacity: .6;
+                    font-size: 0.9rem;
+                    opacity: .8;
+                    
+                    &.selected {
+                        color: var(--theme);
+                        opacity: 1;
+                        background: rgba(var(--themergb), 0.13);
+                        border-radius: 50px;
+                    }
                 }
-                margin: 0 2rem;
+                margin: 0 1.5rem;
                 font-size: 1.0rem;
                 cursor: pointer;
-                transition: 0.2s ease-out;
+                transition: 0.05s ease-out;
+                padding: 10px;
                 &:hover {
                     color: var(--theme);
-                    transform: scale(1.2);
+                    // transform: scale(1.2);
                 }
             }
             .middle-button {
