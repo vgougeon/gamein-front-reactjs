@@ -18,37 +18,35 @@ class AuthActions {
     toggleLogin() {
         store.dispatch({ type: 'AUTH_TOGGLE_LOGIN'})
     }
-    signIn(username, password) { 
+    async signIn(username, password) { 
         store.dispatch({ type: 'AUTH_IS_LOADING'})
-        axios.post('/api/signIn', 
+        let res = await axios.post('/api/signIn', 
         { params: { 
             username: username,
             password: password
         }})
-        .then(res => {
-            if(res.data !== false){
-                localStorage.setItem("token", res.data);
-                axios.defaults.headers.common['Authorization'] = res.data;
-                this.toggleLogin()
-                this.getMe()
-            }
-        })
+        if(res.status === 200){
+            localStorage.setItem("token", res.data);
+            axios.defaults.headers.common['Authorization'] = res.data;
+            this.toggleLogin()
+            this.getMe()
+        }
+        return res
     }
-    register(username, password) { 
+    async register(username, password) { 
         store.dispatch({ type: 'AUTH_IS_LOADING'})
-        axios.post('/api/register', 
+        let res = await axios.post('/api/register', 
         { params: { 
             username: username,
             password: password
         }})
-        .then(res => {
-            if(res.data !== false){
-                localStorage.setItem("token", res.data);
-                axios.defaults.headers.common['Authorization'] = res.data;
-                this.toggleLogin()
-                this.getMe()
-            }
-        })
+        if(res.status === 200){
+            localStorage.setItem("token", res.data);
+            axios.defaults.headers.common['Authorization'] = res.data;
+            this.toggleLogin()
+            this.getMe()
+        }
+        return res;
     }
     signOut() {
         localStorage.setItem("token", null);

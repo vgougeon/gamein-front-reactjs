@@ -3,11 +3,12 @@ import authActions from '../../../../store/authActions';
 import Img from '../../img/img';
 
 import './login-popup.scss';
+import Spinner from '../../spinner/spinner-standard';
 
 class LoginForm extends Component {
     constructor(props) {
         super(props);
-        this.state = { username: '', password: '' }
+        this.state = { username: '', password: '', loading: false }
     }
     componentDidMount() {
         this.username.focus();
@@ -15,9 +16,15 @@ class LoginForm extends Component {
     checkUsername = () => {
         console.log("Check username")
     }
-    login = (e) => {
-        authActions.signIn(this.state.username, this.state.password)
+    login = async (e) => {
         e.preventDefault()
+        this.setState({
+            loading: true
+        })
+        let res = await authActions.signIn(this.state.username, this.state.password)
+        this.setState({
+            loading: false
+        })
     }
     render() { 
         return (  
@@ -42,8 +49,9 @@ class LoginForm extends Component {
 
                 </input>
                 <div className="d-flex justify-content-between mt-3">
-                    <button className="grey" onClick={ this.props.switchForm }><i className="fas fa-user-circle"/> Inscription </button>
-                    <button type="submit"> Connexion </button>
+                    { this.state.loading ? <Spinner size={ 25 } /> : 
+                    <button type="submit">Connexion</button> }
+                    <button className="grey" onClick={ this.props.switchForm }><i className="fas fa-user-circle"/>Inscription</button>
                 </div>
                 
             </form>

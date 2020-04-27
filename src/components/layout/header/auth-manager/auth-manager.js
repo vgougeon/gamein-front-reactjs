@@ -6,9 +6,12 @@ import Spinner from '../../../shared/spinner/spinner-standard';
 
 function Login (props) {
     return (
-        <button className="stroked-theme" onClick={ props.click }>
-            <i className="fas fa-user-circle mr-2" />Connexion
-        </button>
+        <React.Fragment>
+            <button className="stroked-theme" onClick={ props.click }>
+                <i className="fas fa-globe-europe"/>Login
+            </button>
+        </React.Fragment>
+        
     ) 
 }
 

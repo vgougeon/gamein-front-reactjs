@@ -91,7 +91,7 @@ a:hover {
 }
 input, button, label.button {
   border: 3px solid var(--soft);
-  background: rgb(96, 117, 235);
+  background: var(--bg);
   height: 35px;
   padding: 0 10px;
   color: var(--color);
@@ -112,7 +112,7 @@ button,label.button {
     margin-right: 0.5rem;
   }
   &.grey {
-    background: rgb(82, 76, 76);
+    background: rgb(51, 51, 51);
   }
   &.small-button {
     height: 25px;
@@ -179,6 +179,7 @@ input[type="submit"], button{
   transition: 0.2s;
   outline: none;
   border-radius: 2px;
+  background: rgb(59, 116, 223);
 }
 input[type="submit"]:hover, button:hover{
   box-shadow: 0 1px 3px rgba(0,0,0,0.15);
@@ -255,4 +256,14 @@ body {
 }
 .green-success {
   background: rgb(70, 161, 74);
+}
+.warning {
+  font-size: 9pt;
+  color: rgb(255, 187, 40);
+  margin: 0;
+}
+.error {
+  font-size: 9pt;
+  color: rgb(255, 65, 65);
+  margin: 0;
 }
