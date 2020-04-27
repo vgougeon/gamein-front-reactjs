@@ -7,6 +7,7 @@ import { withTranslation } from 'react-i18next';
 import Interweave from 'interweave';
 import marked from 'marked'
 import { getAvatarUrl } from '../../../../services/profile/avatarService';
+import Img from '../../img/img';
 
 marked.setOptions({ breaks: true });
 class Post extends Component {
@@ -17,18 +18,6 @@ class Post extends Component {
       liked: this.props.account_id,
       comments: this.props.comments,
       active: false
-    }
-  }
-  expand = (e) => {
-    if(e.currentTarget.classList.contains('open')) {
-      e.currentTarget.style.maxHeight = '250px';
-      e.currentTarget.classList.remove('open')
-    }
-    else {
-      let height = e.currentTarget.scrollHeight
-      if(height > 1500) { height = 1500 }
-      e.currentTarget.style.maxHeight = '' + height + 'px'
-      e.currentTarget.classList.add('open')
     }
   }
 
@@ -64,23 +53,23 @@ class Post extends Component {
         <div className="info">
             <img className="m-g" src={getAvatarUrl(this.props.avatar, this.props.username)}
             alt="Post user profile" />
-            <div className="d-flex flex-column mt-g mb-g justify-content-center">
-                <Link to={"user/" + this.props.username } className="username font-weight-bold">{ this.props.display_name }<i className="fas fa-check-circle"></i></Link>
+            <div className="d-flex flex-column mt-g mb-g justify-content-center low-line-height">
+                <Link to={"user/" + this.props.username } className="nostyle username font-weight-bold">{ this.props.display_name }</Link>
                 <span className="grade text-muted">{t(this.props.name)}</span>
             </div>
         </div>
         <div className="content px-g">
           <Interweave content={ marked(this.props.content) } />
         </div>
-        <div className="content-images" onClick={ this.expand }>
-          {
-            this.props.path &&
-            <React.Fragment>
-              <div className="fas fa-angle-double-down expand"></div>
-              <img alt="Post media" src={'/f/posts/' + this.props.path }/>
-            </React.Fragment>
-          }
+        {
+        this.props.path &&
+        <div className="content-images">
+          <Img 
+            src={'/f/posts/' + this.props.path }
+            alt="Post media"
+          />
         </div>
+        }
         <div className="content-footer px-g">
             <p className="text-muted text-size-s my-0">{ this.props.dateformat }</p>
             <div className="d-flex feed-tools align-items-center">

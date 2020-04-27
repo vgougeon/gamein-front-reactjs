@@ -10,7 +10,27 @@ header {
     box-shadow: var(--boxshadow);
     position: relative;
     z-index: 15;
-
+    .header-user-info {
+        @media screen and (max-width: 1000px){
+            display: none;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        margin-right: 1rem;
+        line-height: 1rem;
+        position: relative;
+        span.name {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        span.level {
+            color: rgba(var(--colorrgb), 0.7);
+            font-size: .9rem;
+            font-weight: 200;
+        }
+    }
     .item {
         display: flex;
         align-items: center;
@@ -47,7 +67,7 @@ header {
     #buttons {
         height: 100%;
         margin-left: auto;
-        margin-right: 7px;
+        margin-right: 21px;
         font-size: 1rem;
         display: flex;
         align-items: center;
@@ -57,8 +77,8 @@ header {
             font-size: 1.2rem;
         }
         .icon-button {
-            width: 46px;
-            height: 46px;
+            width: 42px;
+            height: 42px;
             display: flex;
             justify-content: center;
             align-items: center;

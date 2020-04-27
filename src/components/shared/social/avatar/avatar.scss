@@ -5,18 +5,31 @@
     img {
         width: 100%;
         height: 100%;
-        border-radius: 6px;
+        border-radius: 12px !important;
         top: 0;
         position: absolute;
         object-fit: cover;
     }
     .status {
-        border-radius: 999px;
+        border-radius: 99px;
         position: absolute;
-        bottom: 0;
+        top: 0;
         border: 2px solid rgba(255,255,255,0.3);
         width: 30%;
         height: 30%;
         right: 0;
     }
+}
+.icon-button {
+    .avatar-component {
+        .status {
+            border-color: var(--header);
+            border-width: 4px;
+            width: 50%;
+            height: 50%;
+            top: -15%;
+            right: -15%;
+        }
+    }
+    
 }

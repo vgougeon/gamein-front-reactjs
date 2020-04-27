@@ -1,0 +1,18 @@
+.side-xp-bar {
+    width: 8px;
+    height: 40px;
+    border-radius: 2px;
+    overflow: hidden;
+    background: rgba(var(--invertrgb), 0.1);
+    position: absolute;
+    right: 7px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    .xp-full {
+        background: rgb(185, 195, 255);
+        height: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+}

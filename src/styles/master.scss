@@ -30,7 +30,7 @@ section#page-content {
 html, body {
   overflow: hidden;
   background: var(--bg);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Segoe UI';
 }
 body {
   margin: 0;
@@ -266,4 +266,23 @@ body {
   font-size: 9pt;
   color: rgb(255, 65, 65);
   margin: 0;
+}
+
+.highlight {
+  font-weight: 600;
+  opacity: 1;
+  color: rgba(var(--colorrgb), 1);
+}
+
+a.nostyle {
+  color: unset;
+  text-decoration: unset;
+  opacity: unset;
+  &:hover {
+    color: var(--theme);
+  }
+}
+
+.low-line-height {
+  line-height: 1.3rem;
 }
