@@ -34,23 +34,12 @@ class LoginPopup extends Component {
                 <div className="login-popup" ref={node => this.node = node}>
                     <div className="login-head z1">
                         <Img src="/assets/favicon.png" alt="Favicon"/>
-                        Gamein
-                    </div>
-                    <div className="info-wrapper">
-                        <span className="mb-2 bold">Rejoignez la communauté !</span>
-                        <div className="info-item">
-                            <b>x</b> membres
-                        </div>
-                        <div className="info-item">
-                            <b>y</b> notes
-                        </div>
-                        <div className="info-item">
-                            <b>z</b> jeux
-                        </div>
                     </div>
                     <div className="login-wrapper relative">
                         <div className="bg-login"></div>
-                        <form className="w-100 d-flex flex-column z1" onSubmit={this.login}>
+                    </div>
+                    <div className="info-wrapper">
+                    <form className="w-100 d-flex flex-column z1" onSubmit={this.login}>
                             <h5 className="mb-4">Connexion</h5>
                             <label htmlFor="username">Username</label>
                             <input 
@@ -67,7 +56,7 @@ class LoginPopup extends Component {
                             >
 
                             </input>
-                            <button type="submit" className="stroked mt-3"> Connexion </button>
+                            <button type="submit" className="mt-3"> Connexion </button>
                         </form>
                     </div>
                 </div>

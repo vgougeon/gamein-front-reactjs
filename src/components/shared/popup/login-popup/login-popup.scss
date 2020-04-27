@@ -16,7 +16,6 @@
     background: var(--module);
     height: 500px;
     box-shadow: 0 0 3px rgba(0,0,0,0.2);
-    border-radius: 6px;
     position: relative;
     display: flex;
     overflow: hidden;
@@ -35,14 +34,15 @@
         }
     }
     .info-wrapper {
-        background: var(--header);
+        background: var(--module);
         height: 100%;
         display: flex;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
         padding-top: 55px;
-        width: 40%;
+        width: 45%;
         color: white;
+        padding: 55px 2rem;
         span {
             text-align: center;
         }
@@ -59,16 +59,6 @@
                 margin-right: .25rem;
             }
         }
-    }
-
-    .login-wrapper {
-        height: 100%;
-        padding: 55px 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-grow: 1;
-        position: relative;
         input {
             max-width: 300px;
             width: 100%;
@@ -84,9 +74,17 @@
             margin-bottom: 0;
         }
         button {
-            border-radius: 6px;
             width: fit-content;
         }
+    }
+
+    .login-wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+        position: relative;
     }
 }
 

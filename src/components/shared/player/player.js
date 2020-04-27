@@ -41,7 +41,7 @@ class Player extends Component {
         }
     }
     addListen = () => {
-        axios.post('/api/addListenOst', { id: this.props.ostData.id }).then(res => {
+        axios.post('/api/addListenOst', { id: this.props.ostData.id, name: this.props.ostData.name}).then(res => {
         })
     }
     getPlayer = (event) => {
