@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import authActions from '../../../../store/authActions';
+import LoginForm from './login-form';
 import Img from '../../img/img';
 
 import './login-popup.scss';
+import RegisterForm from './register-form';
 
 class LoginPopup extends Component {
     constructor(props) {
         super(props);
-        this.state = { username: '', password: '' }
+        this.state = { form: 'login' }
     }
     componentDidMount() {
-        this.username.focus();
         document.addEventListener('mousedown', this.handleClick, false);
     }
     componentWillUnmount() {
@@ -28,6 +29,11 @@ class LoginPopup extends Component {
         authActions.signIn(this.state.username, this.state.password)
         e.preventDefault()
     }
+    switchForm = () => {
+        this.setState(prevState => {
+            return { form: (prevState.form === "login") ? "register" : "login" };
+        });
+    }
     render() { 
         return (  
             <div className="popup-wrapper">
@@ -39,25 +45,9 @@ class LoginPopup extends Component {
                         <div className="bg-login"></div>
                     </div>
                     <div className="info-wrapper">
-                    <form className="w-100 d-flex flex-column z1" onSubmit={this.login}>
-                            <h5 className="mb-4">Connexion</h5>
-                            <label htmlFor="username">Username</label>
-                            <input 
-                            type="text" name="username" id="username" placeholder="Username"
-                            value={this.state.username} 
-                            onChange={ (e) => {this.setState({username: e.target.value})}}
-                            onBlur={ this.checkUsername }
-                            ref={(input) => { this.username = input; }} 
-                            ></input>
-                            <label htmlFor="password" className="mt-2">Password</label>
-                            <input type="password" name="password" id="password" placeholder="Password"
-                            value={this.state.password}
-                            onChange={ (e) => {this.setState({password: e.target.value})}}
-                            >
-
-                            </input>
-                            <button type="submit" className="mt-3"> Connexion </button>
-                        </form>
+                    { this.state.form === 'login' ?
+                    <LoginForm switchForm={ this.switchForm }/> : 
+                    <RegisterForm switchForm={ this.switchForm }/> }
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 .popup-wrapper {
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0);
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -15,7 +15,8 @@
     max-width: 800px;
     background: var(--module);
     height: 500px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    border: 1px solid rgba(var(--colorrgb),0.3);
+    box-shadow: 0 0 12px rgba(var(--invertrgb), 1);
     position: relative;
     display: flex;
     overflow: hidden;
@@ -34,7 +35,9 @@
         }
     }
     .info-wrapper {
-        background: var(--module);
+        border-left: 1px solid var(--soft);
+        box-shadow: 0 0 6px rgba(var(--invertrgb), 1);
+        background: linear-gradient(var(--bg), rgba(var(--invertrgb),0.5));
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -90,7 +93,7 @@
 
 .bg-login {
     position: absolute;
-    background: url("/f/skin/25.jpg") center no-repeat;
+    background: url("/f/skin/39.jpg") center no-repeat;
     top: 0;
     left: 0;
     right: 0;
@@ -99,7 +102,7 @@
     height: 100%;
     z-index: 0;
     background-size: cover;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 .relative {
     position: relative;

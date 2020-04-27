@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './userHeader.scss';
+import { getAvatarUrl } from '../../../../services/profile/avatarService';
 class UserHeader extends Component {
     constructor(props) {
         super(props);
@@ -15,7 +16,7 @@ class UserHeader extends Component {
                     className="appear wrapper-banner" 
                     alt="User Banner"
                     /> }
-                    { this.props.avatar && <img src={ "/f/accounts/" + this.props.avatar} 
+                    { this.props.avatar && <img src={getAvatarUrl(this.props.avatar, this.props.username)} 
                     className="avatar s-1" 
                     alt="User Profile"
                     /> }

@@ -6,6 +6,7 @@ import Comments from '../comments/comments';
 import { withTranslation } from 'react-i18next';
 import Interweave from 'interweave';
 import marked from 'marked'
+import { getAvatarUrl } from '../../../../services/profile/avatarService';
 
 marked.setOptions({ breaks: true });
 class Post extends Component {
@@ -61,7 +62,7 @@ class Post extends Component {
     <div className="feed-content mb-g s-1">
     <div className="box feed">
         <div className="info">
-            <img className="m-g" src={"/f/accounts/" + this.props.avatar }
+            <img className="m-g" src={getAvatarUrl(this.props.avatar, this.props.username)}
             alt="Post user profile" />
             <div className="d-flex flex-column mt-g mb-g justify-content-center">
                 <Link to={"user/" + this.props.username } className="username font-weight-bold">{ this.props.display_name }<i className="fas fa-check-circle"></i></Link>

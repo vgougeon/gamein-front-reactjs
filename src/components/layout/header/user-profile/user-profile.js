@@ -5,6 +5,7 @@ import * as theme from '../../../../services/themes/themeService';
 import ExperienceBar from '../../../shared/user/experienceBar/experienceBar';
 import { withTranslation } from 'react-i18next';
 import AnimateHeight from 'react-animate-height';
+import { getAvatarUrl } from '../../../../services/profile/avatarService';
 
 class UserProfile extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class UserProfile extends Component {
           <div className="closeUserProfile" onClick={ this.props.toggle }>
             <i className="fas fa-angle-double-right"></i>
           </div>
-          <img src={ '/f/accounts/' + this.props.avatar} className="user-avatar" alt="User Profile" />
+          <img src={getAvatarUrl(this.props.avatar, this.props.username)} className="user-avatar" alt="User Profile" />
           <div className=" m-g d-flex flex-column">
             <Link to={ "/user/" + this.props.username } className="bold">{ this.props.display_name }</Link>
             <span className='username'>@{ this.props.username }</span>

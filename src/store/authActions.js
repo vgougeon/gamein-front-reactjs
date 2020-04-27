@@ -34,6 +34,22 @@ class AuthActions {
             }
         })
     }
+    register(username, password) { 
+        store.dispatch({ type: 'AUTH_IS_LOADING'})
+        axios.post('/api/register', 
+        { params: { 
+            username: username,
+            password: password
+        }})
+        .then(res => {
+            if(res.data !== false){
+                localStorage.setItem("token", res.data);
+                axios.defaults.headers.common['Authorization'] = res.data;
+                this.toggleLogin()
+                this.getMe()
+            }
+        })
+    }
     signOut() {
         localStorage.setItem("token", null);
         delete axios.defaults.headers.common["Authorization"];

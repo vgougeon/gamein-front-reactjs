@@ -104,21 +104,35 @@ input:focus, button:focus{
 button,label.button {
   display: flex;
   align-items: center;
+  &:hover {
+    border-color: var(--color);
+  }
   i {
     font-size: 1rem !important;
+    margin-right: 0.5rem;
+  }
+  &.grey {
+    background: rgb(82, 76, 76);
+  }
+  &.small-button {
+    height: 25px;
   }
   &.stroked {
     border: 2px solid var(--theme);
     color: var(--color);
     background: transparent;
+    
   }
   &.stroked:active {
     background: var(--soft);
   }
   &.stroked-theme {
-    border: 2px solid rgba(255,255,255,0.6);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     color: white;
-    background: transparent;
+    background: var(--module);
+    &:hover {
+      border-color: var(--color);
+    }
   }
   &.success {
     background: var(--theme);

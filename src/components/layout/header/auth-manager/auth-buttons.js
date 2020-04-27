@@ -3,6 +3,7 @@ import Dropdown from '../../../shared/dropdown/dropdown';
 import UserProfile from '../user-profile/user-profile';
 import Avatar from '../../../shared/social/avatar/avatar';
 import { connect } from 'react-redux';
+import { getAvatarUrl } from '../../../../services/profile/avatarService';
 class AuthButtons extends Component {
     constructor(props) {
         super(props);
@@ -25,7 +26,7 @@ class AuthButtons extends Component {
                 </div>
                 <div className="icon-button" onClick={ this.toggleUserProfile }>
                     <Avatar 
-                    img={"/f/accounts/" + this.props.avatar }
+                    img={getAvatarUrl(this.props.avatar, this.props.username)}
                     status={ 1 }
                     />
                 </div>
