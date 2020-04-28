@@ -73,11 +73,19 @@ class Post extends Component {
         <div className="content-footer px-g">
             <p className="text-muted text-size-s my-0">{ this.props.dateformat }</p>
             <div className="d-flex feed-tools align-items-center">
-                <i className={ 'fa-heart pl-3 pr-2 ' + (this.state.liked ? 'fas liked' : 'far')}
-                onClick={ this.likePost } />
-                <span className="font-weight-bold">{ this.state.likes }</span>
-                <i className="far fa-comment pl-3 pr-2" onClick={this.showComments} />
-                <span className="font-weight-bold">{ this.state.comments }</span>
+                <div className="tool-element">
+                  <i className="far fa-eye pr-2"/>
+                  <span>{ this.state.likes }</span> 
+                </div>
+                <div className="tool-element">
+                  <i className={ 'fas fa-heart pr-2 ' + (this.state.liked ? 'liked' : '')}
+                  onClick={ this.likePost } />
+                  <span>{ this.state.likes }</span>
+                </div>
+                <div className="tool-element">
+                  <i className="fas fa-comments pr-2" onClick={this.showComments} />
+                  <span>{ this.state.comments }</span>
+                </div>
             </div>
         </div>
     </div>
