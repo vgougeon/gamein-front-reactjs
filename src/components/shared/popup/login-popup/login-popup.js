@@ -42,7 +42,8 @@ class LoginPopup extends Component {
                         <Img src="/assets/favicon.png" alt="Favicon"/>
                     </div>
                     <div className="login-wrapper relative">
-                        <div className="bg-login"></div>
+                        <div className="bg-login">  
+                        </div>
                     </div>
                     <div className="info-wrapper">
                     { this.state.form === 'login' ?

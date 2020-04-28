@@ -83,27 +83,62 @@
 
     .login-wrapper {
         height: 100%;
-        display: flex;
         flex-direction: column;
         align-items: center;
         flex-grow: 1;
         position: relative;
+        overflow: hidden;
     }
 }
 
 .bg-login {
-    position: absolute;
-    background: url("/f/skin/39.jpg") center no-repeat;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
+    // position: absolute;
+    // background: url("/f/skin/39.jpg") center no-repeat;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    // width: 100%;
+    // height: 100%;
+    // z-index: 0;
+    // background-size: cover;
+    // opacity: 0.6;
+
+    position: relative;
     height: 100%;
-    z-index: 0;
-    background-size: cover;
-    opacity: 0.6;
+    width: 100%;
+    animation-name: sideupscroll;
+    animation-duration: 50s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    // overflow: hidden;
+
+    &:before {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 500%;
+        height: 100%;
+        content: "";
+        background: url("/f/skin/39.jpg") 0 0 var(--header);
+        background-size: cover; 
+        transition: background-image 1.5s;
+    }
+    @keyframes sideupscroll {
+        0% {
+          transform: translateX(0%)
+        }
+        50% {
+            transform: translateX(-400%)
+          }
+        100% {
+            transform: translateX(0%)
+        }
+      }
 }
+
 .relative {
     position: relative;
 }
