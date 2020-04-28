@@ -67,6 +67,9 @@ header {
     #buttons {
         height: 100%;
         margin-left: auto;
+        @media screen and (max-width: 1000px){
+            margin-right: 21px;
+        }
         margin-right: 21px;
         font-size: 1rem;
         display: flex;

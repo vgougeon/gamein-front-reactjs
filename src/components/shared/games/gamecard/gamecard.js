@@ -5,7 +5,7 @@ import "./gamecard.scss";
 class GameCard extends Component {
   render() {
     return (
-      <div className="game-item s-1 mx-g2 mb-g">
+      <Link className="game-item s-1 mx-g2 mb-g" to={'/game/' + this.props.id + '/'}>
         { (this.props.skin && this.props.skin.length !== 0) ?
         <Img className="bg-game" src={`/f/skin/${this.props.skin[0]}.jpg`} />
         : null
@@ -34,7 +34,7 @@ class GameCard extends Component {
             </div> */}
           </div>
         </div>
-      </div>
+      </Link>
     );
   }
 }

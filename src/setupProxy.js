@@ -1,10 +1,9 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = function(app) {
-  console.log("PROXY")
   app.use(
-    '/api',
+    '/api/',
     createProxyMiddleware({
-      target: 'http://localhost:3000',
+      target: 'http://54.37.228.12/api',
       changeOrigin: true,
       pathRewrite: {
         '^/api': '', // remove base path

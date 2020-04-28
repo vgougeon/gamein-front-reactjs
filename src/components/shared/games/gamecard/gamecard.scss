@@ -10,6 +10,12 @@
     flex-basis: 400px;
     position: relative;
     background: var(--module);
+    opacity: 1;
+    &:hover {
+      img.bg-game {
+        opacity:0.4;
+      }
+    }
     .game-item-content {
       z-index: 1;
       display: flex;
