@@ -31,6 +31,7 @@ class AuthActions {
             axios.defaults.headers.common['Authorization'] = res.data;
             this.toggleLogin()
             this.getMe()
+            socket.emit('signIn', { auth: res.data})
         }
         return res
     }
@@ -50,13 +51,15 @@ class AuthActions {
         return res;
     }
     signOut() {
+        console.log("BYE BYE")
+        socket.emit('signOut')
         localStorage.setItem("token", null);
         delete axios.defaults.headers.common["Authorization"];
         store.dispatch({ type: 'AUTH_RESET'})
     }
 }
 socket.on('addXp',(data) => {
-    console.log("RECEIVED SOCKET addXp" + data)
+    store.dispatch({type: 'AUTH_ADD_XP', amount: data.amount, reason: data.reason})
 })
 let authActions = new AuthActions()
 export default authActions;
