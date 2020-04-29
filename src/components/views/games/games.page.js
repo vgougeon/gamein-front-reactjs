@@ -87,7 +87,7 @@ class GamesPage extends Component {
 					<button className="transparent-button ml-2" onClick={ this.toggleFilters }>Cacher filtres</button>
 					: <button className="transparent-button ml-2" onClick={ this.toggleFilters }>Plus de filtres</button> }
 					</div>
-					<SwitchLayout setLayout={this.setLayout} />
+					<SwitchLayout currentLayout={ this.state.view } setLayout={this.setLayout} />
 				</div>
 				<div className="row mt-g g-g row-p-0">
 					<div className="col-xl-12 col-lg-12">
