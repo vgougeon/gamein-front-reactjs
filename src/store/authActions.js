@@ -27,11 +27,7 @@ class AuthActions {
             password: password
         }})
         if(res.status === 200){
-            localStorage.setItem("token", res.data);
-            axios.defaults.headers.common['Authorization'] = res.data;
-            this.toggleLogin()
-            this.getMe()
-            socket.emit('signIn', { auth: res.data})
+            this.setLogin(res)
         }
         return res
     }
@@ -43,12 +39,16 @@ class AuthActions {
             password: password
         }})
         if(res.status === 200){
-            localStorage.setItem("token", res.data);
-            axios.defaults.headers.common['Authorization'] = res.data;
-            this.toggleLogin()
-            this.getMe()
+            this.setLogin(res)
         }
         return res;
+    }
+    setLogin(res) {
+        localStorage.setItem("token", res.data);
+        axios.defaults.headers.common['Authorization'] = res.data;
+        this.toggleLogin()
+        this.getMe()
+        socket.emit('signIn', { auth: res.data})
     }
     signOut() {
         console.log("BYE BYE")
