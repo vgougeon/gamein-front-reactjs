@@ -1,4 +1,5 @@
 import store from '../store';
+import socket from '../services/socket/openSocket';
 import axios from 'axios';
 if (localStorage.getItem("token") !== null) {
     axios.defaults.headers.common['Authorization'] = localStorage.getItem("token")
@@ -54,5 +55,8 @@ class AuthActions {
         store.dispatch({ type: 'AUTH_RESET'})
     }
 }
+socket.on('addXp',(data) => {
+    console.log("RECEIVED SOCKET addXp" + data)
+})
 let authActions = new AuthActions()
 export default authActions;

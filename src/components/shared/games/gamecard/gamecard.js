@@ -18,7 +18,7 @@ class GameCard extends Component {
           />
           <div className=" d-flex flex-column mx-2 m-g">
             <div className="flex-wrap justify-content-center align-items-center gi-infos">
-            <Link to={'/game/' + this.props.id + '/'}>{this.props.name}</Link>
+            <span to={'/game/' + this.props.id + '/'}>{this.props.name}</span>
             <span className="date ml-2">{this.props.release_year}</span>
             </div>
             <div className="d-flex flex-wrap mt-2">
