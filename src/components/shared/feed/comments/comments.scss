@@ -2,14 +2,32 @@
     min-height: 0px;
     height: 0;
     opacity: 0;
-    border-top: 1px solid var(--soft);
+    border-top: 1px solid var(--module-soft2);
     transition: 0.2s;
     overflow: hidden;
     .comment-item {
-        transition: 0.2s;
+        position: relative;
+        border-bottom: 1px solid var(--module-soft2);
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: var(--theme-soft3);
+            width: 8px;
+        }
+        &:nth-child(2n+1){
+            &::before {
+                background: var(--color-soft3);
+            }
+        }
         &:hover {
-            background: var(--soft);
+            background: var(--module-soft1);
             padding-left: 26px;
+            &::before {
+                background: var(--theme-soft1);
+            }
         }
     }
 }
@@ -21,9 +39,9 @@
     width: fit-content;
 }
 .small-avatar {
-    width: 40px;
-    min-width: 40px;
-    height: 40px;
+    width: 45px;
+    min-width: 45px;
+    height: 45px;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;

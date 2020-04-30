@@ -12,9 +12,9 @@
   "language": "Language",
 
 
-  "level": "LEVEL",
-  "points": "POINTS",
-  "followers": "FOLLOWERS",
+  "level": "Level",
+  "points": "Points",
+  "followers": "Followers",
 
   "newpost-placeholder": "What's up ?",
   "image": "Image",

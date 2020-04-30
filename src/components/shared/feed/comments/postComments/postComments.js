@@ -2,8 +2,16 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import axios from 'axios';
 import './postComments.scss';
+import TextArea from "../../../utils/textarea/textarea";
 
 class PostComments extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+          content: ""
+        }
+        this.handleChange = this.handleChange.bind(this)
+      }
     submitComment = (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
@@ -15,15 +23,26 @@ class PostComments extends Component {
             }
         })
     }
+    handleChange = (event) => {
+        const target = event.target
+        const value = target.value
+        const name = target.name
+        this.setState({
+          [name]: value
+        })
+    }
     render() {
         if(this.props.auth){
             return(
-            <form onSubmit={ this.submitComment } ref={(el) => this.newCommentRef = el }>
-                <div className="textarea-post m-g d-flex align-items-center">
-                    <textarea className="p-g comment-textarea" name="content" placeholder="Commentez !" 
-                    style={{overflow: 'hidden', overflowWrap: 'break-word', resize: 'none', height: '54px'}}
-                    />
-                    <input type="submit" className="submit-comment ml-2" value="Envoyer"/>
+            <form className="postComment-form" onSubmit={ this.submitComment } ref={(el) => this.newCommentRef = el }>
+                <TextArea
+                name="content"
+                value={ this.state.content }
+                onChange={ this.handleChange }
+                placeHolder={"Commentez ici !"}
+                />
+                <div className="tool-bar">
+                    <input type="submit" className="submit-comment ml-auto" value="Envoyer"/>
                 </div>
             </form>
             );

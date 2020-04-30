@@ -3,16 +3,31 @@ import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 import './newPost.scss';
 import axios from "axios";
+import TextArea from "../../utils/textarea/textarea";
 class NewPost extends Component {
   constructor(props) {
     super(props);
-    this.state = { file: null, inputKey : Date.now(), isLoading: false};
+    this.state = { 
+      file: null, 
+      inputKey : Date.now(), 
+      isLoading: false,
+      content: ""
+    };
+    this.handleChange = this.handleChange.bind(this)
+  }
+  handleChange = (event) => {
+      const target = event.target
+      const value = target.value
+      const name = target.name
+      this.setState({
+        [name]: value
+      })
   }
   submitPost = (e) => {
     let self = this
     e.preventDefault();
     const data = new FormData(e.target);
-    this.newPostRef.reset();
+    
 
     axios.post('/api/newPost', data, 
     {onUploadProgress(progressEvent){
@@ -26,8 +41,10 @@ class NewPost extends Component {
       }})
       .then(res => {
         if(res.status === 200){
+          this.newPostRef.reset();
           this.props.addPost([res.data]);
           self.setState({
+            content: "",
             isLoading: false,
             file: null,
             inputKey : Date.now()
@@ -58,10 +75,11 @@ class NewPost extends Component {
             onSubmit={ this.submitPost }
             ref={(el) => this.newPostRef = el }
           >
-            <textarea
-              className="p-g"
-              name="content"
-              placeholder={t('newpost-placeholder')}
+            <TextArea
+            name="content"
+            value={ this.state.content }
+            onChange={ this.handleChange }
+            placeHolder={t('newpost-placeholder')}
             />
             <div className="filePreview">
               {this.state.file &&

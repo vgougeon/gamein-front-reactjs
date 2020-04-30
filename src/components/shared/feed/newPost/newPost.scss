@@ -1,17 +1,5 @@
 .textarea-post {
   position: relative;
-
-  textarea {
-    width: 100%;
-    border: none;
-    background: var(--module);
-    font-family: 'Segoe UI';
-    color: var(--color);
-
-    &:focus {
-      outline: none;
-    }
-  }
 }
 .textarea-tools {
   width: 100%;

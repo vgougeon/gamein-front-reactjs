@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import authActions from '../../../../store/authActions';
 import LoginForm from './login-form';
-import Img from '../../img/img';
+import Img from '../../utils/img/img';
 
 import './login-popup.scss';
 import RegisterForm from './register-form';

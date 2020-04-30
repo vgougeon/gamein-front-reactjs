@@ -22,15 +22,42 @@
   }
   .info {
     display: flex;
-    img{
+    position: relative;
+    img.avatar{
       width: 55px;
       height: 55px;
       object-fit: cover;
       object-position: center;
-      border-radius: 5px;
       background: var(--theme);
       border-radius: 6px;
+      z-index: 1;
     }
+    .skin {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      z-index: 0;
+      opacity: 0.5;
+      .gradient {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        position: absolute;
+        background: linear-gradient(transparent, var(--module-soft2));
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+      }
+    }
+    
+  }
+  .content {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   p {
     margin-bottom: 0;
@@ -136,7 +163,7 @@
 
 .feed-content {
   animation: 0.8s cardIn ease-in-out;
-
+  background: var(--module);
    .box {
      border-radius: 0 ;
    }

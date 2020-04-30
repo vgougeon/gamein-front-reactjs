@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Spinner from '../spinner/spinner-standard';
+import Spinner from '../../spinner/spinner-standard';
 import './img.scss';
 class Img extends Component {
   state = { 

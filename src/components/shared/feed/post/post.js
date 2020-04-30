@@ -7,7 +7,9 @@ import { withTranslation } from 'react-i18next';
 import Interweave from 'interweave';
 import marked from 'marked'
 import { getAvatarUrl } from '../../../../services/profile/avatarService';
-import Img from '../../img/img';
+import Img from '../../utils/img/img';
+import moment from "moment";
+import levelService from '../../../../services/profile/levelService';
 
 marked.setOptions({ breaks: true });
 class Post extends Component {
@@ -24,7 +26,6 @@ class Post extends Component {
   showComments = () => {
     this.setState({active : !this.state.active });
   }
-
   likePost = () => {
     let data = { id: this.props.id}
     axios.post('/api/likePost', data)
@@ -51,12 +52,16 @@ class Post extends Component {
     <div className="feed-content mb-g s-1">
     <div className="box feed">
         <div className="info">
-            <img className="m-g" src={getAvatarUrl(this.props.avatar, this.props.username)}
+            <img className="m-g avatar" src={getAvatarUrl(this.props.avatar, this.props.username)}
             alt="Post user profile" />
-            <div className="d-flex flex-column mt-g mb-g justify-content-center low-line-height">
+            <div className="d-flex flex-column mt-g mb-g justify-content-center low-line-height z-i1">
                 <Link to={"user/" + this.props.username } className="nostyle username font-weight-bold">{ this.props.display_name }</Link>
-                <span className="grade text-muted">{t(this.props.name)}</span>
+                <small className="muted-2">{t("level") + " " + levelService.level(this.props.experience)}</small>
             </div>
+            {/* <div className="skin">
+              <div className="gradient"></div>
+              <Img className="skin" src={"/f/skin/" + this.props.skin + ".jpg" } />
+            </div> */}
         </div>
         <div className="content px-g">
           <Interweave content={ marked(this.props.content) } />
@@ -71,19 +76,18 @@ class Post extends Component {
         </div>
         }
         <div className="content-footer px-g">
-            <p className="text-muted text-size-s my-0">{ this.props.dateformat }</p>
+            <p className="text-muted text-size-s my-0">{ moment(this.props.date).fromNow() }</p>
             <div className="d-flex feed-tools align-items-center">
                 <div className="tool-element">
                   <i className="far fa-eye pr-2"/>
                   <span>{ this.state.likes }</span> 
                 </div>
-                <div className="tool-element">
-                  <i className={ 'fas fa-heart pr-2 ' + (this.state.liked ? 'liked' : '')}
-                  onClick={ this.likePost } />
+                <div className="tool-element" onClick={ this.likePost }>
+                  <i className={ 'fas fa-heart pr-2 ' + (this.state.liked ? 'liked' : '')}/>
                   <span>{ this.state.likes }</span>
                 </div>
-                <div className="tool-element">
-                  <i className="fas fa-comments pr-2" onClick={this.showComments} />
+                <div className="tool-element" onClick={this.showComments}>
+                  <i className="fas fa-comments pr-2"  />
                   <span>{ this.state.comments }</span>
                 </div>
             </div>

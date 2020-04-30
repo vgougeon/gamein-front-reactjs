@@ -27,7 +27,7 @@ class HomePage extends Component {
   appendPosts() {
     let self = this;
     this.getPosts().then(response => {
-      if (response.data.length) {
+      if (response.status === 200) {
         self.setState(state => ({
           isLoading: false,
           posts: [...self.state.posts, ...response.data],

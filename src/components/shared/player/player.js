@@ -7,7 +7,7 @@ import Spinner from '../spinner/spinner-standard';
 import { Link } from 'react-router-dom';
 import LikeOST from './likeOst/likeOst';
 import Volume from './volume/volume';
-import Img from '../img/img';
+import Img from '../utils/img/img';
 import player from '../../../store/playerActions';
 
 class Player extends Component {
@@ -31,7 +31,6 @@ class Player extends Component {
             this.addListen()
         }
         if(this.props.videoId !== this.state.videoId){
-            console.log("new")
             clearInterval(this.interval)
             this.setState({
                 videoId: this.props.videoId,
@@ -148,7 +147,7 @@ class Player extends Component {
     getError = (event) => {
         player.setUnplayable(this.state.videoId)
         this.next()
-        console.log("YOUTUBE player error")
+        // YOUTUBE ERROR
     }
     getProgress = () => {
         const progressM = String(Math.floor(this.state.progress / 60)).padStart(2, '0');

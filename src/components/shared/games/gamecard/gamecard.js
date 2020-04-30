@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import Img from '../../img/img';
+import Img from '../../utils/img/img';
 import "./gamecard.scss";
 class GameCard extends Component {
   render() {

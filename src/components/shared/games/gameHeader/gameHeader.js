@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './gameHeader.scss';
 import '../gamecard/gamecard.scss'
-import Img from '../../img/img';
+import Img from '../../utils/img/img';
 const NewSkin = React.lazy(() => import('../../editor/newSkin/newSkin'))
 class GameHeader extends Component {
     static defaultProps = {

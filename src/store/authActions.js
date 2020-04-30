@@ -51,7 +51,6 @@ class AuthActions {
         socket.emit('signIn', { auth: res.data})
     }
     signOut() {
-        console.log("BYE BYE")
         socket.emit('signOut')
         localStorage.setItem("token", null);
         delete axios.defaults.headers.common["Authorization"];

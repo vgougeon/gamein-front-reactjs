@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import authActions from '../../../../store/authActions';
-import Img from '../../img/img';
 
 import './login-popup.scss';
 import Spinner from '../../spinner/spinner-standard';
