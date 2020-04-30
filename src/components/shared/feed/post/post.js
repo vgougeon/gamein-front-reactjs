@@ -10,6 +10,7 @@ import { getAvatarUrl } from '../../../../services/profile/avatarService';
 import Img from '../../utils/img/img';
 import moment from "moment";
 import levelService from '../../../../services/profile/levelService';
+import { motion, AnimatePresence } from "framer-motion"
 
 marked.setOptions({ breaks: true });
 class Post extends Component {
@@ -24,6 +25,7 @@ class Post extends Component {
   }
 
   showComments = () => {
+    console.log("ACTIVE")
     this.setState({active : !this.state.active });
   }
   likePost = () => {
@@ -93,9 +95,18 @@ class Post extends Component {
             </div>
         </div>
     </div>
-    { this.state.active &&
-    < Comments idpost={this.props.id} />
-    }
+    <AnimatePresence>
+      { this.state.active &&
+      <motion.div
+      position="center"
+      initial={{ opacity: 1, height: "auto"}}
+      animate={{ opacity: 1, height: "auto"}}
+      exit={{ opacity: 0, height: "0" }}
+      >
+        < Comments idpost={this.props.id} /> 
+      </motion.div>
+      }
+    </AnimatePresence>
     </div>
     );
   }

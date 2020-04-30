@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { motion, AnimatePresence } from "framer-motion"
 import moment from 'moment';
 import './comments.scss';
 import axios from "axios";
@@ -20,7 +21,7 @@ class Comments extends Component {
 
     componentDidMount() {
         this.setState({
-            height: '50px'
+            height: "auto"
         })
         this.appendComments();
     }
@@ -56,16 +57,31 @@ class Comments extends Component {
     }
     render() {
         return (
-            <AnimateHeight
-            duration={ 500 }
-            height={ this.state.height }
-            >
-            { this.state.loading ?
-            <Spinner position="center"/> : null}
+            <React.Fragment>
+            <AnimatePresence>
+                { this.state.loading &&
+                <motion.div
+                position="center"
+                initial={{ opacity: 0, height: 0}}
+                animate={{ opacity: 1, height: "auto", scale:[0, 1, 1.5, 1]}}
+                exit={{ opacity: 0, height: "0px" }}
+                >
+                <Spinner position="center"/>
+                </motion.div>
+                }
+            </AnimatePresence>
+            {/*  : null} */}
             <div className={"box comments toggleOn"}>
                 <div className="d-flex flex-column" id="comment-container">
+                    <AnimatePresence>
                     {this.state.comments.map((comment, index) => (
-                        <div key={index + "-" + this.state.idpost} className="d-flex comment-item px-3 py-2">
+                        <motion.div 
+                        key={index + "-" + this.state.idpost} 
+                        className="d-flex comment-item px-3 py-2"
+                        initial={{ opacity: 0, height: 0, x: 200}}
+                        animate={{ opacity: 1, height: "auto", x: 0}}
+                        exit={{ opacity: 0, height: 0 }}
+                        >
                             <img className="small-avatar mr-2" src={getAvatarUrl(comment.avatar, comment.username)} alt="" />
                             <div className="d-flex flex-column">
                                 <div className="d-flex flex-column">
@@ -75,13 +91,13 @@ class Comments extends Component {
                                 <span className="mt-1">{comment.content}</span>
                             </div>
                             
-                        </div>
+                        </motion.div>
                     ))}
+                    </AnimatePresence>
                 </div>
                 <PostComments id={this.state.idpost} newComment={this.newComment} />
             </div>
-            </AnimateHeight>
-
+            </React.Fragment>
         );
     }
 }
