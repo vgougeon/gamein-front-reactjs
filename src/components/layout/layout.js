@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
+import { AnimatePresence } from "framer-motion"
 import authActions from '../../store/authActions';
 import Header from "./header/header";
 import SideNav from "./sidenav/sidenav";
 import LoginPopup from "../shared/popup/login-popup/login-popup";
+import Popup from '../shared/popup/popup'
 import Social from '../shared/social/social';
 import Player from '../shared/player/player';
 
@@ -20,7 +22,6 @@ class Layout extends Component {
     this.setState(state => ({
       Open : !state.Open
     }));
-    
   }
   
   render() {
@@ -31,6 +32,11 @@ class Layout extends Component {
         show={ this.props.loginlayout }
         toggle={ authActions.toggleLogin } />
         }
+        <AnimatePresence>
+        { this.props.popup &&
+        <Popup>{ this.props.popup }</Popup>
+        }
+        </AnimatePresence>
         <section id="container">
         <Header toggleOpen={this.toggleOpen} />
         <section id="main">
@@ -46,6 +52,7 @@ class Layout extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  popup: state.popup.popup,
   loginlayout: state.auth.loginlayout
 })
 export default connect(mapStateToProps)(Layout)

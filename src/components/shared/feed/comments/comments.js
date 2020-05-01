@@ -4,7 +4,6 @@ import moment from 'moment';
 import './comments.scss';
 import axios from "axios";
 import PostComments from './postComments/postComments';
-import AnimateHeight from 'react-animate-height';
 import { getAvatarUrl } from "../../../../services/profile/avatarService";
 import Spinner from "../../spinner/spinner-standard";
 

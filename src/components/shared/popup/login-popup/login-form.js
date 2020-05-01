@@ -20,7 +20,7 @@ class LoginForm extends Component {
         this.setState({
             loading: true
         })
-        let res = await authActions.signIn(this.state.username, this.state.password)
+        await authActions.signIn(this.state.username, this.state.password)
         this.setState({
             loading: false
         })

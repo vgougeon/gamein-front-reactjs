@@ -1,0 +1,16 @@
+.expandPostImage {
+    max-width: 80vw;
+    max-height: 80vh;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    box-shadow: 0 0 12px rgba(0,0,0,0.35);
+    img {
+        width: auto;
+        height: auto;
+        max-width: 80vw;
+        max-height: 80vh;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+}

@@ -11,6 +11,8 @@ import Img from '../../utils/img/img';
 import moment from "moment";
 import levelService from '../../../../services/profile/levelService';
 import { motion, AnimatePresence } from "framer-motion"
+import popup from '../../../../store/popupActions'
+import ExpandPostImage from '../expandPostImage/expandPostImage';
 
 marked.setOptions({ breaks: true });
 class Post extends Component {
@@ -22,12 +24,14 @@ class Post extends Component {
       comments: this.props.comments,
       active: false
     }
+    // this.expand = this.expand.bind(this)
   }
 
   showComments = () => {
     console.log("ACTIVE")
     this.setState({active : !this.state.active });
   }
+
   likePost = () => {
     let data = { id: this.props.id}
     axios.post('/api/likePost', data)
@@ -46,6 +50,10 @@ class Post extends Component {
       }
       
     })
+  }
+
+  expand() {
+    popup.set(<ExpandPostImage { ...this.props }></ExpandPostImage>)
   }
 
   render() { 
@@ -70,8 +78,8 @@ class Post extends Component {
         </div>
         {
         this.props.path &&
-        <div className="content-images">
-          <Img 
+        <div className="content-images" onClick={ this.expand.bind(this) }>
+          <Img
             src={'/f/posts/' + this.props.path }
             alt="Post media"
           />

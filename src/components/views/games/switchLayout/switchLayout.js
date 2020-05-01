@@ -3,7 +3,6 @@ import './switchLayout.scss';
 class SwitchLayout extends Component {
     constructor(props) {
         super(props);
-        let views = []
         let layouts = ["view-normal", "view-box", "view-line"]
         let index = layouts.findIndex(item => item === this.props.currentLayout)
         this.state={
