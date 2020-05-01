@@ -78,7 +78,7 @@ class Comments extends Component {
                         <motion.div 
                         key={index + "-" + this.state.idpost} 
                         className="d-flex comment-item px-3 py-2"
-                        initial={{ opacity: 0, height: 0, x: 200}}
+                        initial={{ opacity: 0, height: 0, x: 10}}
                         animate={{ opacity: 1, height: "auto", x: 0}}
                         exit={{ opacity: 0, height: 0 }}
                         >
@@ -95,7 +95,12 @@ class Comments extends Component {
                     ))}
                     </AnimatePresence>
                 </div>
-                <PostComments id={this.state.idpost} newComment={this.newComment} />
+                <AnimatePresence>
+                    <motion.div initial={{ height: 0}} animate={{ height: "auto"}} exit={{ height: 0}}>
+                        <PostComments id={this.state.idpost} newComment={this.newComment} />
+                    </motion.div>
+                </AnimatePresence>
+                
             </div>
             </React.Fragment>
         );
