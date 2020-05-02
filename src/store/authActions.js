@@ -1,4 +1,5 @@
 import store from '../store';
+import popup from './popupActions';
 import socket from '../services/socket/openSocket';
 import axios from 'axios';
 if (localStorage.getItem("token") !== null) {
@@ -46,7 +47,7 @@ class AuthActions {
     setLogin(res) {
         localStorage.setItem("token", res.data);
         axios.defaults.headers.common['Authorization'] = res.data;
-        this.toggleLogin()
+        popup.close()
         this.getMe()
         socket.emit('signIn', { auth: res.data})
     }

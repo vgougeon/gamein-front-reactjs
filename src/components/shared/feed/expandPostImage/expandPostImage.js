@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import './expandPostImage.scss'
 import Img from '../../utils/img/img';
 const ExpandPostImage = (props) => {

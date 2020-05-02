@@ -34,5 +34,24 @@
 
   "by-date": "Sort by date",
   "by-popularity": "Sort by popularity",
-  "by-note": "Sort by note"
+  "by-note": "Sort by note",
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  "register": "Inscription",
+  "login": "Connexion",
+  "username": "Nom d'utilisateur",
+  "password": "Mot de passe",
+  "confirm-password": "Confirmer le mot de passe",
+  "already-registered": "Déjà inscrit ?"
 }

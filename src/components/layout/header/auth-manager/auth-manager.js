@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import authActions from '../../../../store/authActions';
+import LoginPopup from '../../../shared/popup/login-popup/login-popup'
+import popup from '../../../../store/popupActions'
 import AuthButtons from './auth-buttons';
 import Spinner from '../../../shared/spinner/spinner-standard';
 
@@ -20,12 +22,16 @@ class AuthManager extends Component {
         let auth;
         if(this.props.isLoading){ auth = <Spinner/> }
         else if(this.props.auth){ auth = <AuthButtons {...this.props.auth} /> } 
-        else { auth = <Login click={ authActions.toggleLogin } />; }
+        // else { auth = <Login click={ authActions.toggleLogin } />; }
+        else auth = <Login click={ this.login }></Login>
         return (
             <div id="buttons">
                 { auth }
             </div>
         );
+    }
+    login() {
+        popup.set(<LoginPopup></LoginPopup>)
     }
 }
 

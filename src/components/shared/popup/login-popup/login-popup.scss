@@ -1,6 +1,6 @@
 .login-popup {
-    width: 100%;
-    max-width: 800px;
+    width: 800px;
+    max-width: 80vw;
     background: var(--module);
     height: 500px;
     border: 1px solid rgba(var(--colorrgb),0.3);
@@ -24,6 +24,10 @@
         }
     }
     .info-wrapper {
+        @media screen and (max-width: 1000px){
+            width: 100%;
+        }
+        width: 45%;
         border-left: 1px solid var(--soft);
         box-shadow: 0 0 6px rgba(var(--invertrgb), 1);
         background: linear-gradient(var(--bg), rgba(var(--invertrgb),0.5));
@@ -32,9 +36,14 @@
         flex-direction: column;
         align-items: center;
         padding-top: 55px;
-        width: 45%;
         color: white;
         padding: 55px 2rem;
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 300px;
+        }
         span {
             text-align: center;
         }
@@ -71,6 +80,9 @@
     }
 
     .login-wrapper {
+        @media screen and (max-width: 1000px){
+            display: none;
+        }
         height: 100%;
         flex-direction: column;
         align-items: center;
@@ -81,18 +93,6 @@
 }
 
 .bg-login {
-    // position: absolute;
-    // background: url("/f/skin/39.jpg") center no-repeat;
-    // top: 0;
-    // left: 0;
-    // right: 0;
-    // bottom: 0;
-    // width: 100%;
-    // height: 100%;
-    // z-index: 0;
-    // background-size: cover;
-    // opacity: 0.6;
-
     position: relative;
     height: 100%;
     width: 100%;
@@ -101,7 +101,6 @@
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
-    // overflow: hidden;
 
     &:before {
         position: absolute;
@@ -126,11 +125,4 @@
             transform: translateX(0%)
         }
       }
-}
-
-.relative {
-    position: relative;
-}
-.z1 {
-    z-index:1;
 }
