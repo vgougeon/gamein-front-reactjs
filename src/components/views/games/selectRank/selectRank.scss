@@ -1,6 +1,7 @@
 .rank-select {
-    background: rgba(var(--themergb), 0.1);
-    border: 2px solid var(--soft);
+    background: var(--module-soft1);
+    border: 1px solid var(--module-soft2);
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
     padding: 0 1.5rem;
     display: flex;
     flex-direction: column;
@@ -11,7 +12,7 @@
     position: relative;
     min-width: 300px;
     &:hover {
-      border: 2px solid rgba(var(--themergb), 0.6);
+      border: 1px solid var(--theme-soft3);
     }
     i {
       opacity: 0.75;
@@ -28,13 +29,12 @@
   .rs-list {
     position: absolute;
     overflow: hidden;
-    top:2.4rem;
+    top: 105%;
     z-index:2;
     background:var(--module);
-    box-shadow: var(--boxshadow);
     width: 100%;
-    border-right: 4px solid rgba(var(--themergb), 0.5);
-    border-left: 4px solid rgba(var(--themergb), 0.5);
+    // border-right: 1px solid rgba(var(--themergb), 0.5);
+    // border-left: 1px solid rgba(var(--themergb), 0.5);
     left: 0;
     .rs-item {
       height: auto;

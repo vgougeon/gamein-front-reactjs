@@ -1,0 +1,32 @@
+@import './purple.scss';
+html {
+    --header-size: 60px;
+    --aside-size: 260px;
+    --header: #{$header};
+    
+    --bg: #{$bg};
+    --bg-l1: #{mix($bg, $module, 33%)};
+    --bg-l2: #{mix($bg, $module, 66%)};
+    
+    --module: #{$module};
+    --module-soft1: #{mix($invert, $module, 5%)};
+    --module-soft2: #{mix($invert, $module, 10%)};
+  
+    --color: #{$color};
+    --color-soft1: #{mix($module, $color, 20%)};
+    --color-soft2: #{mix($module, $color, 40%)};
+    --color-soft3: #{mix($module, $color, 60%)};
+  
+    --theme: #{$theme};
+    --theme-soft1: #{mix($module, $theme, 20%)};
+    --theme-soft2: #{mix($module, $theme, 40%)};
+    --theme-soft3: #{mix($module, $theme, 60%)};
+    --theme-soft4: #{mix($module, $theme, 80%)};
+  
+    --soft: #{rgba($invert, 0.05)};
+    --boxshadow: 0 0px 4px #{rgba(mix(#000, $bg, 15%),1)};
+    --shadow: #{rgba(mix(#000, $bg),1)};
+    --themergb: #{red($theme)}, #{green($theme)}, #{blue($theme)};
+    --colorrgb: #{red($color)}, #{green($color)}, #{blue($color)};
+    --invertrgb: #{red($invert)}, #{green($invert)}, #{blue($invert)};
+  }

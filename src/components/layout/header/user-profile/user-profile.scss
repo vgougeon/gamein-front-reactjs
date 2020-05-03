@@ -110,6 +110,9 @@
   &.bluetooth {
     background: rgb(92, 135, 216);
   }
+  &.purple {
+    background: #7f53c5;
+  }
   &:hover{
     border: 2px solid var(--theme);
     transform: scale(1.2);

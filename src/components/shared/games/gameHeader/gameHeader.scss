@@ -132,15 +132,15 @@
             }
         }
         a.active,.menu-item.active {
-            color: var(--theme);
-            border-bottom: 4px solid var(--theme);
-            background: var(--soft);
+            color: var(--theme-soft3);
+            border-bottom: 4px solid var(--theme-soft3);
+            background: rgba(255, 255, 255, 0.1);
             text-shadow: 0 0 3px rgba(0,0,0,.5);
         }
         a:hover,.menu-item:hover {
-            color: var(--theme);
+            color: var(--theme-soft3);
             text-decoration: none;
-            border-bottom: 4px solid var(--theme);
+            border-bottom: 4px solid var(--theme-soft3);
         }
         
     }

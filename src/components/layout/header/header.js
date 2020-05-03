@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AuthManager from './auth-manager/auth-manager';
 import SearchBar from "./search-bar/search-bar";
 import "./header.scss";
+import Logo from "./logo/logo";
 
 class Header extends Component {
   render() {
@@ -10,7 +11,8 @@ class Header extends Component {
         <div className="item">
           <i className="fas fa-bars aside-action" onClick={this.props.toggleOpen} />
           <div id="logo" className="d-none d-md-flex">
-            <img src="/assets/favicon.png" alt="Logo gamein" />
+            {/* <img src="/assets/favicon.png" alt="Logo gamein" /> */}
+            <Logo />
           </div>
         </div>
         <div className="item search-bar">

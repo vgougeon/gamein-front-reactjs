@@ -1,39 +1,6 @@
 $invert: #ffffff;
-$bg: #222231;
-$theme: #c999ff;
-$module: #263950;
-$header: #7f53c5;
 $color: #ffffff;
-html {
-  --header-size: 60px;
-  --aside-size: 260px;
-  --header: #{$header};
-  
-  --bg: #{$bg};
-  --bg-l1: #{mix($bg, $module, 33%)};
-  --bg-l2: #{mix($bg, $module, 66%)};
-  
-  --module: #{$module};
-  --module-soft1: #{mix($invert, $module, 5%)};
-  --module-soft2: #{mix($invert, $module, 10%)};
-
-  
-
-  --color: #{$color};
-  --color-soft1: #{mix($module, $color, 20%)};
-  --color-soft2: #{mix($module, $color, 40%)};
-  --color-soft3: #{mix($module, $color, 60%)};
-
-  --theme: #{$theme};
-  --theme-soft1: #{mix($module, $theme, 20%)};
-  --theme-soft2: #{mix($module, $theme, 40%)};
-  --theme-soft3: #{mix($module, $theme, 60%)};
-  --soft: #{rgba($invert, 0.05)};
-  // --soft: rgba(255,255,255,0.05);
-  --boxshadow: 0 0px 4px rgba(0,0,0,0.2);
-  --border: none;
-  --themergb: 201, 153, 255;
-  --module2: 56, 58, 80;
-  --colorrgb: 255, 255, 255;
-  --invertrgb: 0, 0, 0;
-}
+$bg: #222231;
+$module: #263950;
+$theme: #c999ff;
+$header: #7f53c5;

@@ -110,10 +110,9 @@ class UserProfile extends Component {
               <i className="fas fa-palette mr-3" /><span>{t('themes')}</span>
             </div>
             <div className="d-flex">
-              <div className="theme-picker white" onClick={() => theme.switchTheme(1)}></div>
+              <div className="theme-picker predator" onClick={() => theme.switchTheme(3)}></div>
               <div className="theme-picker black" onClick={() => theme.switchTheme(2)}></div>
-              <div className="theme-picker bluetooth" onClick={() => theme.switchTheme(5)}></div>
-              <div className="theme-picker predator" onClick={() => theme.switchTheme(4)}></div>
+              <div className="theme-picker purple" onClick={() => theme.switchTheme(1)}></div>
             </div>
           </div>
         </div>

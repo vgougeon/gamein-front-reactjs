@@ -13,7 +13,8 @@ table.osts {
             }
         }
         &:hover {
-            background: rgba(var(--themergb), 0.2);
+            // background: rgba(var(--themergb), 0.2);
+            background: var(--theme-soft4);
         }
         transition: 0.1s;
         height: 50px;

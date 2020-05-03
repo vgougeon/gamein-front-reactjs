@@ -1,15 +1,6 @@
-html {
-    --header-size: 60px;
-    --aside-size: 260px;
-    --bg: rgba(32, 32, 34, 1);
-    --module: rgba(47, 49, 63, 1);
-    --header: rgba(156, 37, 39, 1);
-    --color: rgba(229, 229, 239, 1);
-    --theme: rgba(251, 86, 89, 1);
-    --soft: rgba(255,255,255,0.05);
-    --boxshadow: 0 0px 3px rgba(0,0,0,0.22);
-    --border: none;
-    --themergb: 250, 220, 250;
-    --module2: 56, 58, 80;
-    --colorrgb: 255, 255, 255;
-  }
+$invert: #ffffff;
+$color: #ffffff;
+$bg: #202022;
+$module: #2f313f;
+$theme: #fb5659;
+$header: #9c2527;

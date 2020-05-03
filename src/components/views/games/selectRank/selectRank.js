@@ -26,7 +26,7 @@ class SelectRank extends Component {
                         <span>{ t(this.state.items[this.state.selected]) }</span>
                         <i className="fas fa-chevron-down"/>
                     </div>
-                    < AnimateHeight className="rs-list" height={this.state.height} duration={200} >
+                    < AnimateHeight className="rs-list s-2" height={this.state.height} duration={200} >
                         { this.state.items.map((item, i) =>
                             <React.Fragment key={ i }>
                             { i !== this.state.selected &&

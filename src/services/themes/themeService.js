@@ -1,16 +1,17 @@
 import axios from 'axios';
+import moment from 'moment';
 
-export function switchTheme(theme) {
-  axios.get('http://api.njak.fr/getTheme', { params: { theme: theme} }).then(res => {
-    const css = res.data,
-    head = document.head || document.getElementsByTagName('head')[0],
-    style = document.createElement('style');
-    head.appendChild(style);
-    style.type = 'text/css';
-    if (style.styleSheet){
-      style.styleSheet.cssText = css;
-    } else {
-      style.appendChild(document.createTextNode(css));
-    }
-  })
+export async function switchTheme(theme) {
+  let res = await axios.get('/api/getTheme', { params: { id: theme} })
+  console.log("recu");
+  const css = res.data;
+  const head = document.head || document.getElementsByTagName('head')[0];
+  const style = document.createElement('style');
+  head.appendChild(style);
+  style.type = 'text/css';
+  if (style.styleSheet){
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
 }
