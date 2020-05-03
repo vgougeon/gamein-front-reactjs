@@ -1,8 +1,9 @@
-@import './dark.scss';
+@import './predator.scss';
 html {
     --header-size: 60px;
     --aside-size: 260px;
     --header: #{$header};
+    --header-gradient: linear-gradient(#{$header}, #{mix($header, desaturate($theme, 33%), 90%)});
     
     --bg: #{$bg};
     --bg-l1: #{mix($bg, $module, 33%)};
