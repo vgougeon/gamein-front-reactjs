@@ -116,7 +116,7 @@
             min-width: fit-content;
             height: 45px;
             height: 100%;
-            font-weight: bold;
+            font-weight: 600;
             border-bottom: 4px solid transparent;
             display: flex;
             align-items: center;
@@ -132,15 +132,15 @@
             }
         }
         a.active,.menu-item.active {
-            color: var(--theme-soft3);
-            border-bottom: 4px solid var(--theme-soft3);
+            color: var(--theme);
+            border-bottom: 4px solid var(--theme);
             background: rgba(255, 255, 255, 0.1);
             text-shadow: 0 0 3px rgba(0,0,0,.5);
         }
         a:hover,.menu-item:hover {
-            color: var(--theme-soft3);
+            color: var(--theme);
             text-decoration: none;
-            border-bottom: 4px solid var(--theme-soft3);
+            border-bottom: 4px solid var(--theme);
         }
         
     }
