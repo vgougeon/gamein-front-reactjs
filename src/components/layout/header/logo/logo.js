@@ -5,10 +5,10 @@ const outline = {
     hidden: {
       opacity: 0,
       pathLength: 0,
-      stroke: "rgba(255, 255, 255, 1)",
+      stroke: "rgba(100, 150, 255, 1)",
       fill: "rgba(255,255,255,0)",
       rotate: -90,
-      scale: 0.5
+      scale: 1.2
     },
     visible: {
       opacity: 1,
