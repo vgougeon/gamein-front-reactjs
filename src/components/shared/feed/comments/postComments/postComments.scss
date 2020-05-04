@@ -6,10 +6,11 @@
     line-height: 35px;
     padding: 0 1rem;
 }
-.submit-comment {
-    border-radius: 50px;
-}
 
+.new-comment {
+    background: var(--bg-l2);
+    border-bottom: 1px solid var(--module-soft2);
+}
 .postComment-form {
     animation: grow 1s ease-in-out
 }

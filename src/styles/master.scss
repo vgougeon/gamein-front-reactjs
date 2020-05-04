@@ -304,16 +304,20 @@ a.nostyle {
 
 .tool-bar {
   background: var(--module-soft1);
+  &.transparent {
+    background: transparent;
+  }
   width: 100%;
   height: 35px;
   display: flex;
   align-items: center;
-  input[type="submit"] {
+  input[type="submit"], button[type="submit"] {
     border: none;
     background: none;
     height: 100%;
+    color: var(--theme);
     &:hover {
-      background: var(--module-soft2)
+      background: var(--module-soft2);
     }
   }
 }

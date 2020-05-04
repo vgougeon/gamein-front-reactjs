@@ -50,8 +50,9 @@ class Comments extends Component {
         
     }
     newComment = (data) => {
+        console.log(data)
         this.setState(state => ({
-            comments: [...this.state.comments, ...data]
+            comments: [...this.state.comments, ...this.parseDates(data)]
         }));
     }
     render() {
