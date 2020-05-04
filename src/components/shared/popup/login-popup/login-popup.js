@@ -5,6 +5,7 @@ import Img from '../../utils/img/img';
 
 import './login-popup.scss';
 import RegisterForm from './register-form';
+import Logo from '../../../layout/header/logo/logo';
 
 class LoginPopup extends Component {
     constructor(props) {
@@ -23,10 +24,13 @@ class LoginPopup extends Component {
         return (  
             <div className="login-popup">
                 <div className="login-head z-i1">
-                    <Img src="/assets/favicon.png" alt="Favicon"/>
+                    {/* <Img src="/assets/favicon.png" alt="Favicon"/> */}
                 </div>
                 <div className="login-wrapper position-relative">
                     <div className="bg-login">  
+                    </div>
+                    <div className="login-popup-logo">
+                        <Logo />    
                     </div>
                 </div>
                 <div className="info-wrapper">

@@ -8,6 +8,8 @@ html {
     --bg: #{$bg};
     --bg-l1: #{mix($bg, $module, 33%)};
     --bg-l2: #{mix($bg, $module, 66%)};
+    --bg-d1: #{mix($bg, invert($color), 33%)};
+    --bg-d2: #{mix($bg, invert($color), 66%)};
     
     --module: #{$module};
     --module-soft1: #{mix($invert, $module, 5%)};

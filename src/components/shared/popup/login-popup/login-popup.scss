@@ -3,8 +3,8 @@
     max-width: 80vw;
     background: var(--module);
     height: 500px;
-    border: 1px solid rgba(var(--colorrgb),0.3);
-    box-shadow: 0 0 12px rgba(var(--invertrgb), 1);
+    border: 1px solid rgba(var(--colorrgb),0.2);
+    box-shadow: 0 0 12px var(--shadow);
     position: relative;
     display: flex;
     overflow: hidden;
@@ -24,13 +24,13 @@
         }
     }
     .info-wrapper {
-        @media screen and (max-width: 1000px){
+        @media screen and (max-width: 500px){
             width: 100%;
         }
-        width: 45%;
+        width: 350px;
         border-left: 1px solid var(--soft);
-        box-shadow: 0 0 6px rgba(var(--invertrgb), 1);
-        background: linear-gradient(var(--bg), rgba(var(--invertrgb),0.5));
+        box-shadow: 0 0 6px var(--shadow);
+        background: linear-gradient(var(--module), var(--bg));
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -89,9 +89,19 @@
         flex-grow: 1;
         position: relative;
         overflow: hidden;
+
+        .login-popup-logo {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            top: 0;
+            position: absolute;
+            z-index: 2;
+            align-items: center;
+        }
     }
 }
-
 .bg-login {
     position: relative;
     height: 100%;
@@ -101,6 +111,9 @@
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:before {
         position: absolute;
@@ -110,7 +123,7 @@
         width: 500%;
         height: 100%;
         content: "";
-        background: url("/f/skin/39.jpg") 0 0 var(--header);
+        background: url("/f/skin/3.jpg") 0 0 var(--header);
         background-size: cover; 
         transition: background-image 1.5s;
     }

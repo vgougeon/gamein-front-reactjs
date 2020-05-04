@@ -39,6 +39,7 @@ class LoginForm extends Component {
                 value={this.state.username} 
                 onChange={ (e) => {this.setState({username: e.target.value})}}
                 onBlur={ this.checkUsername }
+                spellcheck="false"
                 ref={(input) => { this.username = input; }} 
                 ></input>
                 <label htmlFor="password" className="mt-2">{ t("password") }</label>
