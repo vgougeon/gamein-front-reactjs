@@ -3,6 +3,7 @@ import { withTranslation } from 'react-i18next';
 import AnimateHeight from 'react-animate-height';
 import axios from 'axios';
 import './filterPanel.scss';
+import { motion } from 'framer-motion';
 class FilterPanel extends Component {
     constructor(props) {
         super(props);
@@ -76,7 +77,12 @@ class FilterPanel extends Component {
     render() { 
         const { t } = this.props
         return ( 
-            <React.Fragment>
+            <motion.div className="filters-container"
+            initial={{ width: 0, opacity: 0, x: 350}}
+            animate={{ width: "350px", opacity: 1, x:0}}
+            exit={{ width: 0, opacity: 0, x:350}}
+            // transition={{ duration: }}
+            >
             <div className="s-1 box">
                 <div className="box-head">
                     {t('filters')}
@@ -122,7 +128,7 @@ class FilterPanel extends Component {
                 </div>
             </div>
             <button className="transparent-button mx-auto my-2" onClick={ this.deselectAll }>{t('unselall')}</button>
-            </React.Fragment>
+            </motion.div>
         );
     }
 }

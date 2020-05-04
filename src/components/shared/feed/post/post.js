@@ -13,6 +13,7 @@ import levelService from '../../../../services/profile/levelService';
 import { motion, AnimatePresence } from "framer-motion"
 import popup from '../../../../store/popupActions'
 import ExpandPostImage from '../expandPostImage/expandPostImage';
+import Icon from '../../utils/icons/icon'
 
 marked.setOptions({ breaks: true });
 class Post extends Component {
@@ -28,7 +29,6 @@ class Post extends Component {
   }
 
   showComments = () => {
-    console.log("ACTIVE")
     this.setState({active : !this.state.active });
   }
 
@@ -88,16 +88,12 @@ class Post extends Component {
         <div className="content-footer px-g">
             <p className="text-muted text-size-s my-0">{ moment(this.props.date).fromNow() }</p>
             <div className="d-flex feed-tools align-items-center">
-                <div className="tool-element">
-                  <i className="far fa-eye pr-2"/>
-                  <span>{ this.state.likes }</span> 
-                </div>
                 <div className="tool-element" onClick={ this.likePost }>
-                  <i className={ 'fas fa-heart pr-2 ' + (this.state.liked ? 'liked' : '')}/>
+                  <Icon name="like" size="13px" active={ this.state.liked } fancy = { true } />
                   <span>{ this.state.likes }</span>
                 </div>
                 <div className="tool-element" onClick={this.showComments}>
-                  <i className="fas fa-comments pr-2"  />
+                  <Icon name="comment" active={ this.state.active } size="13px"/>
                   <span>{ this.state.comments }</span>
                 </div>
             </div>

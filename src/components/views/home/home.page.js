@@ -5,6 +5,7 @@ import NewPost from "../../shared/feed/newPost/newPost";
 import Spinner from "../../shared/spinner/spinner-standard";
 let state = { posts: [], offset: 0, scroll: 0, isLoading: true };
 
+
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -43,7 +44,7 @@ class HomePage extends Component {
           <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
             <div className="box s-1">
               <div className="box-head">
-                Suggestions d'amis
+                Left
                 <i className="fas fa-users" />
               </div>
               <div className="box-content">
@@ -62,7 +63,17 @@ class HomePage extends Component {
               }
             </div>
           </div>
-          <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block" />
+          <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
+            <div className="box s-1">
+              <div className="box-head">
+                Right
+                <i className="fas fa-users" />
+              </div>
+              <div className="box-content">
+
+              </div>
+            </div>
+					</div>
         </div>
       </section>
     );

@@ -74,18 +74,22 @@
   }
   .feed-tools {
     .tool-element {
-      padding: 0 0.45rem;
+      padding: 0.1rem 0.65rem;
       margin-left: 5px;
       border-radius: 5px;
+      display: flex;
+      align-items: center;
       cursor: pointer;
-      &:hover {
-        background: rgba(255,255,255,0.1);
-        i {
-          opacity: 1;
-          color: #5e83fa;
+      .icon-icon {
+        margin-right: 6px;
+        svg path {
+          fill-opacity: 0.6;
         }
-        i.fa-heart {
-          color: var(--red);
+      }
+      &:hover {
+        background: var(--soft);
+        .icon-icon svg path{
+          fill-opacity: 1;
         }
       }
       i {
@@ -134,25 +138,6 @@
       border: 2px solid var(--soft);
     }
   }
-    
-    // .ratio-box {
-    //   width: 100%;
-    //   padding-top: 135%;
-    //   img.ratio {
-    //     height: 100%;
-    //     width: 100%;
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     object-fit: cover;
-    //     border: 3px solid var(--soft);
-    //   }
-    //   .loader {
-    //     position: absolute;
-    //     top: 0; left: 0; right: 0; bottom: 0;
-    //     margin: auto auto;
-    //   }
-    // }
   .content-footer {
     height: 50px;
     display: flex;

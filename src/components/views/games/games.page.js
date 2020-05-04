@@ -7,6 +7,7 @@ import FilterPanel from './filterPanel/filterPanel';
 import SelectRank from './selectRank/selectRank';
 import './games.page.scss';
 import SwitchLayout from "./switchLayout/switchLayout";
+import { AnimatePresence } from "framer-motion";
 
 let state = { games: [], offset: 0, scroll: 0, isLoading: true, filters: {}, showFilters: false, view: "view-normal"}
 
@@ -105,11 +106,11 @@ class GamesPage extends Component {
 									}
 								</div>
 							</div>
+							<AnimatePresence>
 							{ this.state.showFilters ? 
-							<div className="filters-container">
-								<FilterPanel setFilters={ this.setFilters } /> 
-							</div>
+							<FilterPanel setFilters={ this.setFilters } /> 
 							: null }
+							</AnimatePresence>
 						</div>
 					</div>
 				</div>

@@ -1,3 +1,9 @@
+.filters-container {
+    width: 350px;
+    // min-width: 350px;
+    flex-shrink: 0;
+    margin-left: 14px;
+  }
 .filter-category {
     .box-head {
         margin-top: 1px;
