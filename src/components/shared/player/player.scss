@@ -2,7 +2,7 @@ $progress-bar-height: 12px;
 $minimized-height: 64px;
 $maximized-height: 110px;
 #player {
-    width: calc(100% - var(--header-size));
+    width: 100%;
     flex-grow: 1;
     height: 0;
     position: relative;
@@ -13,12 +13,6 @@ $maximized-height: 110px;
     display: flex;
     flex-direction: column;
     opacity: 0;
-    visibility: hidden;
-    margin-left: var(--header-size);
-    @media screen and (max-width: 800px){
-        margin-left: 0;
-        width: 100%;
-    }
     img.splash {
         width: 100%;
         height: 100%;

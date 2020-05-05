@@ -41,19 +41,9 @@ class HomePage extends Component {
   render() {
     return (
       <section id="page-content">
-        <div className="row mt-g g-g row-p-0">
-          <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
-            <div className="box s-1">
-              <div className="box-head">
-                Left
-                <i className="fas fa-users" />
-              </div>
-              <div className="box-content">
-
-              </div>
-            </div>
-					</div>
-          <div className="col-xl-6 col-lg-12">
+        <div className="page-container mt-g">
+          <div className="w-100"></div>
+          <div className="main-width">
             <NewPost addPost={this.addPost}/>
             <div className={"feed-container " + this.state.view}>
               { this.state.isLoading ? 
@@ -64,17 +54,7 @@ class HomePage extends Component {
               }
             </div>
           </div>
-          <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
-            <div className="box s-1">
-              <div className="box-head">
-                Currently online
-                <i className="fas fa-users" />
-              </div>
-              <div className="box-content">
-                {/* <OnlineUsers /> */}
-              </div>
-            </div>
-					</div>
+          <div className="w-100"></div>
         </div>
       </section>
     );

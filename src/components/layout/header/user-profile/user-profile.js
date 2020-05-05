@@ -6,6 +6,7 @@ import ExperienceBar from '../../../shared/user/experienceBar/experienceBar';
 import { withTranslation } from 'react-i18next';
 import AnimateHeight from 'react-animate-height';
 import { getAvatarUrl } from '../../../../services/profile/avatarService';
+import authActions from '../../../../store/authActions';
 
 class UserProfile extends Component {
   constructor(props) {
@@ -115,6 +116,10 @@ class UserProfile extends Component {
               <div className="theme-picker purple" onClick={() => theme.switchTheme(1)}></div>
             </div>
           </div>
+        </div>
+        
+        <div className="wide-button" onClick={ authActions.signOut }>
+          <i className="fas fa-user-circle mr-3" /><span>{t('sign-out')}</span>
         </div>
       </div>
     </div>

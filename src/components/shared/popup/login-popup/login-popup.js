@@ -6,6 +6,7 @@ import Img from '../../utils/img/img';
 import './login-popup.scss';
 import RegisterForm from './register-form';
 import Logo from '../../../layout/header/logo/logo';
+import { AnimatePresence } from 'framer-motion';
 
 class LoginPopup extends Component {
     constructor(props) {
@@ -30,7 +31,9 @@ class LoginPopup extends Component {
                     <div className="bg-login">  
                     </div>
                     <div className="login-popup-logo">
-                        <Logo />    
+                        <AnimatePresence>
+                            <Logo />
+                        </AnimatePresence>
                     </div>
                 </div>
                 <div className="info-wrapper">

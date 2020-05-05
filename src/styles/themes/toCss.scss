@@ -2,8 +2,31 @@
 html {
     --header-size: 60px;
     --aside-size: 260px;
+    --main-width: 800px;
     --header: #{$header};
-    --header-gradient: linear-gradient(#{$header}, #{mix($header, desaturate($theme, 33%), 90%)});
+    --logo-color: #{$invert};
+    @if (lightness($header) > 80) {
+      --header-gradient: #fff;
+      --logo-color: #{$theme};
+    }
+    @else {
+      --header-gradient: linear-gradient(#{$header}, #{mix($header, desaturate($theme, 33%), 90%)});
+      --logo-color: #fff;
+    }
+
+    @if (lightness($bg) > 80) {
+      --boxshadow: 0 2px 4px #{mix(#000, $bg, 9%)};
+    }
+    @else if (lightness($bg) < 10) {
+      --boxshadow: 0 1px 3px #{mix(#000, $bg, 50%)};
+    }
+    @else {
+      --boxshadow: 0 0px 4px #{rgba(mix(#000, $bg, 15%),1)};
+    }
+    
+    --shadow: #{rgba(mix(#000, $bg),1)};
+    
+    
     
     --bg: #{$bg};
     --bg-l1: #{mix($bg, $module, 33%)};
@@ -27,8 +50,6 @@ html {
     --theme-soft4: #{mix($module, $theme, 80%)};
   
     --soft: #{rgba($invert, 0.05)};
-    --boxshadow: 0 0px 4px #{rgba(mix(#000, $bg, 15%),1)};
-    --shadow: #{rgba(mix(#000, $bg),1)};
     --themergb: #{red($theme)}, #{green($theme)}, #{blue($theme)};
     --colorrgb: #{red($color)}, #{green($color)}, #{blue($color)};
     --invertrgb: #{red($invert)}, #{green($invert)}, #{blue($invert)};

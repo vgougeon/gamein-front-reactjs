@@ -40,7 +40,7 @@ class Layout extends Component {
         <section id="container">
         <Header toggleOpen={this.toggleOpen} />
         <section id="main">
-        <SideNav toggleOpen={this.toggleOpen} isOpen = {this.state.Open} />
+        {/* <SideNav toggleOpen={this.toggleOpen} isOpen = {this.state.Open} /> */}
         {this.props.children}
         <Social />
         </section>

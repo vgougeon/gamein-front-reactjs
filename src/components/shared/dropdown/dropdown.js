@@ -8,11 +8,17 @@ class Dropdown extends Component {
   }
   componentDidUpdate(prevProps, prevState, snapshot){
     if(prevProps.show !== this.props.show && this.props.show === true){
+      console.log("added")
       document.addEventListener('mousedown', this.handleClick, false);
     }
     else {
+      console.log("removed")
       document.removeEventListener('mousedown', this.handleClick, false) 
     }
+  }
+  componentWillUnmount() {
+    console.log("removed event")
+    document.removeEventListener('mousedown', this.handleClick, false) 
   }
   handleClick = (e) => {
     if(this.node.contains(e.target)) {

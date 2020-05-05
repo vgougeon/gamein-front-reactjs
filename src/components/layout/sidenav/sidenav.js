@@ -9,9 +9,6 @@ class SideNav extends Component {
   isOpen() {
     return ((this.props.isOpen) ? "" : "aside-fold");
   }
-  navClicked() {
-    // Cette fonction devra fermer le nav sur mobile lorsqu'un lien est cliqué
-  }
   check = (paths) => {
     for(const path of paths)
       if(path === this.props.location.pathname.substr(1).split('/')[0])

@@ -35,7 +35,7 @@ class AuthButtons extends Component {
                         <span className="highlight"> { this.props.level }</span>
                     </span>
                 </div>
-                <div className="icon-button" onClick={ this.toggleUserProfile }>
+                <div className="icon-button header-avatar" onClick={ this.toggleUserProfile }>
                     <Avatar 
                     img={getAvatarUrl(this.props.avatar, this.props.username)}
                     />

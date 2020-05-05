@@ -5,16 +5,16 @@ const outline = {
     hidden: {
       opacity: 0,
       pathLength: 0,
-      stroke: "rgba(100, 150, 255, 1)",
-      fill: "rgba(255,255,255,0)",
+      stroke: "var(--logo-color)",
+      fill: "none",
       rotate: -90,
       scale: 1.2
     },
     visible: {
       opacity: 1,
       pathLength: 1,
-      stroke: "rgba(255, 255, 255, 1)",
-      fill: "rgba(255,255,255,0)",
+      stroke: "var(--logo-color)",
+      fill: "none",
       rotate: 0,
       scale: 1
     }
@@ -23,14 +23,14 @@ const fill = {
     hidden: {
       opacity: 0,
       pathLength: 0,
-      fill: "rgba(255, 255, 255, 0)",
+      fill: "var(--logo-color)",
       rotate: -90,
       scale: 0.5
     },
     visible: {
       opacity: 1,
       pathLength: 1,
-      fill: "rgba(255,255,255,1)",
+      fill: "var(--logo-color)",
       rotate: 0,
       scale: 1
     }

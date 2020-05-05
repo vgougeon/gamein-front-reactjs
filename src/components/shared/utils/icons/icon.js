@@ -36,7 +36,7 @@ class Icon extends Component {
                         { this.props.fancy ?
                         <motion.path
                         initial = {{ opacity: 1, scale: 1, pathLength: 0}}
-                        animate = {{ opacity: 1, scale: [2.5, 1], pathLength: 1}}
+                        animate = {{ opacity: [0.5, 0.4, 0] , scale: [2.5, 1], pathLength: 1}}
                         exit = {{ opacity: 0, scale: [1, 3], pathLength: [1, 0] }}
                         transition = {{ duration: 0.5, ease: "easeOut" }}
                         d={ this.path }

@@ -1,0 +1,20 @@
+[
+    {
+        "name": "nav-home",
+        "icon": "home",
+        "paths": ["", "user"],
+        "to": "/"
+    },
+    {
+        "name": "nav-games",
+        "icon": "games",
+        "paths": ["games", "game"],
+        "to": "/games"
+    },
+    {
+        "name": "nav-party",
+        "icon": "party",
+        "paths": ["party"],
+        "to": "/party"
+    }
+]

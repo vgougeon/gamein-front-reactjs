@@ -9,7 +9,7 @@ import Spinner from '../../../shared/spinner/spinner-standard';
 function Login (props) {
     return (
         <React.Fragment>
-            <button className="stroked-theme" onClick={ props.click }>
+            <button className="stroked-theme mr-3" onClick={ props.click }>
                 <i className="fas fa-globe-europe"/>Login
             </button>
         </React.Fragment>
@@ -25,7 +25,7 @@ class AuthManager extends Component {
         // else { auth = <Login click={ authActions.toggleLogin } />; }
         else auth = <Login click={ this.login }></Login>
         return (
-            <div id="buttons">
+            <div id="buttons" className="item">
                 { auth }
             </div>
         );
