@@ -1,0 +1,16 @@
+.online-users-container {
+    //
+}
+.online-users-user {
+    width: 100%;
+    height: 60px;
+    background: var(--module);
+    transition: 0.1s;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    img { width: 45px; height: 45px; border-radius: 5px;}
+    &:hover {
+        background: var(--module-soft1);
+    }
+}

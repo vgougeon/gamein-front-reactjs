@@ -3,6 +3,7 @@ import axios from "axios";
 import Post from "../../shared/feed/post/post";
 import NewPost from "../../shared/feed/newPost/newPost";
 import Spinner from "../../shared/spinner/spinner-standard";
+import OnlineUsers from "../../shared/social/online-users/online-users";
 let state = { posts: [], offset: 0, scroll: 0, isLoading: true };
 
 
@@ -66,11 +67,11 @@ class HomePage extends Component {
           <div className="col-xl-3 d-none d-md-none d-sm-none d-lg-none d-xl-block">
             <div className="box s-1">
               <div className="box-head">
-                Right
+                Currently online
                 <i className="fas fa-users" />
               </div>
               <div className="box-content">
-
+                {/* <OnlineUsers /> */}
               </div>
             </div>
 					</div>
