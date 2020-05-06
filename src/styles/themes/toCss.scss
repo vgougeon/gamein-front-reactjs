@@ -50,6 +50,12 @@ html {
     --theme-soft4: #{mix($module, $theme, 80%)};
   
     --soft: #{rgba($invert, 0.05)};
+    @if (lightness($bg) > 50) {
+      --main-rgb: 255, 255, 255;
+    }
+    @else {
+      --main-rgb: 0, 0, 0;
+    }
     --themergb: #{red($theme)}, #{green($theme)}, #{blue($theme)};
     --colorrgb: #{red($color)}, #{green($color)}, #{blue($color)};
     --invertrgb: #{red($invert)}, #{green($invert)}, #{blue($invert)};
