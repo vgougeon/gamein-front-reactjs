@@ -27,7 +27,7 @@ class Icon extends Component {
                         exit = {{ opacity: 0 }}
                         transition = {{ }}
                         d={ this.path }
-                        fill="var(--color)">
+                        fill={ this.props.fill || "var(--color)" }>
                         </motion.path> : null }
                     </AnimatePresence>
                     <AnimatePresence>
