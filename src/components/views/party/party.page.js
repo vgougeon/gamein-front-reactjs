@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import socket from '../../../services/socket/openSocket';
 import { Route } from "react-router-dom";
 import './party.page.scss'
 import Spinner from '../../shared/spinner/spinner-standard';
 import Skribol from '../../../mini-games/skribol/skribol';
 import MiniAvatar from '../../shared/utils/miniAvatar/miniAvatar';
+import { AnimatePresence, motion } from 'framer-motion';
 
 
 class PartyPage extends Component {
@@ -41,6 +43,10 @@ class PartyPage extends Component {
             socket.off('joinServer')
         })
     }
+    leaveServer() {
+        console.log("LEAVE")
+        socket.emit('leaveServer')
+    }
     render() {
         const servers = 
             <div className="page-container mt-g">
@@ -55,14 +61,44 @@ class PartyPage extends Component {
                                 <small className="muted-1">Créé par Njak</small>
                             </div>
                             <div className="ml-auto d-flex">
+                                <AnimatePresence>
                                 { item.players.map( player =>
-                                    <MiniAvatar size="35px" {...player} host={ item.owner === player.sid } />
+                                    <motion.div
+                                        key={ player.id }
+                                        initial={{ width: 0, opacity: 0}}
+                                        animate={{ width: "auto", opacity: 1}}
+                                        exit={{ width: 0, opacity: 0}}
+                                    >
+                                        <MiniAvatar size="35px" {...player} host={ item.owner === player.sid } />
+                                    </motion.div>
                                 )}
+                                </AnimatePresence>
                             </div>
                             <div className="ml-2 party-game-players">
                                 <span>{ item.players.length } / <span> { item.maxPlayers } </span></span>
                             </div>
-                            <button className="ml-3" onClick={ this.joinServer.bind(this, item.id)}>Rejoindre</button>
+                            <AnimatePresence>
+                            { item.players.find(i => i.id === this.props.auth.id) &&
+                            <motion.div initial={{ width: 0, opacity: 0}} animate={{ width: "auto", opacity: 1}} exit={{ width: 0, opacity: 0}}>
+                                <button className="ml-3 grey" onClick={ this.leaveServer }>Sortir</button>
+                            </motion.div>
+                            }
+                            </AnimatePresence>
+                            <AnimatePresence>
+                            { item.players.find(i => (i.id === this.props.auth.id) && (i.sid === this.props.socket.status)) && (item.players.find(i => i.id === this.props.auth.id).sid === item.owner) &&
+                            <motion.div initial={{ width: 0, opacity: 0}} animate={{ width: "auto", opacity: 1}} exit={{ width: 0, opacity: 0}}>
+                                <button className="ml-3 no-wrap">GO !</button>
+                            </motion.div>
+                            }
+                            </AnimatePresence>
+                            <AnimatePresence>
+                            { !item.players.find(i => (i.id === this.props.auth.id)) &&
+                            <motion.div initial={{ width: 0, opacity: 0}} animate={{ width: "auto", opacity: 1}} exit={{ width: 0, opacity: 0}}>
+                                <button className="ml-3" onClick={ this.joinServer.bind(this, item.id)}>Jouer</button>
+                            </motion.div>
+                            }
+                            </AnimatePresence>
+                            {/* { this.props.socket.status } */}
                         </div>
                     )}
                 </div>
@@ -75,5 +111,8 @@ class PartyPage extends Component {
     }
 }
 
- 
-export default PartyPage;
+const mapStateToProps = (state) => ({
+    auth: state.auth.auth,
+    socket: state.socket
+})
+export default connect(mapStateToProps)(PartyPage)

@@ -228,6 +228,9 @@ input[type="submit"], button{
   outline: none;
   border-radius: 2px;
   background: rgb(59, 116, 223);
+  &.no-wrap {
+    white-space: nowrap;
+  }
 }
 input[type="submit"]:hover, button:hover{
   box-shadow: 0 1px 3px rgba(0,0,0,0.15);

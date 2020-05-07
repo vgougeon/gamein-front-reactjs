@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 import 'flag-icon-css/css/flag-icon.min.css';
+require('./store/socketActions')
 
 const Container = () => (
     <BrowserRouter> 
