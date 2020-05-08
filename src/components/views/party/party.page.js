@@ -30,15 +30,12 @@ class PartyPage extends Component {
             socket.off('getServers')
         })
         socket.on('updateServers', (data) => {
+            console.log(data)
             this.setState({ servers: data })
         })
     }
     joinServer(id) {
         socket.emit("joinServer", id)
-        // socket.on('joinServer', (data) => {
-        //     // this.props.history.push("/party/" + id)
-        //     socket.off('joinServer')
-        // })
     }
     leaveServer() {
         console.log("LEAVE")
@@ -47,18 +44,29 @@ class PartyPage extends Component {
     startGame() {
         socket.emit('startGame')
     }
+    getOwnerUsername(game) {
+        if(game.owner === null){
+            return "-"
+        }
+        let owner = game.players.find(item => item.sid === game.owner)
+        if(owner) return owner.display_name
+    }
     render() {
         const servers = 
             <motion.div key="2" className="page-container mt-g" initial={{ y: -200, opacity: 0}} animate={{ y: 0, opacity: 1}} exit={{ y: -200, opacity: 0}}>
                 <div className="main-width">
-                    <h2 className="mt-3 mb-3">Rejoindre une partie !</h2>
+                    <h4 className="mt-3 mb-4">Rejoindre une partie !</h4>
                     { this.state.servers.map(item =>
                         <div key={ item.id } className="party-server-card" style={{ 
                             backgroundImage: `linear-gradient(rgba(var(--main-rgb), 0.6), rgba(var(--themergb), 0.3)), url('/assets/mini-games/${item.game.toLowerCase()}/bg.png')`
                             }}>
                             <div className="d-flex flex-column low-line-height">
                                 <span className="party-game-name">{ item.game }</span>
-                                <small className="muted-1">Game master : ???</small>
+                                { item.playing ? 
+                                <small className="success">En jeu</small> :
+                                <small className="muted-1">En attente</small>
+                                
+                                }
                             </div>
                             <div className="ml-auto d-flex">
                                 <AnimatePresence>

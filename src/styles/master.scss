@@ -308,7 +308,7 @@ body {
   margin-right: 7px !important;
 }
 .green-success {
-  background: rgb(70, 161, 74);
+  background: rgb(74, 177, 79);
 }
 .warning {
   font-size: 9pt;
@@ -320,7 +320,9 @@ body {
   color: rgb(255, 65, 65);
   margin: 0;
 }
-
+.success {
+  color: rgb(74, 177, 79);
+}
 .highlight {
   font-weight: 600;
   opacity: 1;

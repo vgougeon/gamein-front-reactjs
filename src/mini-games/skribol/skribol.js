@@ -9,13 +9,16 @@ class Skribol extends Component {
     }
     render() { 
         return (
-            <div className="page-container mt-3">
+            <>
+            <div className="skribol-top">
+                H__ry __t__r
+            </div>
+            <div className="page-container">
                 <div className="main-width">
-                    <h1>Skribol</h1>
                     <Canvas />
                 </div>
             </div>
-            
+            </>
         );
     }
 }
